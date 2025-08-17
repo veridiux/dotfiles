@@ -1,0 +1,225 @@
+{
+
+ 
+    "tray": {
+	"icon-size": 16,
+	"spacing": 5,
+	"show-passive-items": true
+    },
+
+     "hyprland/workspaces": {
+         "all-outputs": true,
+         "persistent-workspaces": {
+            "*": [1, 2, 3, 4, 5]
+         },
+         "format": "{icon}",
+         "format-icons": {
+             "1": "",
+             "2": "",
+             "3": "",
+             "4": "",
+             "5": "",
+            "active": "",
+            "default": ""
+            }
+    },
+
+     "custom/power": {
+    	"format": " ⏻ ",
+    	"on-click": "$HOME/.config/waybar/scripts/power-menu",
+    	"tooltip": false
+    },
+
+		
+    "custom/lock": {
+    	"format": "󰌾",
+    	"on-click": "hyprlock",
+    	"tooltip": true,
+    	"tooltip-format": "󰷛 Screen Lock",
+    },
+
+     "custom/arch": {
+        "format": "󰩥",
+        "on-click": "nwg-drawer -c 4 -is 48 -spacing 15 -fm \"Noto Sans\" || fuzzel",
+        "on-click-right": "pkill fuzzel || fuzzel",
+        "tooltip": true,
+        "tooltip-format": "Left-click: App Drawer | Right-click: Fuzzel"
+    },
+
+    "custom/logo": {
+        "exec": "~/.config/waybar/scripts/gpu_logo_display.sh",
+        "interval": 2,
+	"tooltip": false,
+        "on-click": "~/.config/waybar/scripts/gpu_logo_cycle.sh"
+    },
+
+
+    "wireplumber": {
+        "format": "{icon}  {volume:>3}%",
+        "format-icons": {
+        "default": ["\uf026", "\uf027", "\uf028"]
+         },
+ 	  "tooltip-format": "volume {volume}%",
+	  "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+	  "on-click-right": "pavucontrol",
+	  "format-muted": "\uf00d {volume}%"
+   },
+
+   "backlight": {
+	"interval": 2,
+	"justify":"centered",
+	"rotate": 0,
+	"format": "{icon} {percent}%",
+	"format-icons": [
+		"󰃚",
+		"󰃛",
+		"󰃜 ",
+		"󰃝 ",
+		"󰃞 ",
+		"󰃟 ",
+		"󰃠 "
+	],
+	 "format": "{icon} {percent:>3}%",
+	 "tooltip-format": "backlight {percent}%",
+	 "icon-size": 10,
+ 	 "on-click": "",
+ 	 "on-click-middle": "",
+	 "on-click-right": "",
+	 "on-update": "",
+	 "on-scroll-up": "exec brightnessctl -d intel_backlight set +5%",
+    	 "on-scroll-down": "exec brightnessctl -d intel_backlight set 5%-",
+ 	 "smooth-scrolling-threshold": 1,
+   },
+
+
+   "battery": {
+	//"interval": 5,
+	"justified": "centered",
+        "max-length": 80,
+	"rotate": 0,
+	//"bat": "BAT0",
+	//"adapter": "ACAD",
+	"full-at": 100,
+	"design-capacity": false,
+	"states": {
+		"good": 95,
+		"warning": 30,
+		"critical": 15
+	},
+	 "format": "{icon}  {capacity}%",
+ 	 "format-charging": " {capacity}%",
+	 "format-plugged": "󱘖 {capacity}%",
+	 // Removed format-alt settings to always show percentage
+	 "format-full": "{icon}  Full",
+	 "format-icons": [
+		"󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"
+		],
+	 "format-time": "{H}h {M}min",
+	 "tooltip": true,
+	 "tooltip-format": "{timeTo} {power}w",
+	 "on-click-right": "$HOME/.config/waybar/scripts/power-menu",
+   },
+
+   "bluetooth": {
+	 "format": "󰂯",
+	 "format-disabled": "󰂳",
+	 "format-connected": "󰂱 {num_connections}",
+	 "tooltip-format": " {device_alias}",
+	 "tooltip-format-connected": "{device_enumerate}",
+	 "tooltip-format-enumerate-connected": " {device_alias} 󰂄{device_battery_percentage}%",
+	 "tooltip": true,
+	 "on-click": "blueberry",
+   },
+
+   "idle_inhibitor": {
+	 "tooltip": true,
+	 "tooltip-format-activated": "Idle_inhibitor active",
+	 "tooltip-format-deactivated": "Idle_inhibitor not active",
+	 "format": "{icon}",
+	 "format-icons": {
+		"activated": "",
+		"deactivated": "",
+	       }
+   },
+
+   "network#speed": {
+       "interval": 1,
+       "format": "{ifname}",
+       "format-wifi": "{icon}    {essid}",
+       "format-ethernet": "󰌘  {signalStrength}%  {bandwidthUpOctets:>8}  {bandwidthDownOctets:>8}",
+       "format-disconnected": "󰌙",
+       "tooltip-format": "{ipaddr}",
+       "format-linked": "󰈁 {ifname} (No IP)",
+       "tooltip-format-wifi": "{bandwidthUpBytes:>6} {bandwidthDownBytes:>6}",
+       "tooltip-format-ethernet": "{bandwidthUpOctets:>6} {bandwidthDownOctets:>6}",
+       "tooltip-format-disconnected": "󰌙 Disconnected",
+       "max-length": 40,
+       "format-icons": [
+        "󰤯", "󰤟", "󰤢", "󰤥", "󰤨"
+       ],
+       "on-click": "~/.config/waybar/scripts/wifi-selector.sh"
+   },
+
+   "clock": {
+       "interval": 1,
+       "format": " {:%A • %B %d • %I:%M %p}", // Sunday • July 13 • 01:49 PM format
+     //"format": " {:%H:%M:%S}",// 24H
+       "format-alt": " {:%H:%M   %d %B, %A}",
+       "tooltip-format": "<tt><small>{calendar}</small></tt>",
+       "calendar": {
+		"mode": "year",
+		"mode-mon-col": 3,
+		"weeks-pos": "right",
+		"on-scroll": 1,
+		"format": {
+			"months": "<span color='#ffead3'><b>{}</b></span>",
+			"days": "<span color='#ecc6d9'><b>{}</b></span>",
+			"weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+			"weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+			"today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+		        }
+	       }
+   },
+
+
+
+
+
+
+
+
+// MPRIS MEDIA PLAYER
+   "mpris": {
+	 "interval": 2,
+ 	 "format": "{player_icon} {dynamic}",
+	 "format-paused": "{status_icon} <i>{dynamic}</i>",
+	 "format-stopped": "",
+	 "format-disconnected": "",
+	 "on-click-middle": "playerctl play-pause",
+	 "on-click": "playerctl previous",
+	 "on-click-right": "playerctl next",
+	 "scroll-step": 5.0,
+
+	 "smooth-scrolling-threshold": 1,
+	 "tooltip": true,
+	 "tooltip-format": "{status_icon} {dynamic}\nLeft Click: previous\nMid Click: Pause\nRight Click: Next",
+	 "player-icons": {
+		"chromium": "",
+		"default": "",
+		"firefox": "",
+		"kdeconnect": "",
+		"mopidy": "",
+		"mpv": "󰐹",
+		"spotify": "",
+		"vlc": "󰕼",
+	},
+	"status-icons": {
+		"paused": "󰐎",
+		"playing": "",
+		"stopped": "",
+	},
+     // "ignored-players": ["firefox"]
+	"max-length": 40,
+   },
+
+}

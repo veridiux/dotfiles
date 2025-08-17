@@ -1,0 +1,137 @@
+/* Sys0p Waybar Styling */
+/* Core waybar CSS for Sys0p desktop environment */
+
+@define-color critical #ff0000; /* critical color */
+@define-color bgcolor #222436;   /* background color */
+@define-color alert   #df3320;
+
+@define-color accent5 #7da6ff;  /* main module color */
+
+@define-color workspace_active #9d7bd8; 
+@define-color workspace_hover #b8a2e6;
+
+@define-color power_color #a45ad0; 
+@define-color power_lock_color #9c7ce8; 
+
+* {
+    font-family: "Hack Nerd Font";
+    font-weight: bold;
+    min-height: 0;
+    min-width: 10px;
+    font-size: 98%;
+    font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
+}
+
+window#waybar {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #ffffff;
+    border-radius: 10px;
+    transition: background-color 0.5s;
+}
+
+window#waybar.hidden { opacity: 0.1; }
+
+#custom-separator { color: #606060; }
+#custom-separator.line-tray { color: #4a6b8a; }
+
+tooltip {
+    background: #1e1e2e;
+    opacity: 0.6;
+    border-radius: 10px;
+    border: 2px solid #11111b;
+}
+
+/* Workspaces */
+#workspaces button {
+    background-color: transparent;
+    color: #3a3a4a;
+    border: none;
+    outline: none;
+    padding: 2px 3px;
+    margin: 0 4px;
+    border-radius: 0px;
+    transition: all 0.5s cubic-bezier(0.55, -0.68, 0.48, 1.682);
+}
+
+#workspaces button.active,
+#workspaces button.focused { color: #3584e8; }
+
+#workspaces button:hover { 
+    background: rgba(0, 0, 0, 0.2); 
+    color: #6b8ba6; /* Lighter than inactive, darker than active for hover */ 
+    border: none; 
+    outline: none; 
+    box-shadow: none; 
+    padding: 2px 3px; 
+    margin-left: 4px; 
+    margin-right: 4px; 
+    border-radius: 0px; 
+    animation: gradient_f 20s ease-in infinite; 
+    transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682); 
+}
+
+#workspaces button.urgent { color: @power_color; }
+
+/* Clock & System Modules */
+#clock, #bluetooth, #battery, #backlight, #wireplumber,
+#idle_inhibitor, #network, #custom-arch { color: @accent5; }
+
+#battery { min-width: 55px; }
+#battery.critical:not(.charging) {
+    color: @critical;
+    animation-name: blink;
+    animation-duration: 3s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+@keyframes blink {
+    to { background-color: @critical; color: @bgcolor; }
+}
+
+#backlight, #wireplumber { font-family: monospace; min-width: 55px; }
+#idle_inhibitor { min-width: 14px; margin-left: 3px; padding-bottom: 1px; }
+#network { padding-left: 3px; padding-right: 2px; }
+#network.disconnected { color: @alert; }
+
+/* Custom Modules */
+#custom-power { 
+	color: @power_lock_color;
+	font-size: 20px;
+}
+
+#custom-lock { color: @power_lock_color; }
+
+#custom-logo {
+    padding: 0 5px;
+    font-size: 22px;
+    border-radius: 6px;
+    background-color: transparent;
+    color: #cdd6f4;
+    min-width: 30px;
+}
+#custom-logo.Integrated { background-color: rgba(100, 200, 100, 0.3); color: #a6e3a1; }
+#custom-logo.Hybrid { background-color: rgba(255, 215, 0, 0.3); color: #f9e2af; }
+#custom-logo.Dedicated { background-color: rgba(255, 80, 80, 0.3); color: #f38ba8; }
+
+/* Tray */
+#tray {
+    border: none;
+    background-color: transparent;
+    box-shadow: none;
+    margin-right: 2px;
+    padding-top: 2px;
+}
+#tray > * { padding: 0 4px; }
+
+/* MPRIS */
+#mpris {
+    margin: 0 10px;
+    padding: 0 10px;
+    border-radius: 8px;
+    background-color: transparent;
+    color: rgb(160, 190, 240);
+    font-weight: bold;
+    font-style: normal;
+}
+

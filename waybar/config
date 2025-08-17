@@ -1,0 +1,153 @@
+{
+    "include":["$HOME/.config/waybar/custom-modules", "$HOME/.config/waybar/style-modules"],
+
+
+    "layer": "top",
+    "position": "top",
+    "height": 10,
+    "margin": "1 6 1 6",
+    "modules-left": [
+    	"custom/arch",
+	"custom/separator#line-tray",
+    	"hyprland/workspaces",
+	"custom/separator#line-tray",
+	"clock",
+	"idle_inhibitor",
+	"power_profiles_daemon"
+    ],
+
+    "modules-center": [
+    	"custom/logo",
+	""
+    ],
+
+    "modules-right": [
+        "custom/separator#blank_3",
+        "tray", 
+	"custom/separator#blank", 
+	"custom/separator#blank", 
+        "custom/separator#line-tray", 
+	"wireplumber",
+	"custom/separator#line-tray",
+	"backlight",
+	"custom/separator#line-tray",
+	"bluetooth", 			//	launch  blueberry
+	"custom/separator#line-tray",
+	"custom/separator#blank", 
+	"network#speed", 			//	launch	iwgtk
+	"custom/separator#line-tray",
+	"custom/separator#blank", 
+	"custom/separator#blank",
+	"custom/separator#blank",
+	"battery", 
+	"custom/separator#blank", 
+	"custom/separator#line-tray",
+	"custom/lock",			//	hyprlock
+	"custom/power" 
+    ],
+
+
+"cpu": {
+	"format": "󰍛 {usage}%",
+	"interval": 1,
+	"min-length": 5,
+	"states": {
+		"warning": 70,
+		"critical": 90
+	},
+	"format-icons": [
+		"▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"
+	],
+	"on-click": "gnome-system-monitor",
+	"on-click-right": "gnome-system-monitor",
+	"tooltip": true,
+	"tooltip-format": "CPU Usage: {usage}% | Load: {load} | Icon: {icon}"
+},
+
+"disk": {
+	"interval": 30,
+	//"format": "󰋊",
+	"path": "/",
+	//"format-alt-click": "click",
+	"format": "{percentage_used}% 󰋊",
+	//"tooltip": true,
+	"tooltip-format": "{used} used out of {total} on {path} ({percentage_used}%)",
+},
+
+
+"memory": {
+	"interval": 10,
+	"format": "{percentage}% 󰾆",  // Show percentage instead since it's more reliable
+	"tooltip": true,
+	"tooltip-format": "Used: {used:0.1f}GB | Available: {avail:0.1f}GB | Total: {total:0.1f}GB ({percentage}%)",
+	"on-click": "gnome-system-monitor",
+	"on-click-right": "gnome-system-monitor"
+},
+
+"power-profiles-daemon": {
+  "format": "{icon} ",
+  "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+  "tooltip": true,
+  "format-icons": {
+    "default": "",
+    "performance": "",
+    "balanced": "",
+    "power-saver": ""
+  }
+},
+
+"wlr/taskbar": {
+	"format": "{icon}",
+	"icon-size": 20,
+	"all-outputs": false,
+	"tooltip-format": "{title}",
+	"on-click": "activate",
+	"on-click-middle": "close",
+	"ignore-list": [
+		"rofi",
+		"fuzzel"
+		],
+	"icon-theme": "kora"
+},
+
+
+
+
+ // Custom CPU meter showing aggregate usage across all cores (Python version)
+    "custom/cpu-aggregate": {
+    	"format": "{}",
+    	"return-type": "json",
+    	"interval": 2,
+    	"exec": "$HOME/.config/waybar/scripts/waybar-cpu-aggregate.py",
+    	"on-click": "gnome-system-monitor",
+    	"on-click-right": "gnome-system-monitor",
+    	"tooltip": true
+    },
+
+
+    // Custom temperature module with visual bar indicators
+    "custom/temp-bar": {
+    	"format": "{}",
+    	"return-type": "json",
+    	"interval": 10,
+    	"exec": "$HOME/.config/waybar/scripts/waybar-temp-bar.py",
+    	"on-click": "gnome-system-monitor",
+    	"on-click-right": "gnome-system-monitor",
+    	"tooltip": true
+    },
+
+
+    // Accurate memory module using same calculation as btop (Total - Available)
+    "custom/memory-accurate": {
+    	"format": "{}",
+    	"return-type": "json",
+    	"interval": 5,
+    	"exec": "$HOME/.config/waybar/scripts/waybar-memory-accurate.py",
+    	"on-click": "gnome-system-monitor",
+    	"on-click-right": "gnome-system-monitor",
+    	"tooltip": true
+    },
+
+
+}
+}
