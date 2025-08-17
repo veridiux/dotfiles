@@ -1,0 +1,8 @@
+[Unit]
+Description=Fix Razer Sound
+
+[Service]
+ExecStart=/opt/bin/fix_razer_sound.sh
+
+[Install]
+WantedBy=multi-user.target

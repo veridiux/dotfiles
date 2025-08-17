@@ -1,0 +1,17 @@
+[Unit]
+Description=Run power profile scripts based on AC or battery
+After=network.target
+After=suspend.target
+After=hibernate.target
+After=hybrid-sleep.target
+
+[Service]
+Type=idle
+ExecStart=/etc/acpi/ac.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
+WantedBy=suspend.target
+WantedBy=hibernate.target
+WantedBy=hybrid-sleep.target
