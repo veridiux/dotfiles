@@ -5,6 +5,8 @@ case "$distro" in
         echo "[*] Linking Arch configs..."
         ln -sf ~/dotfiles/distro/arch/config/hypr ~/.config/hypr
         ln -sf ~/dotfiles/distro/arch/config/waybar ~/.config/waybar
+	ln -s ~/dotfiles/shells/.zshrc ~/.zshrc
+
         ;;
     debian|ubuntu)
         echo "[*] Linking Debian configs..."
