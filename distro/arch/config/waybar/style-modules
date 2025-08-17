@@ -88,5 +88,77 @@
     "custom/arrow10": {
     	"format": "",
     	"tooltip": false
+    },
+    // Powerline-style arrows
+    "custom/arrow-left-1": {
+        "format": "", // left thin
+        "tooltip": false
+    },
+    "custom/arrow-left-2": {
+        "format": "", // left thin inverse
+        "tooltip": false
+    },
+    "custom/arrow-right-1": {
+        "format": "", // right thin
+        "tooltip": false
+    },
+    "custom/arrow-right-2": {
+        "format": "", // right thin inverse
+        "tooltip": false
+    },
+
+    // Triangular arrows
+    "custom/arrow-tri-left": {
+        "format": "◀",
+        "tooltip": false
+    },
+    "custom/arrow-tri-right": {
+        "format": "▶",
+        "tooltip": false
+    },
+    "custom/arrow-tri-up": {
+        "format": "▲",
+        "tooltip": false
+    },
+    "custom/arrow-tri-down": {
+        "format": "▼",
+        "tooltip": false
+    },
+
+    // Chevron arrows
+    "custom/arrow-chevron-left": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/arrow-chevron-right": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/arrow-chevron-double-left": {
+        "format": "«",
+        "tooltip": false
+    },
+    "custom/arrow-chevron-double-right": {
+        "format": "»",
+        "tooltip": false
+    },
+
+    // Block arrows
+    "custom/arrow-block-left": {
+        "format": "⬅",
+        "tooltip": false
+    },
+    "custom/arrow-block-right": {
+        "format": "➡",
+        "tooltip": false
+    },
+    "custom/arrow-block-up": {
+        "format": "⬆",
+        "tooltip": false
+    },
+    "custom/arrow-block-down": {
+        "format": "⬇",
+        "tooltip": false
     }
+
 }

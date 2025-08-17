@@ -22,16 +22,15 @@
     ],
 
     "modules-right": [
-        "custom/separator#blank_3",
-        "tray", 
+    	"tray",
+    	"custom/separator#line-tray",
+    	"bluetooth",
 	"custom/separator#blank", 
 	"custom/separator#blank", 
         "custom/separator#line-tray", 
 	"wireplumber",
 	"custom/separator#line-tray",
 	"backlight",
-	"custom/separator#line-tray",
-	"bluetooth", 			//	launch  blueberry
 	"custom/separator#line-tray",
 	"custom/separator#blank", 
 	"network#speed", 			//	launch	iwgtk

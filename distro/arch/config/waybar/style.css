@@ -5,13 +5,14 @@
 @define-color bgcolor #222436;   /* background color */
 @define-color alert   #df3320;
 
-@define-color accent5 #7da6ff;  /* main module color */
+@define-color main_modules #00ffff;  /* 7da6ff main module color */
+@define-color main_lines #00ff00;   /* lines and arrows */
 
 @define-color workspace_active #9d7bd8; 
 @define-color workspace_hover #b8a2e6;
 
 @define-color power_color #a45ad0; 
-@define-color power_lock_color #9c7ce8; 
+@define-color power_lock_color #00bfff; 
 
 * {
     font-family: "Hack Nerd Font";
@@ -32,7 +33,14 @@ window#waybar {
 window#waybar.hidden { opacity: 0.1; }
 
 #custom-separator { color: #606060; }
-#custom-separator.line-tray { color: #4a6b8a; }
+#custom-separator.line-tray { color: #00ff00; }
+
+#custom-arrow-left-2, #custom-arrow-right-2 {
+	color: @main_lines;
+	margin-right: 3px;
+	margin-left: 3px;
+	padding-top: 2px;
+}
 
 tooltip {
     background: #1e1e2e;
@@ -72,9 +80,13 @@ tooltip {
 
 #workspaces button.urgent { color: @power_color; }
 
+#idle_inhibitor {
+	color: @power_lock_color;
+}
+
 /* Clock & System Modules */
 #clock, #bluetooth, #battery, #backlight, #wireplumber,
-#idle_inhibitor, #network, #custom-arch { color: @accent5; }
+#network, #custom-arch { color: @main_modules; }
 
 #battery { min-width: 55px; }
 #battery.critical:not(.charging) {
@@ -103,7 +115,8 @@ tooltip {
 #custom-lock { color: @power_lock_color; }
 
 #custom-logo {
-    padding: 0 5px;
+    padding: 0;
+    margin-right: 5px;
     font-size: 22px;
     border-radius: 6px;
     background-color: transparent;

@@ -107,7 +107,7 @@
 		"critical": 15
 	},
 	 "format": "{icon}  {capacity}%",
- 	 "format-charging": " {capacity}%",
+ 	 "format-charging": "{icon}  {capacity}%",
 	 "format-plugged": "󱘖 {capacity}%",
 	 // Removed format-alt settings to always show percentage
 	 "format-full": "{icon}  Full",
@@ -121,13 +121,15 @@
    },
 
    "bluetooth": {
+   	 "justified": "centered",
 	 "format": "󰂯",
 	 "format-disabled": "󰂳",
-	 "format-connected": "󰂱 {num_connections}",
+	 "format-connected": "󰂱",
 	 "tooltip-format": " {device_alias}",
 	 "tooltip-format-connected": "{device_enumerate}",
 	 "tooltip-format-enumerate-connected": " {device_alias} 󰂄{device_battery_percentage}%",
 	 "tooltip": true,
+	 "min-length": 2,
 	 "on-click": "blueberry",
    },
 
@@ -150,8 +152,8 @@
        "format-disconnected": "󰌙",
        "tooltip-format": "{ipaddr}",
        "format-linked": "󰈁 {ifname} (No IP)",
-       "tooltip-format-wifi": "{bandwidthUpBytes:>6} {bandwidthDownBytes:>6}",
-       "tooltip-format-ethernet": "{bandwidthUpOctets:>6} {bandwidthDownOctets:>6}",
+       "tooltip-format-wifi": "{bandwidthUpBytes:>6} ⬆ {bandwidthDownBytes:>6} ⬇ ",
+       "tooltip-format-ethernet": "{bandwidthUpOctets:>6} ⬆ {bandwidthDownOctets:>6} ⬇ ",
        "tooltip-format-disconnected": "󰌙 Disconnected",
        "max-length": 40,
        "format-icons": [
