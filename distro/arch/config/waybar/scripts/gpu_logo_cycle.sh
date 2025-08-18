@@ -20,7 +20,7 @@ case "$NEXT" in
 env = GBM_BACKEND,intel
 env = __GLX_VENDOR_LIBRARY_NAME,mesa
 env = LIBVA_DRIVER_NAME,iHD
-env = AQ_DRM_DEVICES,/dev/dri/card0:
+env = AQ_DRM_DEVICES,/dev/dri/card1:
 EOL
         ;;
     "Hybrid")
@@ -29,7 +29,7 @@ EOL
 env = GBM_BACKEND,drm
 env = __GLX_VENDOR_LIBRARY_NAME,mesa
 env = LIBVA_DRIVER_NAME,iHD
-env = AQ_DRM_DEVICES,/dev/dri/card0:/dev/dri/card1
+env = AQ_DRM_DEVICES,/dev/dri/card1:/dev/dri/card0
 EOL
         ;;
     "Dedicated")
@@ -38,7 +38,7 @@ EOL
 env = GBM_BACKEND,nvidia
 env = __GLX_VENDOR_LIBRARY_NAME,nvidia
 env = LIBVA_DRIVER_NAME,nvidia
-env = AQ_DRM_DEVICES,/dev/dri/card1:/dev/dri/card0
+env = AQ_DRM_DEVICES,/dev/dri/card0:/dev/dri/card1
 EOL
         ;;
 esac
