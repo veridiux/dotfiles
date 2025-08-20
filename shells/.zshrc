@@ -85,3 +85,4 @@ alias yout='yay -Yc'           # remove orphaned packages
 alias hd='cd ~/'
 alias df='cd ~/dotfiles/'
 
+
