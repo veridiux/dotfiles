@@ -47,18 +47,47 @@ git_branch() {
 }
 
 # ===============================
-# Custom functions
+# Safe Git auto-update with confirmation
 # ===============================
-gitupdate() {
+gitupdate_safe() {
     local repo="$1"
+    local msg
+
+    # default to current directory if none given
     if [[ -z "$repo" ]]; then
-        repo="$HOME/dotfiles"
+        repo="$PWD"
     fi
-    cd "$repo" || return
-    git pull
+
+    cd "$repo" || { echo "Directory not found: $repo"; return; }
+
+    # show git status first
+    git status
+
+    # ask for confirmation
+    read -q "confirm?Do you want to commit and push these changes? (y/n) " 
+    echo
+    if [[ "$confirm" != "y" && "$confirm" != "Y" ]]; then
+        echo "Aborted."
+        cd - || return
+        return
+    fi
+
+    # generate timestamp commit message
+    msg="update: $(date '+%Y-%m-%d %H:%M:%S')"
+
+    # stage and commit
+    git add -A
+    git commit -m "$msg"
+
+    # pull remote changes first
+    git pull --rebase
+
+    # push to GitHub
+    git push
+
+    # return to original directory
     cd - || return
 }
-
 
 # ===============================
 # Prompt
@@ -77,6 +106,7 @@ alias gs='git status'
 alias ga='git add'
 alias gc='git commit'
 alias gp='git push'
+alias gu='gitupdate_safe'
 
 # Pacman shortcuts
 alias p='sudo pacman'
