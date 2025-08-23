@@ -39,3 +39,6 @@ blue = '0x123e7c'
 magenta = '0x711c91'
 cyan = '0x0abdc6'
 white = '0xd7d7d5'
+
+[window]
+opacity = 0.8
