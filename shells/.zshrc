@@ -47,6 +47,20 @@ git_branch() {
 }
 
 # ===============================
+# Custom functions
+# ===============================
+gitupdate() {
+    local repo="$1"
+    if [[ -z "$repo" ]]; then
+        repo="$HOME/dotfiles"
+    fi
+    cd "$repo" || return
+    git pull
+    cd - || return
+}
+
+
+# ===============================
 # Prompt
 # ===============================
 PROMPT='%F{cyan}%n@%m%f %F{green}%1~%f$(git_branch) %# '
@@ -84,5 +98,9 @@ alias yout='yay -Yc'           # remove orphaned packages
 # Directory shortcute
 alias hd='cd ~/'
 alias df='cd ~/dotfiles/'
+alias la='ls -A'     # show hidden files
+alias ll='ls -lah'   # already your long listing
+alias lla='ls -lahA' # long listing with hidden files
+
 
 
