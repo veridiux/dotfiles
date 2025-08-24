@@ -12,7 +12,7 @@ case "$distro" in
 	ln -s ~/dotfiles/distro/arch/config/kdeglobals ~/.config/kdeglobals
 
 	ln -s ~/dotfiles/systemd/fix_razer_sound.service /etc/systemd/system/fix_razer_sound.service
-	in -s ~/dotfiles/scripts/fix_razer_sound.sh /opt/binfix_razer_sound.sh
+	ln -s ~/dotfiles/scripts/fix_razer_sound.sh /opt/binfix_razer_sound.sh
         ;;
     debian|ubuntu)
         echo "[*] Linking Debian configs..."
