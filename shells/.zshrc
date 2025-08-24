@@ -133,4 +133,16 @@ alias ll='ls -lah'   # already your long listing
 alias lla='ls -lahA' # long listing with hidden files
 
 
+HISTFILE=~/.zsh_history
+
+HISTSIZE=5000
+SAVEHIST=5000
+
+setopt APPEND_HISTORY        # append instead of overwrite
+setopt SHARE_HISTORY         # share history across sessions
+setopt HIST_IGNORE_DUPS      # ignore duplicates
+setopt HIST_IGNORE_SPACE     # ignore commands starting with space
+
+
+
 

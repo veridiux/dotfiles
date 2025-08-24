@@ -1,0 +1,39 @@
+nvidia-dkms
+nvidia-utils
+nvidia-settings
+
+hyprland
+hypridle
+hyprpaper
+hyprlock
+dolphin
+fuzzel
+kvantum
+qt5ct
+qt6ct
+archlinux-xdg-menu
+breeze
+kate
+nwg-displays
+pavucontrol
+pipewire-pulse
+alsa-utils
+brightnessctl
+
+
+ttf-jetbrains-mono-nerd
+otf-font-awesome
+zsh
+
+chsh -s /usr/bin/zsh
+
+logout
+
+build yay
+yay nordic-theme
+xpadneo
+blueberry
+auto-cpufreq
+
+services enable
+bluetooth
