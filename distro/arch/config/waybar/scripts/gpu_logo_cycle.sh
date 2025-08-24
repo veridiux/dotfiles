@@ -35,7 +35,8 @@ EOL
 # NVIDIA Only
 env = GBM_BACKEND,nvidia
 env = __GLX_VENDOR_LIBRARY_NAME,nvidia
-env = LIBVA_DRIVER_NAME,iHD
+env = LIBVA_DRIVER_NAME,nvidia
+env = WLR_DRM_DEVICES=/dev/dri/card1:/dev/dri/card2
 EOL
         ;;
 esac
