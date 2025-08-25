@@ -2,7 +2,7 @@
     "include":["$HOME/.config/waybar/custom-modules", "$HOME/.config/waybar/style-modules"],
 
 
-    "layer": "top",
+    "layer": "bottom",
     "position": "top",
     "height": 10,
     "margin": "1 6 1 6",
