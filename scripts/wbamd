@@ -1,0 +1,9 @@
+#!/bin/sh
+
+unset __NV_PRIME_RENDER_OFFLOAD
+unset __GLX_VENDOR_LIBRARY_NAME
+unset VK_ICD_FILENAMES
+
+export DRI_PRIME=0
+
+exec waybar
