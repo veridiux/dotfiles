@@ -4,6 +4,11 @@
 [[ -f ~/.bashrc ]] && source ~/.bashrc
 
 # ===============================
+# System info on shell startup
+# ===============================
+fastfetch
+
+# ===============================
 # Enable Zsh completion system
 # ===============================
 autoload -Uz compinit
