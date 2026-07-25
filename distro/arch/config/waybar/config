@@ -30,7 +30,7 @@
         "custom/separator#line-tray", 
 	"wireplumber",
 	"custom/separator#line-tray",
-	"backlight",
+//	"backlight",
 	"custom/separator#line-tray",
 	"custom/separator#blank", 
 	"network#speed", 			//	launch	iwgtk
