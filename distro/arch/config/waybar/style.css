@@ -15,7 +15,7 @@
 @define-color power_lock_color #00bfff; 
 
 * {
-    font-family: "Hack Nerd Font";
+    font-family: "JetBrainsMono Nerd Font";
     font-weight: bold;
     min-height: 0;
     min-width: 10px;
@@ -87,6 +87,23 @@ tooltip {
 /* Clock & System Modules */
 #clock, #bluetooth, #battery, #backlight, #wireplumber,
 #network, #custom-arch { color: @main_modules; }
+
+#custom-spacer {
+    margin-left: 800px;
+}
+
+#network {
+    min-width: 90px;
+}
+
+#network.upload {
+    min-width: 90px;
+}
+
+#network.download {
+    min-width: 90px;
+}
+
 
 #battery { min-width: 55px; }
 #battery.critical:not(.charging) {

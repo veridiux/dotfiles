@@ -1,5 +1,8 @@
 {
    // Separators
+    "custom/spacer": {
+	"format": " "
+    },
     "custom/separator#dot": {
     	"format": "",
     	"interval": "once",

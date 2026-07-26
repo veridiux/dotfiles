@@ -144,34 +144,23 @@
 	       }
    },
 
-   "network": {
-    "interface": "wlan0",
-    "interval": 1,
-    "format-wifi": "{icon} {essid}",
-    "format-disconnected": "󰤮",
-    "format-icons": [
-        "󰤯",
-        "󰤟",
-        "󰤢",
-        "󰤥",
-        "󰤨"
-    ],
-    "tooltip-format-wifi": "{essid}\nSignal: {signalStrength}%\nIP: {ipaddr}"
-},
-
-"network#upload": {
-    "interface": "wlan0",
-    "interval": 1,
-    "format-wifi": "↑ {bandwidthUpBytes}",
-    "tooltip-format-wifi": "Upload\n{bandwidthUpBytes}"
-},
-
-"network#download": {
-    "interface": "wlan0",
-    "interval": 1,
-    "format-wifi": "↓ {bandwidthDownBytes}",
-    "tooltip-format-wifi": "Download\n{bandwidthDownBytes}"
-},
+   "network#speed": {
+       "interval": 1,
+       "format": "{ifname}",
+       "format-wifi": "{icon}    {essid}",
+       "format-ethernet": "󰌘  {signalStrength}%  {bandwidthUpOctets:>8}  {bandwidthDownOctets:>8}",
+       "format-disconnected": "󰌙",
+       "tooltip-format": "{ipaddr}",
+       "format-linked": "󰈁 {ifname} (No IP)",
+       "tooltip-format-wifi": "{bandwidthUpBytes:>6} ⬆ {bandwidthDownBytes:>6} ⬇ ",
+       "tooltip-format-ethernet": "{bandwidthUpOctets:>6} ⬆ {bandwidthDownOctets:>6} ⬇ ",
+       "tooltip-format-disconnected": "󰌙 Disconnected",
+       "max-length": 40,
+       "format-icons": [
+        "󰤯", "󰤟", "󰤢", "󰤥", "󰤨"
+       ],
+       "on-click": "~/.config/waybar/scripts/wifi-selector.sh"
+   },
 
    "clock": {
        "interval": 1,
