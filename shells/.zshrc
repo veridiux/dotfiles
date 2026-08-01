@@ -132,7 +132,7 @@ alias yout='yay -Yc'           # remove orphaned packages
 
 # Directory shortcute
 alias hd='cd ~/'
-alias df='cd ~/dotfiles/'
+alias df='cd ~/.dotfiles/'
 alias la='ls -A'     # show hidden files
 alias ll='ls -lah'   # already your long listing
 alias lla='ls -lahA' # long listing with hidden files

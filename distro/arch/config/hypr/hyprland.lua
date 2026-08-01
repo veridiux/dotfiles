@@ -26,7 +26,7 @@ hl.monitor({
     output   = "",
     mode     = "preferred",
     position = "auto",
-    scale    = "1",
+    scale    = "auto",
     vrr = 2,
     bitdepth = 10,
     cm = "auto",
@@ -62,7 +62,9 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("hypridle -c /home/justin/.config/hypr/scripts/hypridle-power/current.conf")
     hl.exec_cmd("waybar")
 end)
-
+-- hl.exec_cmd("~/.config/hypr/scripts/game-space.sh &")
+hl.exec_cmd("~/.config/hypr/scripts/game-mode.sh &")
+-- hl.exec_cmd("systemctl --user start game-space.service")
 -------------------------------
 ---- ENVIRONMENT VARIABLES ----
 -------------------------------
@@ -278,7 +280,7 @@ hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
 hl.bind(mainMod .. " + X", hl.dsp.exec_cmd("~/.config/waybar/scripts/launcher.sh"))
-
+hl.bind(mainMod .. " + SHIFT + B", hl.dsp.exec_cmd("steam steam://open/bigpicture"))
 
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))
@@ -372,3 +374,30 @@ hl.window_rule({
 })
 
 
+--hl.window_rule({
+--    name = "steam-big-picture-fullscreen",
+--    match = {
+--        class = "steam",
+--        title = "Steam Big Picture Mode",
+--    },
+--
+--    fullscreen = true,
+--})
+
+
+-- Steam games -> workspace 5 + fullscreen
+--hl.window_rule({
+--    name = "steam-games-workspace-fullscreen",
+--    match = {
+--        class = "^(steam_app_.*|gamescope|wine|Wine|.*\\.exe)$",
+--    },
+--
+--    workspace = 5,
+--    fullscreen = true,
+--})
+
+
+--------------------
+--- CUSTOM RULES ---
+--------------------
+require("scripts/rules/steam-big-picture")
