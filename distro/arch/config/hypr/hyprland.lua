@@ -64,7 +64,7 @@ hl.on("hyprland.start", function()
 end)
 -- hl.exec_cmd("~/.config/hypr/scripts/game-space.sh &")
 hl.exec_cmd("~/.config/hypr/scripts/game-mode.sh &")
--- hl.exec_cmd("systemctl --user start game-space.service")
+hl.exec_cmd("hyprpaper")
 -------------------------------
 ---- ENVIRONMENT VARIABLES ----
 -------------------------------

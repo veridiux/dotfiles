@@ -14,7 +14,7 @@ exec >>"$LOG" 2>&1
 echo "=== steam-swd started $(date) ==="
 
 # Give the normal Waybar startup a moment to finish
-sleep 2
+sleep 5
 
 # Assume Waybar is already running (your hyprland exec-once handles it)
 WAYBAR_RUNNING=1
