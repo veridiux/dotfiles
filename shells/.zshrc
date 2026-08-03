@@ -153,6 +153,12 @@ setopt SHARE_HISTORY         # share history across sessions
 setopt HIST_IGNORE_DUPS      # ignore duplicates
 setopt HIST_IGNORE_SPACE     # ignore commands starting with space
 
-
+alias ep='{
+    mkdir -p ~/.dotfiles/packages
+    pacman -Qqen > ~/.dotfiles/packages/pacman.txt
+    pacman -Qqem > ~/.dotfiles/packages/aur.txt
+    cat ~/.dotfiles/packages/pacman.txt ~/.dotfiles/packages/aur.txt > ~/.dotfiles/packages/all.txt
+    echo "Package lists exported to ~/.dotfiles/packages/"
+}'
 
 

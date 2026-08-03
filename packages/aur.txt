@@ -1,0 +1,5 @@
+blueberry
+brave-bin
+vscodium-bin
+yay-git
+yay-git-debug
