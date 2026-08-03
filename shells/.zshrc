@@ -101,7 +101,7 @@ gitupdate_safe() {
 # ===============================
 #PROMPT='%F{cyan}%n@%m%f %F{green}%1~%f$(git_branch) %# '
 PROMPT='%F{cyan}%n%f@%F{green}%m%f  %F{yellow}%~%f$(git_branch) %&
-%F{yellow}❯%f '
+%F{yellow}󱞩%f '
 
 
 # Interpret prompt variables correctly
