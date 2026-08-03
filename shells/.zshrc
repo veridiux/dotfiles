@@ -1,3 +1,5 @@
+# ~/.zshrc
+
 # ===============================
 # Load Bash settings if you have them
 # ===============================
@@ -97,7 +99,10 @@ gitupdate_safe() {
 # ===============================
 # Prompt
 # ===============================
-PROMPT='%F{cyan}%n@%m%f %F{green}%1~%f$(git_branch) %# '
+#PROMPT='%F{cyan}%n@%m%f %F{green}%1~%f$(git_branch) %# '
+PROMPT='%F{cyan}%n%f@%F{green}%m%f  %F{yellow}%~%f$(git_branch) %&
+%F{yellow}❯%f '
+
 
 # Interpret prompt variables correctly
 setopt prompt_subst
@@ -136,7 +141,7 @@ alias df='cd ~/.dotfiles/'
 alias la='ls -A'     # show hidden files
 alias ll='ls -lah'   # already your long listing
 alias lla='ls -lahA' # long listing with hidden files
-
+alias cfg='cd ~/.config/'
 
 HISTFILE=~/.zsh_history
 

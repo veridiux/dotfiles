@@ -5,7 +5,7 @@
 @define-color bgcolor #222436;   /* background color */
 @define-color alert   #df3320;
 
-@define-color main_modules #00ffff;  /* 7da6ff main module color */
+@define-color main_modules #6a41b5;  /* 7da6ff #00ffff main module color */
 @define-color main_lines #00ff00;   /* lines and arrows */
 
 @define-color workspace_active #9d7bd8; 
