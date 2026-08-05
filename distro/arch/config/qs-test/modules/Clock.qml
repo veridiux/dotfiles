@@ -16,4 +16,3 @@ Text {
         precision: SytemClock.Minutes
     }
 }
-letterSpacing

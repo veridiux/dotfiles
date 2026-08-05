@@ -2,7 +2,8 @@ import Quickshell
 import Quickshell.Hyprland
 import QtQuick
 import QtQuick.Layouts
-import "modules"
+import "./modules"
+import "./themes" as Theme
 
 ShellRoot {
     Variants {
@@ -18,7 +19,7 @@ ShellRoot {
                 right: true
             }
             implicitHeight: 30
-            color: '#11c3b1'
+            color: Theme.Main.background
 
             // Left zone
             RowLayout {

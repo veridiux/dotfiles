@@ -33,7 +33,7 @@ RowLayout {
                 color: wsButton.isActive ? '#3dd1b0' : (wsButton.ws ? '#f5e2c5' : "#5a4d3e")
 
                 font {
-                    family: "JetBraingsMono Nerd Font"
+                    family: "JetBrainsMono Nerd Font"
                     pixelSize: 14
                     weight: 500
                 }
