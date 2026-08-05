@@ -18,7 +18,7 @@ ShellRoot {
                 right: true
             }
             implicitHeight: 30
-            color: "#040e0d"
+            color: '#11c3b1'
 
             // Left zone
             RowLayout {
