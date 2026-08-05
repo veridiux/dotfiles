@@ -2,6 +2,8 @@ import Quickshell
 import Quickshell.Services.Pipewire
 import QtQuick
 import QtQuick.Layouts
+import "../themes" as Theme
+
 RowLayout {
     id: root
     spacing: 7
@@ -25,7 +27,7 @@ RowLayout {
 
     Text {
         text: root.icon
-        color: "#f5cd5b"
+        color: Theme.Main.textSecondary
 
         font {
             family: "JetBrainsMono Nerd Font"
@@ -43,7 +45,8 @@ RowLayout {
 
         font {
             family: "JetBrainsMono Nerd Font"
-            weight: 500
+            weight: 600
+            pixelSize: 13
         }
     }
 

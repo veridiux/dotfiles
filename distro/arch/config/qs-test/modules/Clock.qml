@@ -1,9 +1,10 @@
 import Quickshell
 import QtQuick
+import "../themes" as Theme
 
 Text {
     text: Qt.formatDateTime(clock.date, "hh:mm")
-    color: "#f5e2c5"
+    color: Theme.Main.surface
 
     font {
         family: "JetBrainsMono Nerd Font"

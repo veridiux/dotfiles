@@ -2,6 +2,7 @@ import Quickshell
 import Quickshell.Hyprland
 import QtQuick
 import QtQuick.Layouts
+import "../themes" as Theme
 
 RowLayout {
     spacing :6
@@ -20,7 +21,7 @@ RowLayout {
             implicitHeight: 22
             radius: 6
 
-            color: isActive ? '#1d3631' : (ws ? '#0f211f' : "transparent")
+            color: isActive ? Theme.Main.wsActive : (ws ? Theme.Main.wsInactive : "transparent")
 
             Behavior on color {
                 ColorAnimation { duration: 150 }
@@ -30,7 +31,7 @@ RowLayout {
                 id: label
                 anchors.centerIn: parent
                 text: wsButton.index + 1
-                color: wsButton.isActive ? '#3dd1b0' : (wsButton.ws ? '#f5e2c5' : "#5a4d3e")
+                color: wsButton.isActive ? Theme.Main.textSecondary : (wsButton.ws ? '#f5e2c5' : "#5a4d3e")
 
                 font {
                     family: "JetBrainsMono Nerd Font"

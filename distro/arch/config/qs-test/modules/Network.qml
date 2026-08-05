@@ -2,6 +2,7 @@ import Quickshell
 import Quickshell.Networking
 import QtQuick
 import QtQuick.Layouts
+import "../themes" as Theme
 
 RowLayout {
     id: root
@@ -26,7 +27,7 @@ RowLayout {
 
 Text {
     text: root.icon
-    color: Networking.wifiEnabled ? "#e89aa8" : "#5a4d3e"
+    color: Networking.wifiEnabled ? Theme.Main.textSecondary : "#5a4d3e"
 
     font {
         family: "JetBrainsMono Nerd Font"
@@ -42,11 +43,12 @@ Text {
         return root.active.name
     }
 
-    color: "#f5e2c5"
+    color: '#f5e2c5'
 
     font {
-        family: "JetBraindMono Nerd Font"
-        weight: 500
+        family: "JetBrainsMono Nerd Font"
+        pixelSize: 13
+        weight: 600
     }
 }
 }
