@@ -32,3 +32,4 @@ sudo pacman -S asusctl
 
 sudo pacman -S rog-control-center
 sudo pacman -S gamescope
+sudo pacman -S networkmanager
