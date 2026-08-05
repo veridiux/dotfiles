@@ -2,7 +2,7 @@ import Quickshell
 import Quickshell.Hyprland
 import QtQuick
 import QtQuick.Layouts
-import qs.modules
+import "modules"
 
 ShellRoot {
     Variants {
