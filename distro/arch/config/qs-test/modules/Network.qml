@@ -33,6 +33,13 @@ Text {
         family: "JetBrainsMono Nerd Font"
         pixelSize: 15
     }
+    MouseArea {
+	anchors.fill: parent
+
+	onClicked: {
+		Quickshell.execDetached(["nm-connection-editor"])
+}
+}
 }
 
 Text {
@@ -49,6 +56,8 @@ Text {
         family: "JetBrainsMono Nerd Font"
         pixelSize: 13
         weight: 600
-    }
+}
+
+
 }
 }

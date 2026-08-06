@@ -42,6 +42,14 @@ RowLayout {
             family: "JetBrainsMono Nerd Font"
             pixelSize: 15
         }
+
+        MouseArea {
+            anchors.fill: parent
+
+            onClicked: {
+                Quickshell.execDetached(["blueberry"])
+        }
+}
     }
 
     Text {
