@@ -9,7 +9,7 @@ RowLayout {
     spacing: 6
 
     property var battery: UPower.displayDevice
-    property bool charging: battery.state === UPowerDeviceState.charging
+    property bool charging: battery.state === UPowerDeviceState.Charging
     readonly property int level: Math.round(battery.percentage * 100)
 
     readonly property string icon: {
