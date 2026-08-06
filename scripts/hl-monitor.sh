@@ -9,7 +9,7 @@ while true; do
     echo "$(date)"
     echo
 
-    ID_PID=$(pgrep -x hyprctl)
+    ID_PID=$(pgrep -x Hyprland)
 
     if [[ -z "$ID_PID" ]]; then
         echo "Hyprland is not running"

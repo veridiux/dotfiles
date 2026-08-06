@@ -41,3 +41,12 @@ hl.window_rule({
     float = true,
     center = true,
 })
+
+hl.window_rule({
+    name = "mpv=floating",
+    match = { class = "^mpv$" },
+
+    float = true,
+    center = true,
+    size = { 1920, 1080 },
+})

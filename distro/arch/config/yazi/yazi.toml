@@ -1,0 +1,18 @@
+[opener]
+play = [
+    { run = 'mpv "$@"', orphan = true }
+]
+
+[open]
+rules = [
+    { mime = "video/*", use = "play" },
+]
+
+[manager]
+show_hidden = true   
+
+[filetype]
+rules = [
+    { name = "*", is = "hidden", bg = "cyan" },
+    # ... other rules
+]   
