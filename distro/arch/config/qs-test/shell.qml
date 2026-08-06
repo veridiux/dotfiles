@@ -53,6 +53,7 @@ ShellRoot {
                 Network {}
                 Volume {}
                 Battery {}
+                Power {}
             }
         }
     }

@@ -12,6 +12,12 @@ hl.window_rule({
      float = true,
 })
 
+hl.window_rule({
+    name = "discord-floating",
+    match = { class = "^discord$" },
+
+    float = true,
+})
 
 hl.window_rule({
     name = "blueberry-floating",
