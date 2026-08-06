@@ -1,0 +1,7 @@
+blueberry
+brave-bin
+gnome-bluetooth
+gnome-bluetooth-debug
+vscodium-bin
+yay-git
+yay-git-debug
