@@ -16,6 +16,6 @@
 hl.on("hyprland.start", function()
     hl.exec_cmd("hypridle -c /home/justin/.config/hypr/scripts/hypridle-power/current.conf")
     hl.exec_cmd("hyprpaper")
-    hl.exec_cmd("waybar")
-    hl.exec_cmd("~/.config/hypr/scripts/game-mode.sh &")
+    hl.exec_cmd("quickshell")
+--    hl.exec_cmd("~/.config/hypr/scripts/game-mode.sh &")
 end)

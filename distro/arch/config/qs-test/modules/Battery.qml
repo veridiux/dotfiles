@@ -13,20 +13,25 @@ RowLayout {
     readonly property int level: Math.round(battery.percentage * 100)
 
     readonly property string icon: {
-        if (charging)
-            return String.fromCodePoint(0xF0E7)
+    if (charging)
+        return String.fromCodePoint(0xF0E7)
 
-        if (level >= 100)
-            return String.fromCodePoint(0xF240)
-
-        return String.fromCodePoint(0xF244 - Math.floor(level / 25))
-    }
+    if (level >= 90)
+        return String.fromCodePoint(0xF240) // full
+    if (level >= 60)
+        return String.fromCodePoint(0xF241) // 3/4
+    if (level >= 40)
+        return String.fromCodePoint(0xF242) // half
+    if (level >= 15)
+        return String.fromCodePoint(0xF243) // 1/4
+    return String.fromCodePoint(0xF244)    // empty
+}
 
     Text {
         text: root.icon
         color: root.charging ? "#7ad9a8" 
                              : root.level <= 15 ? "#ff5048" 
-                             : root.lvel <= 30 ? "#ffa478" 
+                             : root.level <= 30 ? "#ffa478" 
                              : "#7ad9a8"
 
         font {

@@ -49,7 +49,7 @@ ShellRoot {
                     rightMargin: 18
                 }
                 spacing: 15
-
+                Bluetooth {}
                 Network {}
                 Volume {}
                 Battery {}
