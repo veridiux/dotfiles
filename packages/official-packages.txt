@@ -39,6 +39,7 @@ man-db
 mkinitcpio
 nano
 neovim
+networkmanager
 nvidia-open-dkms
 nvidia-settings
 openssh
@@ -50,6 +51,7 @@ polkit-kde-agent
 power-profiles-daemon
 qt5-wayland
 qt6-wayland
+quickshell
 rofi
 rog-control-center
 rustup
