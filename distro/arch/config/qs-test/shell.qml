@@ -1,3 +1,5 @@
+//@ pragma UseQApplication
+
 import Quickshell
 import Quickshell.Hyprland
 import QtQuick
@@ -39,6 +41,7 @@ ShellRoot {
                     horizontalCenter: parent.horizontalCenter
                     verticalCenter: parent.verticalCenter
                 }
+            
             }
 
             // Right zone
@@ -49,6 +52,7 @@ ShellRoot {
                     rightMargin: 18
                 }
                 spacing: 15
+                Tray {}
                 Bluetooth {}
                 Network {}
                 Volume {}
