@@ -15,7 +15,7 @@ local function enable_laptop()
         output   = LAPTOP,
         mode     = "preferred",
         position = "0x0",
-        scale    = "auto",
+        scale    = "1.6",
         vrr      = 2,
         bitdepth = 10,
         cm       = "auto",
