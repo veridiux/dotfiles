@@ -1,25 +1,15 @@
-configuration {
-    modi: "drun,run,window";
-    show-icons: true;
-    font: "JetBrainsMono Nerd Font 12";   /* change to your font */
-    drun-display-format: "{icon} {name}";
-    display-drun: "";
-}
+#!/bin/bash
 
-/* Critical for clean transparency */
-* {
-    background-color: transparent;
-    text-color: #cdd6f4;                  /* adjust to taste */
-}
+source ~/.cache/iris/colors.sh
 
+cat > ~/.config/rofi/iris.rasi <<EOF
 * {
-    bg: rgba(4, 4, 4, 0.85);
-    surface: #1a1919;
-    fg: #d7e7dd;
-    dim: #5b5454;
-    accent: #44FFFFFF;
-    width: 500px;
-    transparency: "real";
+    bg: $bg;
+    surface: $surface;
+    fg: $fg;
+    dim: $dim;
+    accent: $accent;
+
     background-color: @bg;
     text-color: @fg;
     border-color: @accent;
@@ -82,3 +72,4 @@ element-text {
 element-icon {
     background-color: transparent;
 }
+EOF
