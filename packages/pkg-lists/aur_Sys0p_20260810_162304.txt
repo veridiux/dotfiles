@@ -1,0 +1,8 @@
+blueberry
+brave-bin
+iris-colors
+limine-entry-tool
+polychromatic
+vscodium-bin
+yay
+yay-debug
