@@ -50,3 +50,10 @@ hl.window_rule({
     center = true,
     size = { 1920, 1080 },
 })
+
+hl.window_rule({
+    name = "Qalculate-floating",
+    match = { class = "^qalculate-gtk$" },
+    
+    float = true,
+})
