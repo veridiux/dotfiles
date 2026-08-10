@@ -27,7 +27,7 @@ RowLayout {
 
 Text {
     text: root.icon
-    color: Networking.wifiEnabled ? Theme.Main.textSecondary : "#5a4d3e"
+    color: Networking.wifiEnabled ? Theme.Main.textSecondary : Theme.Main.border
 
     font {
         family: "JetBrainsMono Nerd Font"
@@ -50,7 +50,7 @@ Text {
         return root.active.name
     }
 
-    color: '#f5e2c5'
+    color: Theme.Main.text
 
     font {
         family: "JetBrainsMono Nerd Font"

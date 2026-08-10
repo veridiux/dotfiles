@@ -4,7 +4,7 @@ import "../themes" as Theme
 
 Text {
     text: Qt.formatDateTime(clock.date, "dddd, MMM d | hh:mm")
-    color: Theme.Main.surface
+    color: Theme.Main.text
 
     font {
         family: "JetBrainsMono Nerd Font"

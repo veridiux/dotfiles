@@ -49,7 +49,7 @@ RowLayout {
             return root.vol + "%"
     }
 
-        color: root.muted ? "#c4b09a" : "#f5e2c5"
+        color: root.muted ? Theme.Main.border: Theme.Main.text
 
         font {
             family: "JetBrainsMono Nerd Font"

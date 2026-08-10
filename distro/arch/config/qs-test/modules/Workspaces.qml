@@ -21,7 +21,7 @@ RowLayout {
             implicitHeight: 22
             radius: 6
 
-            color: isActive ? Theme.Main.wsActive : (ws ? Theme.Main.wsInactive : "transparent")
+            color: isActive ? Theme.Main.textSecondary : (ws ? Theme.Main.border : "transparent")
 
             Behavior on color {
                 ColorAnimation { duration: 150 }
@@ -31,7 +31,7 @@ RowLayout {
                 id: label
                 anchors.centerIn: parent
                 text: wsButton.index + 1
-                color: wsButton.isActive ? Theme.Main.textSecondary : (wsButton.ws ? '#f5e2c5' : "#5a4d3e")
+                color: wsButton.isActive ? Theme.Main.textAccent : (wsButton.ws ? Theme.Main.text : Theme.Main.border)
 
                 font {
                     family: "JetBrainsMono Nerd Font"

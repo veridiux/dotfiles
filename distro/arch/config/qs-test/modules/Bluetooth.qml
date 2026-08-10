@@ -36,7 +36,7 @@ RowLayout {
 
     Text {
         text: root.icon
-        color: (adapter && adapter.enabled) ? Theme.Main.textSecondary : "#5a4d3e"
+        color: (adapter && adapter.enabled) ? Theme.Main.textSecondary : Theme.Main.border
 
         font {
             family: "JetBrainsMono Nerd Font"
@@ -65,7 +65,7 @@ RowLayout {
             return root.active.name || root.active.deviceName || "Connected"
         }
 
-        color: '#f5e2c5'
+        color: Theme.Main.text
 
         font {
             family: "JetBrainsMono Nerd Font"

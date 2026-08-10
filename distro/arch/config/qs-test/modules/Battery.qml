@@ -31,11 +31,11 @@ RowLayout {
     }
 
     Text {
-        text: root.icon
-        color: root.charging ? "#7ad9a8" 
-                             : root.level <= 15 ? "#ff5048" 
-                             : root.level <= 30 ? "#ffa478" 
-                             : "#7ad9a8"
+    text: root.icon
+    color: root.charging ? Theme.Main.battery1 :
+           root.level <= 15 ? Theme.Main.battery2 :
+           root.level <= 30 ? Theme.Main.battery3 :
+           Theme.Main.battery1
 
         font {
             family: "JetBrainsMono Nerd Font"
@@ -45,7 +45,7 @@ RowLayout {
 
     Text {
         text: root.level + "%"
-        color: "#f5e2c5"
+        color: Themes.Main.text
 
         font {
             family: "JetBrainsMono Nerd Font"

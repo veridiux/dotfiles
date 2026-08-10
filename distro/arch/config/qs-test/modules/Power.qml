@@ -2,6 +2,7 @@ import Quickshell
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
+import "../themes" as Theme
 
 Item {
     id: root
@@ -21,7 +22,7 @@ Item {
             anchors.centerIn: parent
             text: "⏻"
             font.pixelSize: 20
-            color: root.menuOpen ? '#18e201' : "#e0e0e0"
+            color: root.menuOpen ? Theme.Main.border : Theme.Main.textSecondary
 
             Behavior on color { ColorAnimation { duration: 180 } }
         }
@@ -40,19 +41,49 @@ Item {
         width: 180
         height: 230
         color: "transparent"
+        grabFocus: true
 
         anchor.item: root
         anchor.rect.y: root.height + 14
 
-        // Transparent container – no box
         Item {
             anchors.fill: parent
+            focus: true
+            Component.onCompleted: forceActiveFocus()
+            onVisibleChanged: if (visible) forceActiveFocus()
+
+            Keys.onPressed: (event) => {
+                if (event.key === Qt.Key_Escape) {
+                    root.menuOpen = false
+                    event.accepted = true
+                }
+            }
+
+            // Tracks the entire popup geometry (including gaps between buttons)
+            HoverHandler {
+                id: popupHover
+                onHoveredChanged: {
+                    if (!hovered)
+                        closeTimer.restart()
+                    else
+                        closeTimer.stop()
+                }
+            }
+
+            // Small delay so quick movements between buttons don't close it
+            Timer {
+                id: closeTimer
+                interval: 80
+                onTriggered: {
+                    if (!popupHover.hovered)
+                        root.menuOpen = false
+                }
+            }
 
             Column {
                 anchors.horizontalCenter: parent.horizontalCenter
                 spacing: 8
 
-                // Futuristic pill button
                 component FuturisticButton: Item {
                     id: btn
 
@@ -61,7 +92,7 @@ Item {
 
                     property string icon: ""
                     property string label: ""
-                    property color accent: "#18e201"
+                    property color accent: Theme.Main.textSecondary
 
                     signal clicked()
 
@@ -72,7 +103,7 @@ Item {
                         Text {
                             text: btn.icon
                             font.pixelSize: 17
-                            color: mouse.containsMouse ? btn.accent : "#cfcfcf"
+                            color: mouse.containsMouse ? btn.accent : Theme.Main.textSecondary
 
                             Behavior on color {
                                 ColorAnimation { duration: 120 }
@@ -83,7 +114,7 @@ Item {
                             text: btn.label
                             font.pixelSize: 14
                             font.weight: Font.Medium
-                            color: mouse.containsMouse ? btn.accent : "#f0f0f0"
+                            color: mouse.containsMouse ? btn.accent : Theme.Main.text
 
                             Behavior on color {
                                 ColorAnimation { duration: 120 }
@@ -104,28 +135,28 @@ Item {
                 FuturisticButton {
                     icon: "⏻"
                     label: "Shutdown"
-                    accent: "#18e201"
+                    accent: Theme.Main.textSecondary
                     onClicked: Quickshell.execDetached(["systemctl", "poweroff"])
                 }
 
                 FuturisticButton {
                     icon: "↻"
                     label: "Reboot"
-                    accent: "#18e201"
+                    accent: Theme.Main.textSecondary
                     onClicked: Quickshell.execDetached(["systemctl", "reboot"])
                 }
 
                 FuturisticButton {
                     icon: "⇥"
                     label: "Logout"
-                    accent: "#18e201"
+                    accent: Theme.Main.textSecondary
                     onClicked: Quickshell.execDetached(["hyprctl", "dispatch", "exit"])
                 }
 
                 FuturisticButton {
                     icon: "✕"
                     label: "Cancel"
-                    accent: '#e20101'
+                    accent: Theme.Main.battery2
                     onClicked: root.menuOpen = false
                 }
             }
