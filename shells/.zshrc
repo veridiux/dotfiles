@@ -143,6 +143,9 @@ alias ll='ls -lah'   # already your long listing
 alias lla='ls -lahA' # long listing with hidden files
 alias cfg='cd ~/.config/'
 
+# Extra
+alias theme='vscodium ~/.config/quickshell/themes/Main.qml'
+
 HISTFILE=~/.zsh_history
 
 HISTSIZE=5000
