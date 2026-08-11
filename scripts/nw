@@ -1,6 +1,6 @@
 #-- Network Shares
-//10.1.7.55/backup /mnt/shares/skynet/backup cifs credentials=/home/justin/.config/samba/share,_netdev,nofail,x-systemd.automount,x-systemd.idle-timeout=600 0 0
-//10.1.7.55/cache /mnt/shares/skynet/cache cifs credentials=/home/justin/.config/samba/share,_netdev,nofail,x-systemd.automount,x-systemd.idle-timeout=600 0 0
-//10.1.7.55/emulation /mnt/shares/skynet/emulation cifs credentials=/home/justin/.config/samba/share,_netdev,nofail,x-systemd.automount,x-systemd.idle-timeout=600 0 0
-//10.1.7.55/extra /mnt/shares/skynet/extra cifs credentials=/home/justin/.config/samba/share,_netdev,nofail,x-systemd.automount,x-systemd.idle-timeout=600 0 0
-//10.1.7.55/media-server /mnt/shares/skynet/media-server cifs credentials=/home/justin/.config/samba/share,_netdev,nofail,x-systemd.automount,x-systemd.idle-timeout=600 0 0
+//10.1.7.55/backup /mnt/shares/skynet/backup cifs credentials=/home/justin/.config/samba/share,_netdev,nofail,x-systemd.automount,x-systemd.idle-timeout=600,uid=1000,gid=1000,file_mode=0644,dir_mode=0755 0 0
+//10.1.7.55/cache /mnt/shares/skynet/cache cifs credentials=/home/justin/.config/samba/share,_netdev,nofail,x-systemd.automount,x-systemd.idle-timeout=600,uid=1000,gid=1000,file_mode=0644,dir_mode=0755 0 0
+//10.1.7.55/emulation /mnt/shares/skynet/emulation cifs credentials=/home/justin/.config/samba/share,_netdev,nofail,x-systemd.automount,x-systemd.idle-timeout=600,uid=1000,gid=1000,file_mode=0644,dir_mode=0755 0 0
+//10.1.7.55/extra /mnt/shares/skynet/extra cifs credentials=/home/justin/.config/samba/share,_netdev,nofail,x-systemd.automount,x-systemd.idle-timeout=600,uid=1000,gid=1000,file_mode=0644,dir_mode=0755 0 0
+//10.1.7.55/media-server /mnt/shares/skynet/media-server cifs credentials=/home/justin/.config/samba/share,_netdev,nofail,x-systemd.automount,x-systemd.idle-timeout=600,uid=1000,gid=1000,file_mode=0644,dir_mode=0755 0 0
