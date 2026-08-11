@@ -45,7 +45,7 @@ RowLayout {
 
     Text {
         text: root.level + "%"
-        color: Themes.Main.text
+        color: Theme.Main.text
 
         font {
             family: "JetBrainsMono Nerd Font"
