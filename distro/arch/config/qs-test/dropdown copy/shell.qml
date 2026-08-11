@@ -1,7 +1,6 @@
 import Quickshell
 import QtQuick
-import "./modules"
-import "./themes" as Theme
+
 
 // ==========================================
 // ROOT
@@ -171,12 +170,7 @@ ShellRoot {
         // of our dropdown.
         Rectangle {
             id: dropdownBackground
-            
-            Network {
-              //  anchors.centerIn: parent
-              //  width: 250
-              //  height: 40
-            }
+
 
             // Keep the rectangle attached to the
             // top of the PopupWindow.
