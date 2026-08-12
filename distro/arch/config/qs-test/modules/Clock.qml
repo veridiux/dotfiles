@@ -103,7 +103,7 @@ property var panelWindow
 
         Text {
             text: "|"
-            color: "#00c3ff"
+            color: Theme.Main.textSecondary
 
             font {
                 family: "JetBrainsMono Nerd Font"
