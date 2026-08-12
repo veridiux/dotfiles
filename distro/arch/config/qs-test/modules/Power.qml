@@ -153,12 +153,12 @@ Item {
                     onClicked: Quickshell.execDetached(["hyprctl", "dispatch", "exit"])
                 }
 
-                FuturisticButton {
-                    icon: "✕"
-                    label: "Cancel"
-                    accent: Theme.Main.battery2
-                    onClicked: root.menuOpen = false
-                }
+             //   FuturisticButton {
+             //       icon: "✕"
+             //       label: "Cancel"
+             //       accent: Theme.Main.battery2
+             //       onClicked: root.menuOpen = false
+             //   }
             }
         }
     }

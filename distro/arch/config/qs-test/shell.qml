@@ -7,11 +7,28 @@ import QtQuick.Layouts
 import "./modules"
 import "./themes" as Theme
 
+
 ShellRoot {
+
+    // Creates one copy of the panel for each monitor.
     Variants {
         model: Quickshell.screens
 
+
+        // ==================================================
+        // MAIN PANEL
+        // ==================================================
+
+        // This is the actual top bar.
+        //
+        // Everything inside this PanelWindow is a child
+        // of the panel.
         PanelWindow {
+
+            // Give the panel a name so other objects
+            // can refer to this specific PanelWindow.
+            id: mainPanel
+
             required property var modelData
             screen: modelData
 
@@ -20,38 +37,62 @@ ShellRoot {
                 left: true
                 right: true
             }
+
             implicitHeight: 30
+
             color: Theme.Main.background
 
-            // Left zone
+
+            // ==================================================
+            // LEFT SIDE
+            // ==================================================
+
             RowLayout {
                 anchors {
                     left: parent.left
                     verticalCenter: parent.verticalCenter
                     leftMargin: 18
                 }
-                spacing: 0   // or whatever you prefer
+
+                spacing: 0
 
                 Workspaces {}
             }
 
-            // Center zone – always true horizontal center
+
+            // ==================================================
+            // CENTER CLOCK
+            // ==================================================
+
+            // Clock is a separate component defined in
+            // modules/Clock.qml.
+            //
+            // panelWindow: mainPanel
+            //
+            // gives Clock.qml a reference to this PanelWindow.
             Clock {
+                panelWindow: mainPanel
+
                 anchors {
                     horizontalCenter: parent.horizontalCenter
                     verticalCenter: parent.verticalCenter
                 }
-            
             }
 
-            // Right zone
+
+            // ==================================================
+            // RIGHT SIDE
+            // ==================================================
+
             RowLayout {
                 anchors {
                     right: parent.right
                     verticalCenter: parent.verticalCenter
                     rightMargin: 18
                 }
+
                 spacing: 15
+
                 Tray {}
                 Bluetooth {}
                 Network {}
