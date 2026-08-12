@@ -5,6 +5,9 @@ import QtQuick.Layouts
 import "../themes" as Theme
 
 Item {
+    onMenuOpenChanged: {
+    console.log("menuOpen changed:", root.menuOpen)
+}
     id: root
 
     width: 28
@@ -19,7 +22,7 @@ Item {
         radius: 6
 
         Text {
-            anchors.centerIn: parent
+            Layout.alignment: Qt.AlignHCenter/Qt.AliegnVCenter
             text: "⏻"
             font.pixelSize: 20
             color: root.menuOpen ? Theme.Main.border : Theme.Main.textSecondary
@@ -38,10 +41,10 @@ Item {
     PopupWindow {
         id: popup
         visible: root.menuOpen
-        width: 180
+        width: 130
         height: 230
-        color: "transparent"
-        grabFocus: true
+        color: Qt.rgba(0, 0, 0, 0.50)
+        grabFocus: false
 
         anchor.item: root
         anchor.rect.y: root.height + 14
@@ -99,15 +102,8 @@ Item {
                     Row {
                         anchors.centerIn: parent
                         spacing: 10
-
-                        Text {
-                            text: btn.icon
-                            font.pixelSize: 17
-                            color: mouse.containsMouse ? btn.accent : Theme.Main.textSecondary
-
-                            Behavior on color {
-                                ColorAnimation { duration: 120 }
-                            }
+                        transform: Translate {
+                            x: 20
                         }
 
                         Text {
@@ -120,6 +116,17 @@ Item {
                                 ColorAnimation { duration: 120 }
                             }
                         }
+                    //    Text {
+                    //        text: btn.icon
+                    //        font.pixelSize: 17
+                    //        color: mouse.containsMouse ? btn.accent : Theme.Main.textSecondary
+                    //
+                    //        Behavior on color {
+                    //            ColorAnimation { duration: 120 }
+                    //        }
+                    //    }
+
+
                     }
 
                     MouseArea {
