@@ -45,11 +45,14 @@ git_branch() {
     if git rev-parse --is-inside-work-tree &>/dev/null; then
         local branch
         branch=$(git symbolic-ref --short HEAD 2>/dev/null) || branch='?'
+
         local dirty=''
+
         if ! git diff --quiet 2>/dev/null || ! git diff --cached --quiet 2>/dev/null; then
             dirty=' ✗'
         fi
-        echo " (%F{yellow}$branch%f$dirty)"
+
+        echo " %F{#ff6200}[%f%F{green}$branch%f%F{#ff6200}]%f$dirty"
     fi
 }
 
@@ -100,9 +103,14 @@ gitupdate_safe() {
 # Prompt
 # ===============================
 #PROMPT='%F{cyan}%n@%m%f %F{green}%1~%f$(git_branch) %# '
-PROMPT='%F{cyan}%n%f@%F{green}%m%f  %F{yellow}%~%f$(git_branch) %&
-%F{yellow}󱞩%f '
-
+#PROMPT='%F{cyan}%n%f@%F{green}%m%f  %F{yellow}%~%f$(git_branch) %&
+#%F{yellow}󱞩%f '
+#PROMPT='%F{cyan}┌─[%f%F{cyan}%n%f@%F{green}%m%f%F{cyan}]%f %F{yellow}%~%f$(git_branch)
+#%F{cyan}└─%f %F{yellow}󱞩%f '
+#PROMPT='%F{cyan}┌─[%f%F{cyan}%n%f@%F{green}%m%f%F{cyan}]%f %F{cyan}::%f %F{yellow}%~%f$(git_branch)
+#%F{cyan}└─[%f%F{yellow}󱞩%f%F{cyan}]%f '
+PROMPT='%F{#ff6200}┌─[%f%F{#ff6200}%n%f@%F{green}%m%f%F{#ff6200}]%f %F{#ff6200}//%f %F{yellow}%~%f$(git_branch)
+%F{#ff6200}└─[%f%F{yellow}❯%f%F{#ff6200}]%f '
 
 # Interpret prompt variables correctly
 setopt prompt_subst
