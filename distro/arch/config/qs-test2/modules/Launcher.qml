@@ -52,8 +52,6 @@ Item {
     // Currently selected application
     property int selectedIndex: 0
 
-    // Monitor where the mouse currently is
-    property var mouseScreen: Quickshell.screens[0]
 
     // ============================================================
     // FILTERED APPLICATION LIST
@@ -140,56 +138,12 @@ Item {
         return result
     }
 
-    Process {
-        id: cursorProcess
-
-        command: ["hyprctl", "cursorpos"]
-
-        stdout: SplitParser {
-            onRead: data => {
-                var parts = data.trim().split(",")
-
-                if (parts.length !== 2)
-                    return
-
-                var mouseX = Number(parts[0])
-                var mouseY = Number(parts[1])
-
-                for (var i = 0; i < Quickshell.screens.length; i++) {
-                    var s = Quickshell.screens[i]
-
-                    if (mouseX >= s.x &&
-                        mouseX < s.x + s.width &&
-                        mouseY >= s.y &&
-                        mouseY < s.y + s.height) {
-
-                        root.mouseScreen = s
-
-                        console.log(
-                            "Launcher screen:",
-                            i,
-                            "mouse:",
-                            mouseX,
-                            mouseY
-                        )
-
-                        return
-                    }
-                }
-            }
-        }
-    }
-
 
     // ============================================================
     // OPEN / CLOSE
     // ============================================================
 
     function openLauncher() {
-
-        // Find the monitor containing the mouse.
-        cursorProcess.running = true
-
         root.launcherOpen = true
         root.searchText = ""
         root.selectedIndex = 0
@@ -249,7 +203,7 @@ Item {
         color: Qt.rgba(0, 0, 0, .70)
 
         // Put the launcher on the first monitor.
-        screen: root.mouseScreen
+        screen: Quickshell.screens[0]
 
         // Center the window on the monitor.
         anchors {
