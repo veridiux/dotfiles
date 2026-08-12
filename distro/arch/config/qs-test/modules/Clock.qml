@@ -198,7 +198,7 @@ property var panelWindow
         // Mouse entered the Clock.
         onEntered: {
             hovered = true
-            dropdownOpen = true
+            dropdownOpen = false
 
             console.log("Mouse entered clock")
         }
