@@ -11,7 +11,7 @@ QtObject {
     readonly property color wsInactive: '#88200c62'
 
     readonly property color text: "#f5e2c5"
-    readonly property color textSecondary: '#1eff00'
+    readonly property color textSecondary: '#00bbff'
     readonly property color textAccent: '#191717'
 
     readonly property color accent: "#C678DD"
