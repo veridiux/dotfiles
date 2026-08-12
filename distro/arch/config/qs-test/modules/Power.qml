@@ -43,7 +43,7 @@ Item {
         visible: root.menuOpen
         width: 130
         height: 230
-        color: Qt.rgba(0, 0, 0, 0.50)
+        color: "transparent"
         grabFocus: false
 
         anchor.item: root
