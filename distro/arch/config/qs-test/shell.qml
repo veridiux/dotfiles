@@ -102,4 +102,8 @@ ShellRoot {
             }
         }
     }
+
+    Launcher {
+    id: launcher
+}
 }
