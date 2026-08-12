@@ -84,6 +84,18 @@ property var panelWindow
     spacing: 0
 
         Text {
+            text: "// "
+            color: Theme.Main.textSecondary
+
+            font {
+                family: "JetBrainsMono Nerd Font"
+                letterSpacing: 5
+                pixelSize: 15
+                weight: 600
+            }
+        }
+
+        Text {
             text: Qt.formatDateTime(
                 clock.date,
                 militaryTime
@@ -121,7 +133,32 @@ property var panelWindow
                     : " hh:mm AP"
             )
 
+        Text {
+            text: ""
+            color: Theme.Main.textSecondary
+
+            font {
+                family: "JetBrainsMono Nerd Font"
+                letterSpacing: 5
+                pixelSize: 15
+                weight: 600
+            }
+        
+        }
+
             color: Theme.Main.text
+
+            font {
+                family: "JetBrainsMono Nerd Font"
+                letterSpacing: 5
+                pixelSize: 15
+                weight: 600
+            }
+        }
+
+        Text {
+            text: " //"
+            color: Theme.Main.textSecondary
 
             font {
                 family: "JetBrainsMono Nerd Font"

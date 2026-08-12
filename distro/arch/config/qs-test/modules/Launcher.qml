@@ -471,7 +471,7 @@ Item {
                         font.pixelSize: 10
                         font.weight: Font.Bold
 
-                        color: Theme.Main.border
+                        color: Theme.Main.textSecondary
                     }
 
                     Text {
@@ -480,7 +480,7 @@ Item {
                         font.pixelSize: 9
                         font.letterSpacing: 1
 
-                        color: Theme.Main.textSecondary
+                        color: Theme.Main.text
                     }
                 }
 
