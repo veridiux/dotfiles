@@ -13,6 +13,18 @@ local menu = "quickshell ipc call launcher toggle"
 
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 
+-- Screen Capture // hyprshot
+
+-- Print Screen → select region
+hl.bind("PRINT", hl.dsp.exec_cmd("hyprshot -m region -o ~/Pictures/Captures"))
+
+-- Super + Print Screen → active window
+hl.bind("SUPER + X", hl.dsp.exec_cmd("hyprshot -m window -m active -o ~/Pictures/Captures"))
+
+-- Shift + Print Screen → select monitor
+hl.bind("SUPER + SHIFT + X", hl.dsp.exec_cmd("hyprshot -m output -o ~/Pictures/Captures"))
+
+
 hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(terminal))
 local closeWindowBind = hl.bind(mainMod .. " + C", hl.dsp.window.close())
 
