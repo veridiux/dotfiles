@@ -19,7 +19,7 @@ QtObject {
     readonly property color warning: "#E5C07B"
     readonly property color error: "#E06C75"
 
-    readonly property color battery1: "#7ad9a8"
-    readonly property color battery2: "#ff5048"
-    readonly property color battery3: "#ffa478"
+    readonly property color battery1: "#ff6200"
+    readonly property color battery2: '#ff0000'
+    readonly property color battery3: '#ffb347'
 }
