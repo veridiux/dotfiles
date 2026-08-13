@@ -1,11 +1,4 @@
-# Package list exported from: Sys0p
-# Date: Mon Aug 10 04:23:04 PM CDT 2026
-# Ignored patterns: mesa nvidia amdgpu radeon intel-media intel-ucode xf86-video vulkan libva libvdpau linux-firmware linux-headers linux-lts linux-zen
-#
-# Official packages: 83
-# AUR packages:      8
-
-===== OFFICIAL (pacman) =====
+archlinux-xdg-menu
 base
 base-devel
 bluez-utils
@@ -33,12 +26,19 @@ hypridle
 hyprland
 hyprlock
 hyprpaper
+hyprshot
+intel-ucode
 jq
 kdenlive
 kitty
 libreoffice-fresh
+libva-nvidia-driver
 limine
 linux
+linux-firmware
+linux-headers
+linux-zen
+linux-zen-headers
 lvm2
 ly
 man-db
@@ -48,6 +48,8 @@ nano
 neovim
 networkmanager
 nm-connection-editor
+nvidia-open-dkms
+nvidia-settings
 obs-studio
 openrazer-daemon
 openrazer-driver-dkms
@@ -62,7 +64,6 @@ qalculate-gtk
 qt5-wayland
 qt6-wayland
 quickshell
-rofi
 rustup
 slurp
 smartmontools
@@ -89,13 +90,12 @@ zram-generator
 zsh
 zsh-autosuggestions
 zsh-syntax-highlighting
-
-===== AUR (yay) =====
 blueberry
 brave-bin
 iris-colors
 limine-entry-tool
 polychromatic
+qt6ct-kde
 vscodium-bin
 yay
 yay-debug

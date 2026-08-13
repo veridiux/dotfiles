@@ -35,7 +35,7 @@ hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
-hl.bind(mainMod .. " + X", hl.dsp.exec_cmd("pkill quickshell; quickshell &"))
+hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("pkill quickshell; quickshell &"))
 hl.bind(mainMod .. " + SHIFT + B", hl.dsp.exec_cmd("steam steam://open/bigpicture"))
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("~/.config/hypr/scripts/hyprpaper-random.sh"))
 

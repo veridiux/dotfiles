@@ -3,6 +3,7 @@ brave-bin
 iris-colors
 limine-entry-tool
 polychromatic
+qt6ct-kde
 vscodium-bin
 yay
 yay-debug

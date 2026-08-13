@@ -1,0 +1,184 @@
+╔══════════════════════════════════════════════════════════════╗
+║                    HYPRLAND KEYBINDS                        ║
+╚══════════════════════════════════════════════════════════════╝
+
+MODIFIER
+──────────────────────────────────────────────────────────────
+  SUPER               Windows / Meta key
+
+
+SCREENSHOTS
+──────────────────────────────────────────────────────────────
+  PRINT               Select region → save to ~/Pictures/Captures
+  SUPER + X           Screenshot active window
+  SUPER + SHIFT + X   Select monitor → save to ~/Pictures/Captures
+
+
+APPLICATIONS
+──────────────────────────────────────────────────────────────
+  SUPER + Q           Open terminal (Kitty)
+  SUPER + E           Open file manager (Yazi)
+  SUPER + R           Toggle Quickshell launcher
+  SUPER + SHIFT + B   Open Steam Big Picture
+  SUPER + W           Randomize wallpaper
+  SUPER + X           Restart Quickshell
+
+
+WINDOW MANAGEMENT
+──────────────────────────────────────────────────────────────
+  SUPER + C           Close active window
+  SUPER + V           Toggle floating window
+  SUPER + P           Toggle pseudo-tiling
+  SUPER + J           Toggle split direction
+  SUPER + M           Shutdown / exit Hyprland
+
+  SUPER + ←           Focus window left
+  SUPER + →           Focus window right
+  SUPER + ↑           Focus window above
+  SUPER + ↓           Focus window below
+
+  SUPER + LMB         Move / drag window
+  SUPER + RMB         Resize window
+
+
+WORKSPACES
+──────────────────────────────────────────────────────────────
+  SUPER + 1-9         Switch to workspace 1-9
+  SUPER + 0           Switch to workspace 10
+
+  SUPER + SHIFT + 1-9
+                      Move window to workspace 1-9
+
+  SUPER + SHIFT + 0   Move window to workspace 10
+
+  SUPER + S           Toggle "magic" scratchpad
+  SUPER + SHIFT + S   Move window to "magic" scratchpad
+
+  SUPER + SCROLL UP   Next workspace
+  SUPER + SCROLL DOWN Previous workspace
+
+
+AUDIO
+──────────────────────────────────────────────────────────────
+  Volume Up           Increase volume 5%
+  Volume Down         Decrease volume 5%
+  Mute                Toggle speaker mute
+  Mic Mute            Toggle microphone mute
+
+
+BRIGHTNESS
+──────────────────────────────────────────────────────────────
+  Brightness Up       Increase brightness 5%
+  Brightness Down     Decrease brightness 5%
+
+
+MEDIA
+──────────────────────────────────────────────────────────────
+  Next Track          Next song
+  Previous Track      Previous song
+  Play / Pause        Play / pause media
+
+
+EXTRA
+──────────────────────────────────────────────────────────────
+  SUPER + F1          Toggle Game Mode
+
+                      Game Mode OFF:
+                        • Disables animations
+                        • Removes gaps
+                        • Removes borders
+                        • Disables shadows
+                        • Disables blur
+                        • Removes window rounding
+
+                      Press SUPER + F1 again to restore.
+
+
+TOUCHPAD
+──────────────────────────────────────────────────────────────
+  3-Finger Swipe ←    Previous workspace
+  3-Finger Swipe →    Next workspace
+
+
+ALIASES
+══════════════════════════════════════════════════════════════
+
+GENERAL
+──────────────────────────────────────────────────────────────
+  ll                  Detailed file listing
+  binds               Show this keybind reference
+
+
+GIT
+──────────────────────────────────────────────────────────────
+  gs                  Git status
+  ga                  Git add
+  gc                  Git commit
+  gp                  Git push
+  gu                  Run gitupdate_safe
+
+
+PACMAN
+──────────────────────────────────────────────────────────────
+  p                   Pacman
+  pi                  Install package
+  ps                  Search packages
+  pu                  Update system
+  pr                  Remove package
+  pss                 List installed packages
+
+
+YAY / AUR
+──────────────────────────────────────────────────────────────
+  y                   Yay
+  yi                  Install package
+  ys                  Search packages
+  yu                  Update system + AUR
+  yr                  Remove package
+  yq                  Package information
+  yout                Remove orphaned packages
+
+
+DIRECTORIES
+──────────────────────────────────────────────────────────────
+  hd                  Go to home directory
+  df                  Go to ~/.dotfiles
+  la                  List files including hidden
+  ll                  Detailed file listing
+  lla                 Detailed listing including hidden
+  cfg                 Go to ~/.config
+
+
+OTHER
+──────────────────────────────────────────────────────────────
+  theme               Open Quickshell Main.qml in VSCodium
+
+  ep                  Export installed package lists
+
+
+PACKAGE EXPORT
+──────────────────────────────────────────────────────────────
+  ep
+
+                      Creates:
+
+                        ~/.dotfiles/packages/pacman.txt
+                        ~/.dotfiles/packages/aur.txt
+                        ~/.dotfiles/packages/all.txt
+
+                      pacman.txt → Official repo packages
+                      aur.txt    → AUR packages
+                      all.txt    → Both combined
+
+
+ZSH HISTORY
+══════════════════════════════════════════════════════════════
+
+  History File        ~/.zsh_history
+  History Size        5000
+  Saved History       5000 entries
+
+  APPEND_HISTORY      Append history instead of overwriting
+  SHARE_HISTORY       Share history between sessions
+  HIST_IGNORE_DUPS    Ignore duplicate commands
+  HIST_IGNORE_SPACE   Ignore commands beginning with a space
