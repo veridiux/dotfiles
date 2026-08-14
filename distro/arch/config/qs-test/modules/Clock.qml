@@ -221,6 +221,7 @@ property var panelWindow
             }
 
             if (mouse.button === Qt.LeftButton){
+                Quickshell.execDetached(["qs", "ipc", "call", "launcher", "toggle"])
                 dropdownOpen = false
             }
 

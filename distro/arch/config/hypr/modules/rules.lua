@@ -1,15 +1,12 @@
+
 hl.window_rule({
-    name  = "steam-no-focus",
+    name = "steam=floating",
     match = { class = "steam$", initial_class = "^steam$" },
-    
-    -- Prevent Steam from grabbing focus on launch
+
     no_focus = false,
-    
-    -- Optional: Force Steam to a specific workspace (e.g., workspace 9)
-    -- workspace = "9",
-    
-    -- Optional: Make Steam float if you prefer non-tiling behavior for the library
-     float = true,
+    float = true,
+    center = true,
+    size = { 1680, 1050 },
 })
 
 hl.window_rule({

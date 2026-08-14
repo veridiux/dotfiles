@@ -68,7 +68,7 @@ Item {
         visible: root.menuOpen
 
         width: 190
-        height: 245
+        height: 205
 
         color: Qt.rgba(0, 0, 0, .70)
 
@@ -811,6 +811,7 @@ Item {
                     }
                 }
 
+                
 
                 // =================================================
                 // BOTTOM STATUS
