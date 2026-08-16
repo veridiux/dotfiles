@@ -57,7 +57,7 @@ Item {
     property color orange: Theme.Main.border
     property color bg: Theme.Main.background
     property color text: Theme.Main.text
-    property color secondary: Theme.Main.mainAccent
+    property color secondary: Theme.Main.textSecondary
 
     function alpha(c, a) {
         return Qt.rgba(c.r, c.g, c.b, a)
@@ -385,7 +385,7 @@ Item {
                 spacing: 9
 
                 Text {
-                    text: "Launcher"
+                    text: Theme.Main.systemName
 
                     font {
                         family: "JetBrainsMono Nerd Font"

@@ -27,7 +27,7 @@ RowLayout {
 
     Text {
         text: root.icon
-        color: Theme.Main.textSecondary
+        color: Theme.Main.mainAccent
 
         font {
             family: "JetBrainsMono Nerd Font"

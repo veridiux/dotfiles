@@ -85,7 +85,7 @@ property var panelWindow
 
         Text {
             text: "// "
-            color: Theme.Main.mainAccent
+            color: Theme.Main.textSecondary
 
             font {
                 family: "JetBrainsMono Nerd Font"
@@ -115,7 +115,7 @@ property var panelWindow
 
         Text {
             text: "|"
-            color: Theme.Main.mainAccent
+            color: Theme.Main.textSecondary
 
             font {
                 family: "JetBrainsMono Nerd Font"
@@ -135,7 +135,7 @@ property var panelWindow
 
         Text {
             text: ""
-            color: Theme.Main.mainAccent
+            color: Theme.Main.textSecondary
 
             font {
                 family: "JetBrainsMono Nerd Font"
@@ -158,7 +158,7 @@ property var panelWindow
 
         Text {
             text: " //"
-            color: Theme.Main.mainAccent
+            color: Theme.Main.textSecondary
 
             font {
                 family: "JetBrainsMono Nerd Font"

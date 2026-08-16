@@ -27,7 +27,7 @@ RowLayout {
 
 Text {
     text: root.icon
-    color: Networking.wifiEnabled ? Theme.Main.mainAccent : Theme.Main.border
+    color: Networking.wifiEnabled ? Theme.Main.textSecondary : Theme.Main.border
 
     font {
         family: "JetBrainsMono Nerd Font"

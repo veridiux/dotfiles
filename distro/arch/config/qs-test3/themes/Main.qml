@@ -8,10 +8,7 @@ QtObject {
 
     property int borderWidth: 1
     property int borderRadius: 1
-    property color borderColor: mainAccent
-
-
-    readonly property color mainAccent: '#ff6200'
+    property color borderColor: textSecondary
 
 
     readonly property color background: "#66111111"
@@ -22,7 +19,7 @@ QtObject {
     readonly property color wsInactive: '#88200c62'
 
     readonly property color text: "#f5e2c5"
-    
+    readonly property color textSecondary: '#ff6200'
     readonly property color textAccent: '#191717'
 
     readonly property color accent: "#C678DD"

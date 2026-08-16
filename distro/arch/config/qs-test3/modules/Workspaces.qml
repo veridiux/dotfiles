@@ -199,7 +199,7 @@ RowLayout {
 
                 color: wsButton.isActive
                     ? Theme.Main.border
-                    : Theme.Main.mainAccent
+                    : Theme.Main.textSecondary
 
                 opacity: wsButton.isOccupied ? 0.9 : 0
 
@@ -236,7 +236,7 @@ RowLayout {
                     if (wsButton.isOccupied)
                         return Theme.Main.text
 
-                    return Theme.Main.mainAccent
+                    return Theme.Main.textSecondary
                 }
 
                 opacity:

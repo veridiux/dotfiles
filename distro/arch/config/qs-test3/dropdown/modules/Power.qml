@@ -22,7 +22,7 @@ Item {
             anchors.centerIn: parent
             text: "⏻"
             font.pixelSize: 20
-            color: root.menuOpen ? Theme.Main.border : Theme.Main.mainAccent
+            color: root.menuOpen ? Theme.Main.border : Theme.Main.textSecondary
 
             Behavior on color { ColorAnimation { duration: 180 } }
         }
@@ -92,7 +92,7 @@ Item {
 
                     property string icon: ""
                     property string label: ""
-                    property color accent: Theme.Main.mainAccent
+                    property color accent: Theme.Main.textSecondary
 
                     signal clicked()
 
@@ -103,7 +103,7 @@ Item {
                         Text {
                             text: btn.icon
                             font.pixelSize: 17
-                            color: mouse.containsMouse ? btn.accent : Theme.Main.mainAccent
+                            color: mouse.containsMouse ? btn.accent : Theme.Main.textSecondary
 
                             Behavior on color {
                                 ColorAnimation { duration: 120 }
@@ -135,21 +135,21 @@ Item {
                 FuturisticButton {
                     icon: "⏻"
                     label: "Shutdown"
-                    accent: Theme.Main.mainAccent
+                    accent: Theme.Main.textSecondary
                     onClicked: Quickshell.execDetached(["systemctl", "poweroff"])
                 }
 
                 FuturisticButton {
                     icon: "↻"
                     label: "Reboot"
-                    accent: Theme.Main.mainAccent
+                    accent: Theme.Main.textSecondary
                     onClicked: Quickshell.execDetached(["systemctl", "reboot"])
                 }
 
                 FuturisticButton {
                     icon: "⇥"
                     label: "Logout"
-                    accent: Theme.Main.mainAccent
+                    accent: Theme.Main.textSecondary
                     onClicked: Quickshell.execDetached(["hyprctl", "dispatch", "exit"])
                 }
 

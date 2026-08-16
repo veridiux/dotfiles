@@ -21,7 +21,7 @@ RowLayout {
             implicitHeight: 22
             radius: 6
 
-            color: isActive ? Theme.Main.mainAccent : (ws ? Theme.Main.border : "transparent")
+            color: isActive ? Theme.Main.textSecondary : (ws ? Theme.Main.border : "transparent")
 
             Behavior on color {
                 ColorAnimation { duration: 150 }

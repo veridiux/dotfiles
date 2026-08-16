@@ -36,7 +36,7 @@ Item {
 
             color: root.menuOpen
                 ? Theme.Main.border
-                : Theme.Main.mainAccent
+                : Theme.Main.textSecondary
 
             Behavior on color {
                 ColorAnimation {
@@ -324,7 +324,7 @@ Item {
                         font.pixelSize: 10
                         font.weight: Font.Bold
 
-                        color: Theme.Main.mainAccent
+                        color: Theme.Main.textSecondary
                     }
 
                     Text {
@@ -430,7 +430,7 @@ Item {
 
                         radius: 1
 
-                        color: Theme.Main.mainAccent
+                        color: Theme.Main.textSecondary
 
                         opacity: shutdownMouse.containsMouse
                             ? 1
@@ -449,7 +449,7 @@ Item {
 
                         color: shutdownMouse.containsMouse
                             ? Theme.Main.text
-                            : Theme.Main.mainAccent
+                            : Theme.Main.textSecondary
                     }
 
 
@@ -462,7 +462,7 @@ Item {
                         font.pixelSize: 7
                         font.letterSpacing: 1
 
-                        color: Theme.Main.mainAccent
+                        color: Theme.Main.textSecondary
 
                         opacity: 0.55
                     }
@@ -480,7 +480,7 @@ Item {
 
                         color: shutdownMouse.containsMouse
                             ? Theme.Main.border
-                            : Theme.Main.mainAccent
+                            : Theme.Main.textSecondary
 
                         Behavior on color {
                             ColorAnimation {
@@ -605,7 +605,7 @@ Item {
 
                         color: rebootMouse.containsMouse
                             ? Theme.Main.border
-                            : Theme.Main.mainAccent
+                            : Theme.Main.textSecondary
                     }
 
 
@@ -618,7 +618,7 @@ Item {
                         font.pixelSize: 7
                         font.letterSpacing: 1
 
-                        color: Theme.Main.mainAccent
+                        color: Theme.Main.textSecondary
 
                         opacity: 0.55
                     }
@@ -636,7 +636,7 @@ Item {
 
                         color: rebootMouse.containsMouse
                             ? Theme.Main.border
-                            : Theme.Main.mainAccent
+                            : Theme.Main.textSecondary
                     }
 
 
@@ -724,7 +724,7 @@ Item {
 
                         radius: 1
 
-                        color: Theme.Main.mainAccent
+                        color: Theme.Main.textSecondary
 
                         opacity: logoutMouse.containsMouse
                             ? 1
@@ -743,7 +743,7 @@ Item {
 
                         color: logoutMouse.containsMouse
                             ? Theme.Main.text
-                            : Theme.Main.mainAccent
+                            : Theme.Main.textSecondary
                     }
 
 
@@ -756,7 +756,7 @@ Item {
                         font.pixelSize: 7
                         font.letterSpacing: 1
 
-                        color: Theme.Main.mainAccent
+                        color: Theme.Main.textSecondary
 
                         opacity: 0.55
                     }
@@ -774,7 +774,7 @@ Item {
 
                         color: logoutMouse.containsMouse
                             ? Theme.Main.border
-                            : Theme.Main.mainAccent
+                            : Theme.Main.textSecondary
                     }
 
 
@@ -843,7 +843,7 @@ Item {
                         font.pixelSize: 7
                         font.letterSpacing: 1
 
-                        color: Theme.Main.mainAccent
+                        color: Theme.Main.textSecondary
 
                         opacity: 0.65
                     }

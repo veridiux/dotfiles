@@ -36,7 +36,7 @@ RowLayout {
 
     Text {
         text: root.icon
-        color: (adapter && adapter.enabled) ? Theme.Main.textSecondary : Theme.Main.border
+        color: (adapter && adapter.enabled) ? Theme.Main.mainAccent : Theme.Main.border
 
         font {
             family: "JetBrainsMono Nerd Font"
