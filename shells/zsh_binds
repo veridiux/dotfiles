@@ -9,19 +9,19 @@ MODIFIER
 
 SCREENSHOTS
 ──────────────────────────────────────────────────────────────
-  PRINT               Select region → save to ~/Pictures/Captures
-  SUPER + X           Screenshot active window
-  SUPER + SHIFT + X   Select monitor → save to ~/Pictures/Captures
+  SUPER + X           Select region → save to ~/Pictures/Captures
+  ALT + X             Screenshot active window
+  ALT + SHIFT + X     Select monitor → save to ~/Pictures/Captures
 
 
 APPLICATIONS
 ──────────────────────────────────────────────────────────────
-  SUPER + Q           Open terminal (Kitty)
-  SUPER + E           Open file manager (Yazi)
-  SUPER + R           Toggle Quickshell launcher
-  SUPER + SHIFT + B   Open Steam Big Picture
-  SUPER + W           Randomize wallpaper
-  SUPER + X           Restart Quickshell
+  SUPER + Q           Open terminal
+  SUPER + E           Open file manager
+  SUPER + R           Open Launcher
+  SUPER + S           Open Steam
+  SUPER + SHIFT + S   Open Steam Big Picture
+  SUPER + T           Restart Quickshell
 
 
 WINDOW MANAGEMENT

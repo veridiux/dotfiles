@@ -1,0 +1,57 @@
+// ┌─[ ZSH :: ALIASES ]──────────────────────────────────────┐
+// │                                                         │
+// └─────────────────────────────────────────────────────────┘
+
+GENERAL
+──────────────────────────────────────────────────────────────
+  ll                  List files with details + hidden files
+  la                  List files with hidden files
+  lla                 List files with details + hidden files
+  binds               Show system binds
+  reload              Reload .zshrc
+  ep                  Export installed packages
+
+
+GIT
+──────────────────────────────────────────────────────────────
+  gs                  Git status
+  ga                  Git add
+  gc                  Git commit
+  gp                  Git push
+  gu                  Safe git update
+
+
+PACMAN
+──────────────────────────────────────────────────────────────
+  p                   Run pacman
+  pi                  Install package
+  ps                  Search packages
+  pf                  Search package files
+  pu                  Update system
+  pr                  Remove package
+  pss                 List installed packages
+  p!                  Install universal package list
+
+
+YAY
+──────────────────────────────────────────────────────────────
+  y                   Run yay
+  yi                  Install package
+  ys                  Search packages
+  yu                  Update system + AUR packages
+  yr                  Remove package
+  yq                  Show package information
+  yout                Remove orphaned packages
+  y!                  Install universal package list
+
+
+DIRECTORY
+──────────────────────────────────────────────────────────────
+  hd                  Go to home directory
+  df                  Go to dotfiles
+  cfg                 Go to ~/.config/
+
+
+SYSTEM
+──────────────────────────────────────────────────────────────
+  theme               Edit Quickshell theme

@@ -5,7 +5,7 @@
 # ===============================
 # General
 alias ll='ls -lah'
-alias binds='cat ~/.dotfiles/shells/zsh_binds'  # Show system binds
+alias cs='cs_viewer'                # show the cheat sheet
 alias reload='source ~/.zshrc'
 alias ep='export_packages'
 
@@ -76,7 +76,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
 [[ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] && \
     source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# ===============================
+# =============================Export packages to folder specified by host name==
 # Prompt
 # ===============================
 setopt prompt_subst
@@ -243,6 +243,48 @@ export_packages() {
     echo
     echo "Saved to:"
     echo "  $PKG_DIR"
+}
+
+# ===============================
+# Cheat Sheet Viewer
+# ===============================
+cs_viewer() {
+    local file
+    local files=(~/.dotfiles/cheat-sheet/*)
+
+    while true; do
+        clear
+
+        echo "════════════════════════════════════════════════════════════"
+        echo "                     CHEAT SHEETS"
+        echo "════════════════════════════════════════════════════════════"
+        echo
+
+        PS3="Select cheat-sheet or q to quit: "
+
+        select file in "${files[@]##*/}"; do
+            # q = quit
+            if [[ "$REPLY" == "q" ]]; then
+                clear
+                return
+            fi
+
+            # Invalid selection
+            if [[ -z "$file" ]]; then
+                echo "Invalid selection."
+                continue
+            fi
+
+            # Display selected cheat sheet
+            clear
+            cat "$HOME/.dotfiles/cheat-sheet/$file"
+
+            printf '\n\nPress Enter to return to the menu...'
+            read -r
+
+            break
+        done
+    done
 }
 
 

@@ -4,7 +4,7 @@
 
 -- Set programs that you use
 local terminal    = "kitty"
-local fileManager = "yazi"
+local fileManager = "dolphin"
 local menu = "quickshell ipc call launcher toggle"
 
 ---------------------
@@ -13,17 +13,16 @@ local menu = "quickshell ipc call launcher toggle"
 
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 
--- Screen Capture // hyprshot
+-- Screen Capture
 
 -- Print Screen → select region
-hl.bind("PRINT", hl.dsp.exec_cmd("hyprshot -m region -o ~/Pictures/Captures"))
+hl.bind(mainMod .. " + X", hl.dsp.exec_cmd("hyprshot -m region -o ~/Pictures/Captures"))
 
 -- Super + Print Screen → active window
-hl.bind("SUPER + X", hl.dsp.exec_cmd("hyprshot -m window -m active -o ~/Pictures/Captures"))
+hl.bind("ALT + X", hl.dsp.exec_cmd("hyprshot -m window -m active -o ~/Pictures/Captures"))
 
 -- Shift + Print Screen → select monitor
-hl.bind("SUPER + SHIFT + X", hl.dsp.exec_cmd("hyprshot -m output -o ~/Pictures/Captures"))
-
+hl.bind("ALT + SHIFT + X", hl.dsp.exec_cmd("hyprshot -m output -o ~/Pictures/Captures"))
 
 hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(terminal))
 local closeWindowBind = hl.bind(mainMod .. " + C", hl.dsp.window.close())
@@ -36,7 +35,8 @@ hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
 hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("pkill quickshell; quickshell &"))
-hl.bind(mainMod .. " + SHIFT + B", hl.dsp.exec_cmd("steam steam://open/bigpicture"))
+hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("steam"))
+hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("steam steam://open/bigpicture"))
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("~/.config/hypr/scripts/hyprpaper-random.sh"))
 
 -- Move focus with mainMod + arrow keys
@@ -54,8 +54,8 @@ for i = 1, 10 do
 end
 
 -- Example special workspace (scratchpad)
-hl.bind(mainMod .. " + S",         hl.dsp.workspace.toggle_special("magic"))
-hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
+hl.bind(mainMod .. " + B",         hl.dsp.workspace.toggle_special("magic"))
+hl.bind(mainMod .. " + SHIFT + B", hl.dsp.window.move({ workspace = "special:magic" }))
 
 -- Scroll through existing workspaces with mainMod + scroll
 hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
@@ -78,67 +78,3 @@ hl.bind("XF86AudioNext",  hl.dsp.exec_cmd("playerctl next"),       { locked = tr
 hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = true })
-
----------------
----- INPUT ----
----------------
-
-hl.config({
-    input = {
-        kb_layout  = "us",
-        kb_variant = "",
-        kb_model   = "",
-        kb_options = "",
-        kb_rules   = "",
-
-        follow_mouse = 1,
-
-        sensitivity = 0, -- -1.0 - 1.0, 0 means no modification.
-
-        touchpad = {
-            natural_scroll = false,
-        },
-    },
-})
-
-hl.gesture({
-    fingers = 3,
-    direction = "horizontal",
-    action = "workspace"
-})
-
--- Example per-device config
--- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Devices/ for more
-hl.device({
-    name        = "epic-mouse-v1",
-    sensitivity = -0.5,
-})
-
--- Extra
-hl.bind("SUPER + F1", function()
-	local game_mode = (hl.get_config("animations.enabled") == false)
-
-	if game_mode then
-		hl.exec_cmd("hyprctl reload")
-		return
-	end
-
-	hl.config({
-		general = {
-			gaps_in = 0,
-			gaps_out = 0,
-			border_size = 0
-		},
-
-		animations = {
-			enabled = false
-		},
-
-		decorations = {
-			shadow = { enabled = false },
-			blur = { enabled = false},
-			rounding = 0
-		},
-	})
-end)
-

@@ -1,0 +1,58 @@
+// ┌─[ HYPRLAND :: KEYBINDS ]────────────────────────────────┐
+// │                                                         │
+// └─────────────────────────────────────────────────────────┘
+
+MODIFIER
+──────────────────────────────────────────────────────────────
+  SUPER               Windows / Meta key
+
+
+SCREENSHOTS
+──────────────────────────────────────────────────────────────
+  SUPER + X           Select region → save to ~/Pictures/Captures
+  ALT + X             Screenshot active window
+  ALT + SHIFT + X     Select monitor → save to ~/Pictures/Captures
+
+
+APPLICATIONS
+──────────────────────────────────────────────────────────────
+  SUPER + Q           Open terminal
+  SUPER + E           Open file manager
+  SUPER + R           Open Launcher
+  SUPER + S           Open Steam
+  SUPER + SHIFT + S   Open Steam Big Picture
+  SUPER + T           Restart Quickshell
+
+
+WINDOW MANAGEMENT
+──────────────────────────────────────────────────────────────
+  SUPER + C           Close active window
+  SUPER + V           Toggle floating window
+  SUPER + P           Toggle pseudo-tiling
+  SUPER + J           Toggle split direction
+  SUPER + M           Shutdown / exit Hyprland
+
+  SUPER + ←           Focus window left
+  SUPER + →           Focus window right
+  SUPER + ↑           Focus window above
+  SUPER + ↓           Focus window below
+
+  SUPER + LMB         Move / drag window
+  SUPER + RMB         Resize window
+
+
+WORKSPACES
+──────────────────────────────────────────────────────────────
+  SUPER + 1-9         Switch to workspace 1-9
+  SUPER + 0           Switch to workspace 10
+
+  SUPER + SHIFT + 1-9
+                      Move window to workspace 1-9
+
+  SUPER + SHIFT + 0   Move window to workspace 10
+
+  SUPER + S           Toggle "magic" scratchpad
+  SUPER + SHIFT + S   Move window to "magic" scratchpad
+
+  SUPER + SCROLL UP   Next workspace
+  SUPER + SCROLL DOWN Previous workspace
