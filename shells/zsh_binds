@@ -1,0 +1,113 @@
+// ┌─[ HYPRLAND :: KEYBINDS ]────────────────────────────────┐
+// │                                                         │
+// └─────────────────────────────────────────────────────────┘
+
+MODIFIER
+──────────────────────────────────────────────────────────────
+  SUPER               Windows / Meta key
+
+
+SCREENSHOTS
+──────────────────────────────────────────────────────────────
+  PRINT               Select region → save to ~/Pictures/Captures
+  SUPER + X           Screenshot active window
+  SUPER + SHIFT + X   Select monitor → save to ~/Pictures/Captures
+
+
+APPLICATIONS
+──────────────────────────────────────────────────────────────
+  SUPER + Q           Open terminal (Kitty)
+  SUPER + E           Open file manager (Yazi)
+  SUPER + R           Toggle Quickshell launcher
+  SUPER + SHIFT + B   Open Steam Big Picture
+  SUPER + W           Randomize wallpaper
+  SUPER + X           Restart Quickshell
+
+
+WINDOW MANAGEMENT
+──────────────────────────────────────────────────────────────
+  SUPER + C           Close active window
+  SUPER + V           Toggle floating window
+  SUPER + P           Toggle pseudo-tiling
+  SUPER + J           Toggle split direction
+  SUPER + M           Shutdown / exit Hyprland
+
+  SUPER + ←           Focus window left
+  SUPER + →           Focus window right
+  SUPER + ↑           Focus window above
+  SUPER + ↓           Focus window below
+
+  SUPER + LMB         Move / drag window
+  SUPER + RMB         Resize window
+
+
+WORKSPACES
+──────────────────────────────────────────────────────────────
+  SUPER + 1-9         Switch to workspace 1-9
+  SUPER + 0           Switch to workspace 10
+
+  SUPER + SHIFT + 1-9
+                      Move window to workspace 1-9
+
+  SUPER + SHIFT + 0   Move window to workspace 10
+
+  SUPER + S           Toggle "magic" scratchpad
+  SUPER + SHIFT + S   Move window to "magic" scratchpad
+
+  SUPER + SCROLL UP   Next workspace
+  SUPER + SCROLL DOWN Previous workspace
+
+
+// ┌─[ ZSH :: ALIASES ]──────────────────────────────────────┐
+// │                                                         │
+// └─────────────────────────────────────────────────────────┘
+
+GENERAL
+──────────────────────────────────────────────────────────────
+  alias ll='ls -lah'
+  alias binds='cat ~/.dotfiles/scripts/binds'  # Show system binds
+  alias reload='source ~/.zshrc'
+  alias ep='export_packages'
+
+GIT 
+──────────────────────────────────────────────────────────────
+  alias gs='git status'
+  alias ga='git add'
+  alias gc='git commit'
+  alias gp='git push'
+  alias gu='gitupdate_safe'
+
+PACMAN 
+──────────────────────────────────────────────────────────────
+  alias p='sudo pacman'
+  alias pi='sudo pacman -S'      # install package
+  alias ps='sudo pacman -Ss'     # search package
+  alias pf='sudo pacman -Fy'     # search installed packages
+  alias pu='sudo pacman -Syu'    # update system
+  alias pr='sudo pacman -R'      # remove package
+  alias pss='pacman -Q'          # list installed packages
+  alias p!='sudo pacman -S --needed - < ~/.dotfiles/packages/pacman.txt'   # Universal package list
+
+YAY
+──────────────────────────────────────────────────────────────
+  alias y='yay'
+  alias yi='yay -S'              # install package
+  alias ys='yay -Ss'             # search package
+  alias yu='yay -Syu'            # update all packages (AUR + official)
+  alias yr='yay -R'              # remove package
+  alias yq='yay -Qi'             # info about installed package
+  alias yout='yay -Yc'           # remove orphaned packages
+  alias y!='yay -S --needed - < ~/.dotfiles/packages/yay.txt'   # Universal package list
+
+DIRECTORY
+──────────────────────────────────────────────────────────────
+  alias hd='cd ~/'
+  alias df='cd ~/.dotfiles/'
+  alias la='ls -A'     # show hidden files
+  alias ll='ls -lah'   # already your long listing
+  alias lla='ls -lahA' # long listing with hidden files
+  alias cfg='cd ~/.config/'
+
+EXTRA
+──────────────────────────────────────────────────────────────
+  alias theme='vscodium ~/.config/quickshell/themes/Main.qml'

@@ -5,7 +5,7 @@
 # ===============================
 # General
 alias ll='ls -lah'
-alias binds='cat ~/.dotfiles/scripts/binds'  # Show system binds
+alias binds='cat ~/.dotfiles/shells/zsh_binds'  # Show system binds
 alias reload='source ~/.zshrc'
 alias ep='export_packages'
 
@@ -76,17 +76,13 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
 [[ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] && \
     source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# Interpret prompt variables correctly
-setopt prompt_subst
-
-# ===============================
-# Colors
-# ===============================
-autoload -U colors && colors
-
 # ===============================
 # Prompt
 # ===============================
+setopt prompt_subst
+
+autoload -U colors && colors
+
 #PROMPT='%F{cyan}%n@%m%f %F{green}%1~%f$(git_branch) %# '
 #PROMPT='%F{cyan}%n%f@%F{green}%m%f  %F{yellow}%~%f$(git_branch) %&
 #%F{yellow}󱞩%f '
@@ -98,9 +94,8 @@ PROMPT='%F{#ff6200}┌─[%f%F{#ff6200}%n%f@%F{green}%m%f%F{#ff6200}]%f %F{#ff62
 %F{#ff6200}└─[%f%F{yellow}❯%f%F{#ff6200}]%f '
 
 
+#//------------Custom Functions------------\\#
 
-
-#//------------Custom Functions------------\\=
 
 # ===============================
 # Git helper functions
@@ -250,6 +245,13 @@ export_packages() {
     echo "  $PKG_DIR"
 }
 
+
+#\\------------Custom Functions------------//#
+
+
+# ===============================
+# Export history of commands typed in shell
+# ===============================
 HISTFILE=~/.zsh_history
 
 HISTSIZE=5000
