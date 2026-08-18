@@ -60,45 +60,64 @@ git_branch() {
 # Safe Git auto-update with confirmation
 # ===============================
 gitupdate_safe() {
-    local repo="$1"
+    local repo="${1:-$PWD}"
     local msg
+    local confirm
 
-    # default to current directory if none given
-    if [[ -z "$repo" ]]; then
-        repo="$PWD"
-    fi
+    # Work in a subshell so the current directory is never changed
+    (
+        cd "$repo" || {
+            echo "Directory not found: $repo"
+            exit 1
+        }
 
-    cd "$repo" || { echo "Directory not found: $repo"; return; }
+        # Make sure this is a Git repository
+        if ! git rev-parse --is-inside-work-tree &>/dev/null; then
+            echo "Not a Git repository: $repo"
+            exit 1
+        fi
 
-    # show git status first
-    git status
+        # Show git status first
+        git status
 
-    # ask for confirmation
-    read -q "confirm?Do you want to commit and push these changes? (y/n) " 
-    echo
-    if [[ "$confirm" != "y" && "$confirm" != "Y" ]]; then
-        echo "Aborted."
-        cd - || return
-        return
-    fi
+        # Ask for confirmation
+        read -q "confirm?Do you want to commit and push these changes? (y/n) "
+        echo
 
-    # generate timestamp commit message
-    msg="update: $(date '+%Y-%m-%d %H:%M:%S')"
+        if [[ "$confirm" != "y" ]]; then
+            echo "Aborted."
+            exit 0
+        fi
 
-    # stage and commit
-    git add -A
-    git commit -m "$msg"
+        # Generate timestamp commit message
+        msg="update: $(date '+%Y-%m-%d %H:%M:%S')"
 
-    # pull remote changes first
-    git pull --rebase
+        # Stage everything
+        git add -A
 
-    # push to GitHub
-    git push
+        # Commit changes
+        if ! git commit -m "$msg"; then
+            echo "Commit failed. Push aborted."
+            exit 1
+        fi
 
-    # return to original directory
-    cd - || return
+        # Pull remote changes and rebase our new commit
+        echo "Pulling remote changes..."
+        if ! git pull --rebase; then
+            echo "Pull failed. Push aborted."
+            exit 1
+        fi
+
+        # Push to GitHub
+        echo "Pushing changes..."
+        if ! git push; then
+            echo "Push failed."
+            exit 1
+        fi
+
+        echo "Git update complete."
+    )
 }
-
 # ===============================
 # Prompt
 # ===============================

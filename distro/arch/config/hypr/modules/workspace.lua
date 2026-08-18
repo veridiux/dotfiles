@@ -75,4 +75,4 @@ hl.window_rule({
 --------------------
 --- CUSTOM RULES ---
 --------------------
-require("scripts/rules/steam-big-picture")
+-- require("scripts/rules/steam-big-picture")
