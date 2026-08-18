@@ -118,6 +118,10 @@ Item {
         return result
     }
 
+    Process {
+        id: terminalProcess
+    }
+
     // ============================================================
     // FIND MONITOR UNDER CURSOR
     // ============================================================
@@ -190,7 +194,34 @@ Item {
         if (!app)
             return
 
-        app.execute()
+        // ------------------------------------------------------------
+        // Terminal applications
+        //
+        // Quickshell's DesktopEntry.execute() intentionally ignores
+        // the desktop entry's runInTerminal/Terminal=true property.
+        //
+        // Therefore terminal applications need to be launched
+        // explicitly through our terminal emulator.
+        // ------------------------------------------------------------
+
+        if (app.runInTerminal) {
+            terminalProcess.command = [
+                "kitty",
+                "--",
+                ...app.command
+            ]
+
+            terminalProcess.running = true
+        }
+
+        // ------------------------------------------------------------
+        // Normal graphical applications
+        // ------------------------------------------------------------
+
+        else {
+            app.execute()
+        }
+
         closeLauncher()
     }
 
