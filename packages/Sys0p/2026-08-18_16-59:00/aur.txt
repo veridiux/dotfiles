@@ -1,0 +1,11 @@
+blueberry
+brave-bin
+faugus-launcher
+heroic-games-launcher-bin
+iris-colors
+limine-entry-tool
+polychromatic
+qt6ct-kde
+vscodium-bin
+yay
+yay-debug

@@ -1,0 +1,11 @@
+bc
+gnome-bluetooth-debug
+go
+gobject-introspection
+gtk-doc
+lib32-zlib-ng
+mbedtls
+python-dbusmock
+qt6ct-kde-debug
+rust-bindgen
+ytmdesktop-debug

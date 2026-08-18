@@ -1,9 +1,52 @@
 # ~/.zshrc
 
 # ===============================
-# Load Bash settings if you have them
+# Aliases
 # ===============================
-[[ -f ~/.bashrc ]] && source ~/.bashrc
+# General
+alias ll='ls -lah'
+alias binds='cat ~/.dotfiles/scripts/binds'  # Show system binds
+alias reload='source ~/.zshrc'
+alias ep='export_packages'
+
+# Git Shortcuts
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit'
+alias gp='git push'
+alias gu='gitupdate_safe'
+
+
+# Pacman shortcuts
+alias p='sudo pacman'
+alias pi='sudo pacman -S'      # install package
+alias ps='sudo pacman -Ss'     # search package
+alias pf='sudo pacman -Fy'     # search installed packages
+alias pu='sudo pacman -Syu'    # update system
+alias pr='sudo pacman -R'      # remove package
+alias pss='pacman -Q'          # list installed packages
+alias p!='sudo pacman -S --needed - < ~/.dotfiles/packages/pacman.txt'   # Universal package list
+
+# Yay shortcuts
+alias y='yay'
+alias yi='yay -S'              # install package
+alias ys='yay -Ss'             # search package
+alias yu='yay -Syu'            # update all packages (AUR + official)
+alias yr='yay -R'              # remove package
+alias yq='yay -Qi'             # info about installed package
+alias yout='yay -Yc'           # remove orphaned packages
+alias y!='yay -S --needed - < ~/.dotfiles/packages/yay.txt'   # Universal package list
+
+# Directory shortcute
+alias hd='cd ~/'
+alias df='cd ~/.dotfiles/'
+alias la='ls -A'     # show hidden files
+alias ll='ls -lah'   # already your long listing
+alias lla='ls -lahA' # long listing with hidden files
+alias cfg='cd ~/.config/'
+
+# Extra
+alias theme='vscodium ~/.config/quickshell/themes/Main.qml'
 
 # ===============================
 # System info on shell startup
@@ -33,10 +76,31 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
 [[ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] && \
     source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# Interpret prompt variables correctly
+setopt prompt_subst
+
 # ===============================
 # Colors
 # ===============================
 autoload -U colors && colors
+
+# ===============================
+# Prompt
+# ===============================
+#PROMPT='%F{cyan}%n@%m%f %F{green}%1~%f$(git_branch) %# '
+#PROMPT='%F{cyan}%n%f@%F{green}%m%f  %F{yellow}%~%f$(git_branch) %&
+#%F{yellow}󱞩%f '
+#PROMPT='%F{cyan}┌─[%f%F{cyan}%n%f@%F{green}%m%f%F{cyan}]%f %F{yellow}%~%f$(git_branch)
+#%F{cyan}└─%f %F{yellow}󱞩%f '
+#PROMPT='%F{cyan}┌─[%f%F{cyan}%n%f@%F{green}%m%f%F{cyan}]%f %F{cyan}::%f %F{yellow}%~%f$(git_branch)
+#%F{cyan}└─[%f%F{yellow}󱞩%f%F{cyan}]%f '
+PROMPT='%F{#ff6200}┌─[%f%F{#ff6200}%n%f@%F{green}%m%f%F{#ff6200}]%f %F{#ff6200}//%f %F{yellow}%~%f$(git_branch)
+%F{#ff6200}└─[%f%F{yellow}❯%f%F{#ff6200}]%f '
+
+
+
+
+#//------------Custom Functions------------\\=
 
 # ===============================
 # Git helper functions
@@ -118,79 +182,11 @@ gitupdate_safe() {
         echo "Git update complete."
     )
 }
-# ===============================
-# Prompt
-# ===============================
-#PROMPT='%F{cyan}%n@%m%f %F{green}%1~%f$(git_branch) %# '
-#PROMPT='%F{cyan}%n%f@%F{green}%m%f  %F{yellow}%~%f$(git_branch) %&
-#%F{yellow}󱞩%f '
-#PROMPT='%F{cyan}┌─[%f%F{cyan}%n%f@%F{green}%m%f%F{cyan}]%f %F{yellow}%~%f$(git_branch)
-#%F{cyan}└─%f %F{yellow}󱞩%f '
-#PROMPT='%F{cyan}┌─[%f%F{cyan}%n%f@%F{green}%m%f%F{cyan}]%f %F{cyan}::%f %F{yellow}%~%f$(git_branch)
-#%F{cyan}└─[%f%F{yellow}󱞩%f%F{cyan}]%f '
-PROMPT='%F{#ff6200}┌─[%f%F{#ff6200}%n%f@%F{green}%m%f%F{#ff6200}]%f %F{#ff6200}//%f %F{yellow}%~%f$(git_branch)
-%F{#ff6200}└─[%f%F{yellow}❯%f%F{#ff6200}]%f '
-
-# Interpret prompt variables correctly
-setopt prompt_subst
 
 # ===============================
-# Aliases
+# Export packages to folder specified by host name
 # ===============================
-# General
-alias ll='ls -lah'
-alias binds='cat ~/.dotfiles/scripts/binds'  # Show system binds
-
-# Git Shortcuts
-alias gs='git status'
-alias ga='git add'
-alias gc='git commit'
-alias gp='git push'
-alias gu='gitupdate_safe'
-
-
-# Pacman shortcuts
-alias p='sudo pacman'
-alias pi='sudo pacman -S'      # install package
-alias ps='sudo pacman -Ss'     # search package
-alias pf='sudo pacman -Fy'     # search installed packages
-alias pu='sudo pacman -Syu'    # update system
-alias pr='sudo pacman -R'      # remove package
-alias pss='pacman -Q'          # list installed packages
-alias p!='sudo pacman -S --needed - < ~/.dotfiles/packages/pacman.txt'   # Universal package list
-
-# Yay shortcuts
-alias y='yay'
-alias yi='yay -S'              # install package
-alias ys='yay -Ss'             # search package
-alias yu='yay -Syu'            # update all packages (AUR + official)
-alias yr='yay -R'              # remove package
-alias yq='yay -Qi'             # info about installed package
-alias yout='yay -Yc'           # remove orphaned packages
-alias y!='yay -S --needed - < ~/.dotfiles/packages/yay.txt'   # Universal package list
-
-# Directory shortcute
-alias hd='cd ~/'
-alias df='cd ~/.dotfiles/'
-alias la='ls -A'     # show hidden files
-alias ll='ls -lah'   # already your long listing
-alias lla='ls -lahA' # long listing with hidden files
-alias cfg='cd ~/.config/'
-
-# Extra
-alias theme='vscodium ~/.config/quickshell/themes/Main.qml'
-
-HISTFILE=~/.zsh_history
-
-HISTSIZE=5000
-SAVEHIST=5000
-
-setopt APPEND_HISTORY        # append instead of overwrite
-setopt SHARE_HISTORY         # share history across sessions
-setopt HIST_IGNORE_DUPS      # ignore duplicates
-setopt HIST_IGNORE_SPACE     # ignore commands starting with space
-
-alias ep='{
+export_packages() {
     SYSTEM_NAME="$HOST"
     TIMESTAMP=$(date +%Y-%m-%d_%H-%M:%S)
     PACKAGE_DIR="$HOME/.dotfiles/packages/$SYSTEM_NAME/$TIMESTAMP"
@@ -252,4 +248,15 @@ alias ep='{
     echo
     echo "Saved to:"
     echo "  $PKG_DIR"
-}'
+}
+
+HISTFILE=~/.zsh_history
+
+HISTSIZE=5000
+SAVEHIST=5000
+
+setopt APPEND_HISTORY        # append instead of overwrite
+setopt SHARE_HISTORY         # share history across sessions
+setopt HIST_IGNORE_DUPS      # ignore duplicates
+setopt HIST_IGNORE_SPACE     # ignore commands starting with space
+
