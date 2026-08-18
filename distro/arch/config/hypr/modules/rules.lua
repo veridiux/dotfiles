@@ -54,3 +54,16 @@ hl.window_rule({
     
     float = true,
 })
+
+hl.window_rule({
+    name = "Battle.net-floating",
+    match = {
+        class = "^steam_app_default$",
+        title = "^Battle%.net$",
+    },
+
+    no_focus = false,
+    float = true,
+    center = true,
+    size = { 1680, 1050 },
+})

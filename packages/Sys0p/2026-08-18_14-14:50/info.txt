@@ -1,0 +1,25 @@
+System Package Snapshot
+=======================
+
+System Name : Sys0p
+Hostname    : Sys0p
+Date        : 2026-08-18_14-14:50
+Kernel      : 7.1.7-zen1-1-zen
+Architecture: x86_64
+Shell       : /usr/bin/zsh
+
+Package Counts
+--------------
+Official    : 93
+Foreign/AUR : 11
+Total       : 104
+Orphans     : 10
+
+Files
+-----
+pacman.txt    - Explicit official repository packages
+aur.txt       - Explicit foreign/AUR packages
+all.txt       - Combined package names
+installed.txt - Every installed package + version
+explicit.txt  - Explicit packages + version
+orphans.txt   - Unneeded dependency packages
