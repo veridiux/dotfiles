@@ -1,0 +1,163 @@
+// ┌─[ LINUX :: /ETC/FSTAB & MOUNTING ]───────────────────────┐
+// │                                                          │
+// └──────────────────────────────────────────────────────────┘
+
+FSTAB BASICS
+──────────────────────────────────────────────────────────────
+  /etc/fstab                 Static filesystem table (boot mounts)
+  cat /etc/fstab             View current fstab
+  sudo nano /etc/fstab       Edit fstab (be careful!)
+  sudo vim /etc/fstab        Edit with vim
+  findmnt                    Show currently mounted filesystems
+  findmnt -t <type>          Filter by filesystem type
+  lsblk -f                   List block devices + UUID/LABEL/FSTYPE
+  blkid                      Show UUIDs and labels of devices
+
+FSTAB FIELD ORDER
+──────────────────────────────────────────────────────────────
+  <device>  <mountpoint>  <type>  <options>  <dump>  <pass>
+
+  device     UUID=... or /dev/sdX or LABEL=...
+  mountpoint /mnt/data  or  /home  etc.
+  type       ext4, xfs, btrfs, ntfs, vfat, nfs, cifs ...
+  options    defaults, noatime, nofail, x-systemd.automount ...
+  dump       0 (almost always)
+  pass       0 (no check), 1 (root), 2 (others)
+
+COMMON FSTAB EXAMPLES (LOCAL)
+──────────────────────────────────────────────────────────────
+  # By UUID (recommended)
+  UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx  /mnt/data  ext4  defaults  0  2
+
+  # By LABEL
+  LABEL=MyData  /mnt/data  ext4  defaults,noatime  0  2
+
+  # By device path (less reliable)
+  /dev/sdb1  /mnt/backup  xfs  defaults  0  2
+
+  # Swap
+  UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx  none  swap  sw  0  0
+
+  # Read-only
+  UUID=...  /mnt/ro  ext4  defaults,ro  0  2
+
+USEFUL MOUNT OPTIONS
+──────────────────────────────────────────────────────────────
+  defaults                   rw,suid,dev,exec,auto,nouser,async
+  noatime                    Don't update access times (faster)
+  nodiratime                 Don't update dir access times
+  nofail                     Don't fail boot if mount fails
+  x-systemd.automount        Mount on-demand (systemd)
+  x-systemd.device-timeout=10s  Timeout for device
+  ro                         Read-only
+  rw                         Read-write
+  user                       Allow non-root to mount
+  noauto                     Don't mount at boot (manual only)
+  _netdev                    Wait for network (for network shares)
+
+// ┌─[ LINUX :: MANUAL MOUNTING ]─────────────────────────────┐
+// │                                                          │
+// └──────────────────────────────────────────────────────────┘
+
+BASIC MOUNT / UMOUNT
+──────────────────────────────────────────────────────────────
+  mount                      Show all mounted filesystems
+  mount -a                   Mount everything in fstab
+  mount -a -t <type>         Mount only specific type from fstab
+  sudo mount /dev/sdb1 /mnt  Mount device to directory
+  sudo mount -t ext4 /dev/sdb1 /mnt
+  sudo mount -o ro /dev/sdb1 /mnt   Read-only mount
+  sudo umount /mnt           Unmount by mountpoint
+  sudo umount /dev/sdb1      Unmount by device
+  sudo umount -l /mnt        Lazy unmount (busy filesystem)
+  sudo umount -f /mnt        Force unmount (use carefully)
+
+CHECK BEFORE UNMOUNT
+──────────────────────────────────────────────────────────────
+  lsof +f -- /mnt            See what is using the mount
+  fuser -m /mnt              Show processes using mount
+  fuser -km /mnt             Kill processes using mount
+
+// ┌─[ LINUX :: NETWORK SHARES (NFS) ]────────────────────────┐
+// │                                                          │
+// └──────────────────────────────────────────────────────────┘
+
+NFS CLIENT
+──────────────────────────────────────────────────────────────
+  sudo apt install nfs-common          # Debian/Ubuntu
+  sudo dnf install nfs-utils           # Fedora
+  sudo pacman -S nfs-utils             # Arch
+
+  # Temporary mount
+  sudo mount -t nfs server:/export /mnt/nfs
+  sudo mount -t nfs -o vers=4 server:/export /mnt/nfs
+
+  # fstab entry
+  server:/export  /mnt/nfs  nfs  defaults,_netdev,nofail  0  0
+
+  # Common NFS options
+  # vers=4 / vers=3
+  # soft / hard
+  # timeo=10
+  # retrans=3
+  # rsize=1048576,wsize=1048576
+
+  # Show NFS mounts
+  findmnt -t nfs
+  mount | grep nfs
+
+// ┌─[ LINUX :: NETWORK SHARES (CIFS / SMB) ]─────────────────┐
+// │                                                          │
+// └──────────────────────────────────────────────────────────┘
+
+CIFS / SMB CLIENT
+──────────────────────────────────────────────────────────────
+  sudo apt install cifs-utils          # Debian/Ubuntu
+  sudo dnf install cifs-utils          # Fedora
+  sudo pacman -S cifs-utils            # Arch
+
+  # Temporary mount (guest)
+  sudo mount -t cifs //server/share /mnt/smb -o guest
+
+  # With credentials
+  sudo mount -t cifs //server/share /mnt/smb -o username=user,password=pass,uid=1000,gid=1000
+
+  # Better: use credentials file
+  # /etc/samba/credentials  (chmod 600)
+  # username=user
+  # password=pass
+  # domain=WORKGROUP
+
+  sudo mount -t cifs //server/share /mnt/smb -o credentials=/etc/samba/credentials,uid=1000,gid=1000,iocharset=utf8
+
+  # fstab entry
+  //server/share  /mnt/smb  cifs  credentials=/etc/samba/credentials,uid=1000,gid=1000,iocharset=utf8,_netdev,nofail  0  0
+
+  # Common CIFS options
+  # vers=3.0 / vers=2.1 / vers=1.0
+  # uid= / gid=
+  # file_mode=0644,dir_mode=0755
+  # iocharset=utf8
+  # noperm
+  # cache=strict / cache=loose
+
+// ┌─[ LINUX :: HELPFUL COMMANDS ]────────────────────────────┐
+// │                                                          │
+// └──────────────────────────────────────────────────────────┘
+
+TESTING & DEBUGGING
+──────────────────────────────────────────────────────────────
+  sudo mount -a              Test all fstab entries
+  sudo mount -a -v           Verbose output
+  findmnt --verify           Check fstab for problems
+  systemctl daemon-reload    After changing fstab with systemd options
+  journalctl -xe             Check for mount errors
+  dmesg | tail               Kernel messages related to mounts
+
+QUICK REFERENCE
+──────────────────────────────────────────────────────────────
+  UUID=...                   Prefer over /dev/sdX (stable)
+  _netdev                    Always use for network mounts
+  nofail                     Prevent boot hang if share unavailable
+  x-systemd.automount        Mount only when accessed
+  mount -a                   Apply fstab changes without reboot

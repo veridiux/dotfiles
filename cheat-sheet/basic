@@ -1,0 +1,224 @@
+// ┌─[ LINUX :: NAVIGATION & FILES ]──────────────────────────┐
+// │                                                          │
+// └──────────────────────────────────────────────────────────┘
+
+NAVIGATION
+──────────────────────────────────────────────────────────────
+  pwd                        Print working directory
+  ls                         List files and directories
+  ls -la                     Long listing + hidden files
+  ls -lh                     Human-readable sizes
+  cd <dir>                   Change directory
+  cd ..                      Go up one level
+  cd ~                       Go to home directory
+  tree                       Tree view of directories
+  tree -L 2                  Tree limited to 2 levels
+
+FINDING FILES
+──────────────────────────────────────────────────────────────
+  find . -name "*.txt"       Search by name
+  find / -type f -size +100M Find large files
+  locate <name>              Fast file search (needs updatedb)
+  which <command>            Show path of a command
+  whereis <command>          Locate binary/source/man
+  file <file>                Identify file type
+
+DISK USAGE
+──────────────────────────────────────────────────────────────
+  du -sh *                   Disk usage of items in current dir
+  du -h --max-depth=1        Disk usage one level deep
+  df -h                      Free disk space (human readable)
+  lsblk                      List block devices / partitions
+  lsblk -f                   With filesystem info
+
+// ┌─[ LINUX :: VIEWING & EDITING ]───────────────────────────┐
+// │                                                          │
+// └──────────────────────────────────────────────────────────┘
+
+VIEWING
+──────────────────────────────────────────────────────────────
+  cat <file>                 Print entire file
+  less <file>                Paginate through file (q to quit)
+  more <file>                Simple pager
+  head -n 20 <file>          First 20 lines
+  tail -n 20 <file>          Last 20 lines
+  tail -f <log>              Follow log in real time
+  grep -i "text" <file>      Search text (case-insensitive)
+  grep -r "pattern" .        Recursive search
+  wc -l <file>               Count lines
+
+EDITING
+──────────────────────────────────────────────────────────────
+  nano <file>                Simple text editor
+  vim <file>                 Powerful text editor
+  touch <file>               Create empty file / update timestamp
+
+// ┌─[ LINUX :: FILE OPERATIONS ]─────────────────────────────┐
+// │                                                          │
+// └──────────────────────────────────────────────────────────┘
+
+COPY / MOVE / DELETE
+──────────────────────────────────────────────────────────────
+  cp <src> <dest>            Copy file
+  cp -r <dir1> <dir2>        Copy directory recursively
+  mv <old> <new>             Move or rename
+  rm <file>                  Remove file
+  rm -r <dir>                Remove directory (careful!)
+  rm -i <file>               Interactive remove
+  mkdir <dir>                Create directory
+  mkdir -p path/to/dir       Create nested directories
+
+LINKS & PERMISSIONS
+──────────────────────────────────────────────────────────────
+  ln -s <target> <link>      Create symbolic link
+  chmod +x <file>            Make executable
+  chmod 755 <file>           Set rwxr-xr-x
+  chown user:group <file>    Change owner (needs sudo)
+  chgrp <group> <file>       Change group
+
+// ┌─[ LINUX :: SYSTEM INFO & MONITORING ]────────────────────┐
+// │                                                          │
+// └──────────────────────────────────────────────────────────┘
+
+SYSTEM INFO
+──────────────────────────────────────────────────────────────
+  uname -a                   Kernel and system info
+  hostnamectl                Hostname and OS details
+  uptime                     Uptime and load average
+  free -h                    Memory usage
+  lscpu                      CPU information
+  lsmem                      Memory hardware info
+  dmesg | tail               Recent kernel messages
+  journalctl -xe             Systemd journal (errors)
+  journalctl -u <service>    Logs for a specific service
+
+PROCESSES
+──────────────────────────────────────────────────────────────
+  top                        Live process monitor
+  htop                       Better interactive process viewer
+  ps aux                     List all processes
+  ps -ef | grep <name>       Find process by name
+  kill <PID>                 Terminate process
+  kill -9 <PID>              Force kill
+  killall <name>             Kill by process name
+  pkill -f <pattern>         Kill by pattern
+
+// ┌─[ LINUX :: PACKAGE MANAGEMENT ]──────────────────────────┐
+// │                                                          │
+// └──────────────────────────────────────────────────────────┘
+
+DEBIAN / UBUNTU (apt)
+──────────────────────────────────────────────────────────────
+  sudo apt update            Refresh package lists
+  sudo apt upgrade           Upgrade installed packages
+  sudo apt install <pkg>     Install package
+  sudo apt remove <pkg>      Remove package
+  sudo apt purge <pkg>       Remove + config files
+  apt search <keyword>       Search packages
+  apt show <pkg>             Show package details
+
+FEDORA / RHEL (dnf)
+──────────────────────────────────────────────────────────────
+  sudo dnf update            Update system
+  sudo dnf install <pkg>     Install package
+  sudo dnf remove <pkg>      Remove package
+  dnf search <keyword>       Search packages
+
+ARCH (pacman)
+──────────────────────────────────────────────────────────────
+  sudo pacman -Syu           Full system update
+  sudo pacman -S <pkg>       Install package
+  sudo pacman -R <pkg>       Remove package
+  pacman -Ss <keyword>       Search packages
+
+// ┌─[ LINUX :: NETWORKING ]──────────────────────────────────┐
+// │                                                          │
+// └──────────────────────────────────────────────────────────┘
+
+BASIC NETWORK
+──────────────────────────────────────────────────────────────
+  ip a                       Show IP addresses
+  ip r                       Show routing table
+  ip link                    Show network interfaces
+  ss -tuln                   Listening sockets
+  ss -tp                     Sockets with processes
+  ping -c 4 <host>           Test connectivity
+  curl -O <url>              Download file
+  wget <url>                 Download file
+  traceroute <host>          Trace network path
+  dig <domain>               DNS lookup
+  nslookup <domain>          DNS lookup (simple)
+  nmap localhost             Port scan local machine
+
+// ┌─[ LINUX :: SYSTEM CONTROL & MAINTENANCE ]────────────────┐
+// │                                                          │
+// └──────────────────────────────────────────────────────────┘
+
+SERVICES (systemd)
+──────────────────────────────────────────────────────────────
+  systemctl status <service> Check service status
+  systemctl start <service>  Start service
+  systemctl stop <service>   Stop service
+  systemctl enable <service> Enable at boot
+  systemctl disable <service> Disable at boot
+  systemctl restart <service> Restart service
+
+POWER & SCHEDULING
+──────────────────────────────────────────────────────────────
+  sudo shutdown -h now       Shut down immediately
+  sudo reboot                Reboot
+  sudo poweroff              Power off
+  crontab -e                 Edit user crontab
+  crontab -l                 List user crontab
+
+DISKS & MOUNTS
+──────────────────────────────────────────────────────────────
+  mount                      Show mounted filesystems
+  mount /dev/sdX /mnt        Mount device
+  umount /mnt                Unmount
+  sync                       Flush filesystem buffers
+
+// ┌─[ LINUX :: USERS & SECURITY ]────────────────────────────┐
+// │                                                          │
+// └──────────────────────────────────────────────────────────┘
+
+USERS
+──────────────────────────────────────────────────────────────
+  whoami                     Current username
+  id                         User and group IDs
+  sudo <command>             Run as root
+  su -                       Switch to root
+  passwd                     Change own password
+  groups                     Show groups of current user
+
+// ┌─[ LINUX :: TEXT & UTILITIES ]────────────────────────────┐
+// │                                                          │
+// └──────────────────────────────────────────────────────────┘
+
+TEXT PROCESSING
+──────────────────────────────────────────────────────────────
+  sort <file>                Sort lines
+  uniq                       Remove duplicate lines
+  cut -d: -f1 /etc/passwd    Extract fields
+  sed 's/old/new/g' <file>   Stream edit
+  awk '{print $1}' <file>    Pattern scanning
+
+ARCHIVES
+──────────────────────────────────────────────────────────────
+  tar -czvf archive.tar.gz <dir>   Create gzipped tar
+  tar -xzvf archive.tar.gz         Extract gzipped tar
+  zip -r archive.zip <dir>         Create zip
+  unzip archive.zip                Extract zip
+  gzip <file>                      Compress file
+  gunzip <file.gz>                 Decompress
+
+MISC
+──────────────────────────────────────────────────────────────
+  history                    Command history
+  history | grep <keyword>   Search history
+  alias ll='ls -la'          Create alias
+  export PATH=$PATH:/new     Add to PATH
+  date                       Current date/time
+  cal                        Calendar
+  echo $PATH                 Print environment variable
+  nohup <command> &          Run immune to hangups

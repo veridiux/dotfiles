@@ -1,0 +1,269 @@
+// ┌─[ NEOVIM :: CHEAT SHEET ]───────────────────────────────┐
+// │                                                         │
+// └─────────────────────────────────────────────────────────┘
+
+
+MODES
+──────────────────────────────────────────────────────────────
+  i                   Insert mode
+  Esc                 Normal mode
+  v                   Visual mode
+  V                   Visual line mode
+  Ctrl + V            Visual block mode
+  :                   Command mode
+  /                   Search forward
+  ?                   Search backward
+
+
+BASIC
+──────────────────────────────────────────────────────────────
+  u                   Undo
+  Ctrl + R            Redo
+
+  yy                  Yank / copy line
+  dd                  Delete line
+  D                   Delete to end of line
+  x                   Delete character
+  p                   Paste after cursor
+  P                   Paste before cursor
+
+  >>                  Indent line
+  <<                  Unindent line
+  J                   Join line below
+
+  .                   Repeat last action
+
+
+MOVEMENT
+──────────────────────────────────────────────────────────────
+  h                   Move left
+  j                   Move down
+  k                   Move up
+  l                   Move right
+
+  w                   Next word
+  b                   Previous word
+  e                   End of word
+
+  0                   Start of line
+  ^                   First non-blank character
+  $                   End of line
+
+  gg                  Top of file
+  G                   Bottom of file
+
+  Ctrl + D            Half-page down
+  Ctrl + U            Half-page up
+  Ctrl + F            Full-page down
+  Ctrl + B            Full-page up
+
+  %                   Jump between brackets
+
+
+SEARCH
+──────────────────────────────────────────────────────────────
+  /text               Search forward
+  ?text               Search backward
+
+  n                   Next search result
+  N                   Previous search result
+
+  *                   Search word under cursor
+  #                   Search word under cursor backward
+
+  :noh                Clear search highlighting
+
+
+TEXT SELECTION
+──────────────────────────────────────────────────────────────
+  v                   Character selection
+  V                   Line selection
+  Ctrl + V            Block selection
+
+  iw                  Inner word
+  aw                  Around word
+  i"                  Inside quotes
+  a"                  Around quotes
+  i(                  Inside parentheses
+  a(                  Around parentheses
+
+  ciw                 Change inner word
+  diw                 Delete inner word
+  yiw                 Yank inner word
+
+
+CHANGE / EDIT
+──────────────────────────────────────────────────────────────
+  i                   Insert before cursor
+  a                   Insert after cursor
+  I                   Insert at start of line
+  A                   Insert at end of line
+  o                   New line below
+  O                   New line above
+
+  r                   Replace character
+  R                   Replace mode
+  c                   Change
+  C                   Change to end of line
+  S                   Change entire line
+
+  cc                  Change entire line
+
+
+WINDOWS
+──────────────────────────────────────────────────────────────
+  :split              Horizontal split
+  :vsplit             Vertical split
+
+  Ctrl + W + h        Move to left window
+  Ctrl + W + j        Move to window below
+  Ctrl + W + k        Move to window above
+  Ctrl + W + l        Move to right window
+
+  Ctrl + W + q        Close window
+  Ctrl + W + o        Keep only current window
+
+  Ctrl + W + =        Equalize window sizes
+  Ctrl + W + +        Increase window height
+  Ctrl + W + -        Decrease window height
+  Ctrl + W + >        Increase window width
+  Ctrl + W + <        Decrease window width
+
+
+BUFFERS
+──────────────────────────────────────────────────────────────
+  :e file             Open file
+  :enew               New buffer
+  :bnext              Next buffer
+  :bprev              Previous buffer
+  :bdelete            Close buffer
+  :buffers             List buffers
+
+  :b N                Switch to buffer N
+
+
+TABS
+──────────────────────────────────────────────────────────────
+  :tabnew             New tab
+  :tabclose           Close tab
+  :tabnext             Next tab
+  :tabprev             Previous tab
+
+  gt                  Next tab
+  gT                  Previous tab
+
+
+FILES
+──────────────────────────────────────────────────────────────
+  :e file             Open file
+  :w                  Save file
+  :wa                 Save all files
+
+  :q                  Quit
+  :q!                 Quit without saving
+  :wq                 Save and quit
+  :x                  Save and quit
+
+  ZZ                  Save and quit
+  ZQ                  Quit without saving
+
+
+REPLACE
+──────────────────────────────────────────────────────────────
+  :%s/old/new/g       Replace all occurrences in file
+  :s/old/new/g        Replace occurrences on current line
+
+  :%s/old/new/gc      Replace with confirmation
+
+  &                   Repeat last substitution
+
+
+VISUAL MODE
+──────────────────────────────────────────────────────────────
+  y                   Yank selection
+  d                   Delete selection
+  c                   Change selection
+  >                   Indent selection
+  <                   Unindent selection
+  J                   Join selected lines
+
+
+COMMAND MODE
+──────────────────────────────────────────────────────────────
+  :w                  Write / save
+  :q                  Quit
+  :qa                 Quit all
+  :wqa                Save and quit all
+  :qa!                Quit all without saving
+
+  :set number         Show line numbers
+  :set relativenumber  Show relative line numbers
+  :set nonumber       Hide line numbers
+
+  :help topic         Open help
+
+
+MACROS
+──────────────────────────────────────────────────────────────
+  qq                  Record macro into register q
+  q                   Stop recording
+  @q                  Play macro q
+  @@                  Repeat last macro
+
+
+MARKS
+──────────────────────────────────────────────────────────────
+  ma                  Set mark "a"
+  `a                  Jump to mark "a"
+  ''                  Jump to previous location
+
+  :marks              List marks
+
+
+REGISTERS
+──────────────────────────────────────────────────────────────
+  :reg                Show registers
+
+  "ayy                Yank line into register a
+  "ap                 Paste from register a
+
+  "+y                 Yank to system clipboard
+  "+p                 Paste from system clipboard
+
+
+FILE NAVIGATION
+──────────────────────────────────────────────────────────────
+  :pwd                Show current directory
+  :cd path            Change directory
+  :Ex                 Open file explorer
+
+  gf                  Open file under cursor
+  Ctrl + ^            Switch to previous file
+
+
+HELP
+──────────────────────────────────────────────────────────────
+  :help               Open Neovim help
+  :help command       Help for command
+  :help key           Help for key
+  :help <C-w>         Help for key combination
+
+  :q                  Close help
+
+
+QUICK REMINDERS
+──────────────────────────────────────────────────────────────
+  Esc                 Get back to Normal mode
+  :w                  Save
+  :q                  Quit
+  :wq                 Save + quit
+  u                   Undo
+  Ctrl + R            Redo
+  dd                  Delete line
+  yy                  Copy line
+  p                   Paste
+  /text               Search
+  n                   Next result
+  gg                  Top
+  G                   Bottom
+  .                   Repeat

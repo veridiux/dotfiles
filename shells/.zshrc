@@ -251,39 +251,74 @@ export_packages() {
 cs_viewer() {
     local file
     local files=(~/.dotfiles/cheat-sheet/*)
+    local choice
+    local i
+
+    # Clear screen + scrollback
+    cs_clear() {
+        printf '\033[2J\033[3J\033[H'
+    }
 
     while true; do
-        clear
+        cs_clear
 
         printf '%s\n' \
             '// ┌─[ CHEAT SHEET ]─────────────────────────────────────────┐' \
             '// │                                                         │' \
             '// └─────────────────────────────────────────────────────────┘'
 
-        PS3="Select cheat-sheet or q to quit: "
+        printf '\n'
 
-        select file in "${files[@]##*/}"; do
-            # q = quit
-            if [[ "$REPLY" == "q" ]]; then
-                clear
-                return
-            fi
+        i=1
+        for file in "${files[@]}"; do
+            printf '  %d) %s\n' "$i" "${file:t:r}"
+            ((i++))
+        done
 
-            # Invalid selection
-            if [[ -z "$file" ]]; then
-                echo "Invalid selection."
+        printf '\n  q) Quit\n\n'
+        printf 'Select cheat-sheet: '
+        read -r choice
+
+        # q = quit
+        if [[ "${choice:l}" == "q" ]]; then
+            cs_clear
+            return
+        fi
+
+        # Number selection
+        if [[ "$choice" =~ '^[0-9]+$' ]]; then
+            if (( choice >= 1 && choice <= ${#files[@]} )); then
+                file="${files[choice]}"
+            else
+                printf '\nInvalid selection.'
+                sleep 1
                 continue
             fi
 
-            # Display selected cheat sheet
-            clear
-            cat "$HOME/.dotfiles/cheat-sheet/$file"
+        # Name selection
+        else
+            file=""
 
-            printf '\n\nPress Enter to return to the menu...'
-            read -r
+            for i in "${files[@]}"; do
+                if [[ "${i:t:r:l}" == "${choice:l}" ]]; then
+                    file="$i"
+                    break
+                fi
+            done
 
-            break
-        done
+            if [[ -z "$file" ]]; then
+                printf '\nInvalid selection.'
+                sleep 1
+                continue
+            fi
+        fi
+
+        # Display selected cheat sheet
+        cs_clear
+        cat "$file"
+
+        printf '\n\nPress Enter to return to the menu...'
+        read -r
     done
 }
 
