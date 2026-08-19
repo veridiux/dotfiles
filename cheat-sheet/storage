@@ -1,0 +1,42 @@
+// ┌─[ STORAGE :: DISKS & FILESYSTEMS ]──────────────────────┐
+// │                                                         │
+// └─────────────────────────────────────────────────────────┘
+
+DEVICES
+──────────────────────────────────────────────────────────────
+  lsblk                     List disks / partitions
+  lsblk -f                  Show filesystems + UUIDs
+  blkid                     Show UUIDs / filesystem types
+
+
+SPACE
+──────────────────────────────────────────────────────────────
+  df -h                     Filesystem free space
+  du -sh <dir>              Directory size
+  du -sh *                  Sizes of current directory
+  du -h --max-depth=1       Directory sizes
+
+
+MOUNT
+──────────────────────────────────────────────────────────────
+  mount                     Show mounted filesystems
+  mount <device> <path>     Mount device
+  umount <path>             Unmount filesystem
+
+
+FIND LARGE FILES
+──────────────────────────────────────────────────────────────
+  du -ah . | sort -h        Find largest items
+  find . -type f -size +1G  Find files larger than 1 GB
+
+
+UUID
+──────────────────────────────────────────────────────────────
+  lsblk -f                  Find partition UUID
+  blkid                     Find UUID + filesystem
+
+
+FILESYSTEM
+──────────────────────────────────────────────────────────────
+  findmnt                   Show mount tree
+  findmnt <path>            Show filesystem for path

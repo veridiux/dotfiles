@@ -1,57 +1,96 @@
-// ┌─[ ZSH :: ALIASES ]──────────────────────────────────────┐
+// ┌─[ ZSH :: SHELL ]────────────────────────────────────────┐
 // │                                                         │
 // └─────────────────────────────────────────────────────────┘
 
-GENERAL
+VARIABLES
 ──────────────────────────────────────────────────────────────
-  ll                  List files with details + hidden files
-  la                  List files with hidden files
-  lla                 List files with details + hidden files
-  binds               Show system binds
-  reload              Reload .zshrc
-  ep                  Export installed packages
+  VAR="value"              Create variable
+  $VAR                     Expand variable
+  ${VAR}                   Explicit variable expansion
+  ${VAR:-default}          Use default if unset
+  ${VAR:default}           Use default if unset/null
 
 
-GIT
+SPECIAL VARIABLES
 ──────────────────────────────────────────────────────────────
-  gs                  Git status
-  ga                  Git add
-  gc                  Git commit
-  gp                  Git push
-  gu                  Safe git update
+  $0                       Script/function name
+  $1                       First argument
+  $2                       Second argument
+  $@                       All arguments
+  $#                       Number of arguments
+  $?                       Previous command exit code
+  $PWD                     Current directory
+  $HOME                    Home directory
+  $HOST                     Hostname
 
 
-PACMAN
+COMMAND SUBSTITUTION
 ──────────────────────────────────────────────────────────────
-  p                   Run pacman
-  pi                  Install package
-  ps                  Search packages
-  pf                  Search package files
-  pu                  Update system
-  pr                  Remove package
-  pss                 List installed packages
-  p!                  Install universal package list
+  $(command)               Insert command output
+
+  example:
+    DATE=$(date)
 
 
-YAY
+CONDITIONALS
 ──────────────────────────────────────────────────────────────
-  y                   Run yay
-  yi                  Install package
-  ys                  Search packages
-  yu                  Update system + AUR packages
-  yr                  Remove package
-  yq                  Show package information
-  yout                Remove orphaned packages
-  y!                  Install universal package list
+  if [[ condition ]]; then
+      command
+  fi
+
+  if [[ condition ]]; then
+      command
+  else
+      command
+  fi
 
 
-DIRECTORY
+LOOPS
 ──────────────────────────────────────────────────────────────
-  hd                  Go to home directory
-  df                  Go to dotfiles
-  cfg                 Go to ~/.config/
+  for item in list; do
+      command
+  done
+
+  while condition; do
+      command
+  done
 
 
-SYSTEM
+READ INPUT
 ──────────────────────────────────────────────────────────────
-  theme               Edit Quickshell theme
+  read -r VAR                Read input
+  read -q "confirm?Continue?"
+                              Read yes/no
+  read -r "var?Prompt: "     Read with prompt
+
+
+FUNCTIONS
+──────────────────────────────────────────────────────────────
+  function_name() {
+      command
+  }
+
+
+ARRAYS
+──────────────────────────────────────────────────────────────
+  files=(file1 file2 file3)
+  ${files[1]}               First item
+  ${files[@]}               All items
+  ${#files[@]}              Number of items
+
+
+REDIRECTION
+──────────────────────────────────────────────────────────────
+  command > file             Write output
+  command >> file            Append output
+  command 2> file            Redirect errors
+  command &> file            Redirect output + errors
+  command < file             Read from file
+  command | command          Pipe output
+
+
+OPERATORS
+──────────────────────────────────────────────────────────────
+  command && command         Run second if first succeeds
+  command || command         Run second if first fails
+  ! command                  Reverse exit status

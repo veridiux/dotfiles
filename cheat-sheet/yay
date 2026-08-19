@@ -1,0 +1,39 @@
+// ┌─[ YAY :: AUR PACKAGE MANAGEMENT ]───────────────────────┐
+// │                                                         │
+// └─────────────────────────────────────────────────────────┘
+
+INSTALL
+──────────────────────────────────────────────────────────────
+  yay -S <pkg>             Install package / AUR package
+  yay -Syu                 Update system + AUR
+
+
+SEARCH
+──────────────────────────────────────────────────────────────
+  yay -Ss <pkg>            Search repositories + AUR
+
+
+INFORMATION
+──────────────────────────────────────────────────────────────
+  yay -Qi <pkg>            Installed package information
+  yay -Si <pkg>            Repository/AUR information
+
+
+REMOVE
+──────────────────────────────────────────────────────────────
+  yay -R <pkg>             Remove package
+  yay -Rs <pkg>            Remove + dependencies
+  yay -Rns <pkg>           Remove + dependencies + configs
+
+
+CLEANUP
+──────────────────────────────────────────────────────────────
+  yay -Yc                  Remove unneeded AUR packages
+  yay -Sc                  Clean package cache
+
+
+COMMON
+──────────────────────────────────────────────────────────────
+  yay                     Launch yay
+  yay -Syu                Update everything
+  yay -Sua                Update AUR packages only

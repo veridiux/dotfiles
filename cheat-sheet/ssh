@@ -1,0 +1,36 @@
+// ┌─[ NETWORK :: SSH ]──────────────────────────────────────┐
+// │                                                         │
+// └─────────────────────────────────────────────────────────┘
+
+CONNECT
+──────────────────────────────────────────────────────────────
+  ssh user@host             Connect to SSH server
+  ssh -p <port> user@host   Connect using custom port
+
+
+KEYS
+──────────────────────────────────────────────────────────────
+  ssh-keygen -t ed25519     Generate SSH key
+  ssh-add ~/.ssh/id_ed25519
+                              Add key to agent
+
+
+COPY
+──────────────────────────────────────────────────────────────
+  scp file user@host:path   Copy file to host
+  scp user@host:path file   Copy file from host
+
+
+SYNC
+──────────────────────────────────────────────────────────────
+  rsync -av source/ dest/   Sync directories
+  rsync -avz source/ host:path/
+                              Sync over SSH
+
+
+SSH CONFIG
+──────────────────────────────────────────────────────────────
+  ~/.ssh/config             SSH host configuration
+
+  chmod 700 ~/.ssh
+  chmod 600 ~/.ssh/*

@@ -1,0 +1,33 @@
+// ┌─[ FILES :: SEARCH ]─────────────────────────────────────┐
+// │                                                         │
+// └─────────────────────────────────────────────────────────┘
+
+FIND
+──────────────────────────────────────────────────────────────
+  find . -name "file"       Find by name
+  find . -type f            Find files
+  find . -type d            Find directories
+  find . -type f -name "*.qml"
+                              Find QML files
+  find . -type f -size +1G  Find files > 1 GB
+
+
+GREP
+──────────────────────────────────────────────────────────────
+  grep "text" file          Search file
+  grep -r "text" .          Search recursively
+  grep -Ri "text" .         Recursive + case insensitive
+  grep -n "text" file       Show line numbers
+
+
+RIPGREP
+──────────────────────────────────────────────────────────────
+  rg "text"                 Search recursively
+  rg -i "text"              Case insensitive
+  rg "text" -g "*.qml"      Search only QML files
+
+
+FILE INFORMATION
+──────────────────────────────────────────────────────────────
+  file <file>               Identify file type
+  stat <file>               Detailed file information

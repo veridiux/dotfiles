@@ -1,0 +1,68 @@
+// ┌─[ QML :: QUICK REFERENCE ]──────────────────────────────┐
+// │                                                         │
+// └─────────────────────────────────────────────────────────┘
+
+OBJECTS
+──────────────────────────────────────────────────────────────
+  Rectangle { }             Basic visual element
+  Text { }                  Display text
+  Item { }                  Invisible container
+  MouseArea { }             Mouse interaction
+  Image { }                 Display image
+
+
+PROPERTIES
+──────────────────────────────────────────────────────────────
+  id: object                Object identifier
+  width: 100                Set width
+  height: 100               Set height
+  visible: true             Visibility
+  opacity: 1.0              Transparency
+  color: "..."              Color
+
+
+ANCHORS
+──────────────────────────────────────────────────────────────
+  anchors.fill: parent      Fill parent
+  anchors.centerIn: parent  Center in parent
+  anchors.left: parent.left
+  anchors.right: parent.right
+  anchors.top: parent.top
+  anchors.bottom: parent.bottom
+
+
+TEXT
+──────────────────────────────────────────────────────────────
+  text: "Hello"             Set text
+  font.pixelSize: 20        Font size
+  font.bold: true           Bold text
+  horizontalAlignment: Text.AlignHCenter
+                              Center horizontally
+
+
+SIGNALS
+──────────────────────────────────────────────────────────────
+  onClicked: { }            Mouse click handler
+  onPressed: { }            Mouse press handler
+  onReleased: { }           Mouse release handler
+
+
+COMPONENT LIFECYCLE
+──────────────────────────────────────────────────────────────
+  Component.onCompleted: { }
+                              Run when component loads
+
+
+DATE / TIME
+──────────────────────────────────────────────────────────────
+  Qt.formatDateTime(
+      date,
+      "hh:mm"
+  )
+
+  Common:
+    "hh:mm"
+    "hh:mm:ss"
+    "yyyy-MM-dd"
+    "MM/dd/yyyy"
+    "ddd MMM dd"

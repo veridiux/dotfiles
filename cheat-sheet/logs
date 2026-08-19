@@ -1,0 +1,32 @@
+// ┌─[ SYSTEM :: LOGS ]──────────────────────────────────────┐
+// │                                                         │
+// └─────────────────────────────────────────────────────────┘
+
+JOURNAL
+──────────────────────────────────────────────────────────────
+  journalctl               Show system journal
+  journalctl -b            Current boot
+  journalctl -b -1         Previous boot
+  journalctl -f            Follow live logs
+  journalctl -n 100        Last 100 entries
+
+
+ERRORS
+──────────────────────────────────────────────────────────────
+  journalctl -p err        Show errors
+  journalctl -p warning    Show warnings
+  journalctl -b -p err     Boot errors
+
+
+SERVICES
+──────────────────────────────────────────────────────────────
+  journalctl -u <service>  Service logs
+  journalctl -u <service> -f
+                             Follow service logs
+
+
+KERNEL
+──────────────────────────────────────────────────────────────
+  dmesg                     Kernel messages
+  dmesg -w                  Follow kernel messages
+  journalctl -k             Kernel journal

@@ -1,0 +1,41 @@
+// ┌─[ STORAGE :: MOUNTS ]───────────────────────────────────┐
+// │                                                         │
+// └─────────────────────────────────────────────────────────┘
+
+VIEW
+──────────────────────────────────────────────────────────────
+  lsblk -f                  Devices + filesystems
+  findmnt                   Mount tree
+  mount                     Current mounts
+  df -h                     Mounted filesystem usage
+
+
+MOUNT
+──────────────────────────────────────────────────────────────
+  sudo mount /dev/sdX1 /mnt
+                              Mount partition
+
+  sudo mount -a              Mount everything in fstab
+
+
+UNMOUNT
+──────────────────────────────────────────────────────────────
+  sudo umount /mnt/path     Unmount filesystem
+
+
+IDENTIFY
+──────────────────────────────────────────────────────────────
+  lsblk -f                  Find UUID
+  blkid                     Find UUID + filesystem
+  findmnt /path              Find device mounted at path
+
+
+FSTAB
+──────────────────────────────────────────────────────────────
+  /etc/fstab                Persistent mount configuration
+
+  Test changes:
+    sudo mount -a
+
+  If it returns without errors:
+    fstab syntax is valid

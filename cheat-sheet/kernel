@@ -1,0 +1,39 @@
+// ┌─[ LINUX :: KERNEL ]─────────────────────────────────────┐
+// │                                                         │
+// └─────────────────────────────────────────────────────────┘
+
+VERSION
+──────────────────────────────────────────────────────────────
+  uname -r                  Current kernel
+  uname -a                  Full kernel information
+
+
+INSTALLED
+──────────────────────────────────────────────────────────────
+  pacman -Q | grep linux    Installed kernel packages
+  pacman -Qs linux          Search kernel packages
+
+
+MODULES
+──────────────────────────────────────────────────────────────
+  lsmod                     Loaded modules
+  modinfo <module>          Module information
+  sudo modprobe <module>    Load module
+  sudo modprobe -r <module> Remove module
+
+
+DKMS
+──────────────────────────────────────────────────────────────
+  dkms status               Show DKMS modules
+  sudo dkms autoinstall     Build modules for current kernel
+
+
+INITRAMFS
+──────────────────────────────────────────────────────────────
+  mkinitcpio -P             Rebuild all images
+
+
+LOGS
+──────────────────────────────────────────────────────────────
+  dmesg                     Kernel messages
+  journalctl -k             Kernel journal

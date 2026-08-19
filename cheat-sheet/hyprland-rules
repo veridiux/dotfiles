@@ -1,0 +1,47 @@
+// ┌─[ HYPRLAND :: WINDOW RULES ]────────────────────────────┐
+// │                                                         │
+// └─────────────────────────────────────────────────────────┘
+
+INSPECT WINDOW
+──────────────────────────────────────────────────────────────
+  hyprctl activewindow       Show active window
+  hyprctl clients            Show all windows
+
+
+COMMON MATCHES
+──────────────────────────────────────────────────────────────
+  class                     Match application class
+  title                     Match window title
+  initialClass              Match original class
+  initialTitle              Match original title
+
+
+COMMON RULES
+──────────────────────────────────────────────────────────────
+  float                     Make window floating
+  tile                      Force window to tile
+  size <w> <h>              Set window size
+  center                    Center window
+  move <x> <y>              Move window
+  workspace <n>              Assign workspace
+  opacity <value>           Set opacity
+  fullscreen                Force fullscreen
+  pin                       Keep window visible
+
+
+EXAMPLE
+──────────────────────────────────────────────────────────────
+  Match:
+    class = "^steam_app_default$"
+
+  Rules:
+    float = true
+    center = true
+    size = 1680x1050
+
+
+DEBUGGING
+──────────────────────────────────────────────────────────────
+  hyprctl clients            Verify actual class/title
+  hyprctl configerrors        Check configuration errors
+  hyprctl reload             Reload rules

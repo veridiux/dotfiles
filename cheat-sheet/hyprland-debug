@@ -1,0 +1,51 @@
+// ┌─[ HYPRLAND :: DEBUGGING ]───────────────────────────────┐
+// │                                                         │
+// └─────────────────────────────────────────────────────────┘
+
+WINDOW INFORMATION
+──────────────────────────────────────────────────────────────
+  hyprctl activewindow       Show active window information
+  hyprctl clients            Show every open window
+
+  Look for:
+    class                    Window class
+    title                    Window title
+    initialClass             Original class
+    initialTitle             Original title
+    pid                      Process ID
+    workspace                Current workspace
+
+
+MONITOR INFORMATION
+──────────────────────────────────────────────────────────────
+  hyprctl monitors           Show monitor configuration
+  hyprctl monitors all       Show detailed monitor information
+
+  Look for:
+    name                     Monitor name
+    description              Hardware description
+    resolution               Current resolution
+    position                 X/Y position
+    scale                    Display scaling
+
+
+WORKSPACE INFORMATION
+──────────────────────────────────────────────────────────────
+  hyprctl workspaces         Show all workspaces
+  hyprctl activeworkspace    Show current workspace
+
+
+CONFIGURATION
+──────────────────────────────────────────────────────────────
+  hyprctl reload             Reload configuration
+  hyprctl configerrors        Show configuration errors
+
+
+RULE DEBUGGING
+──────────────────────────────────────────────────────────────
+  1. Run: hyprctl clients
+  2. Find class/title of application
+  3. Compare against window rule
+  4. Check for regex mismatches
+  5. Run: hyprctl configerrors
+  6. Reload: hyprctl reload

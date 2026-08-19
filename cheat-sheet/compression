@@ -1,0 +1,39 @@
+// ┌─[ FILES :: COMPRESSION ]────────────────────────────────┐
+// │                                                         │
+// └─────────────────────────────────────────────────────────┘
+
+TAR
+──────────────────────────────────────────────────────────────
+  tar -cf archive.tar files
+                              Create archive
+  tar -xf archive.tar        Extract archive
+  tar -tf archive.tar        List contents
+
+
+TAR + GZIP
+──────────────────────────────────────────────────────────────
+  tar -czf archive.tar.gz files
+                              Create compressed archive
+  tar -xzf archive.tar.gz    Extract archive
+
+
+TAR + XZ
+──────────────────────────────────────────────────────────────
+  tar -cJf archive.tar.xz files
+                              Create XZ archive
+  tar -xJf archive.tar.xz    Extract archive
+
+
+ZIP
+──────────────────────────────────────────────────────────────
+  zip archive.zip file       Create ZIP
+  zip -r archive.zip dir     ZIP directory
+  unzip archive.zip          Extract ZIP
+  unzip -l archive.zip       List contents
+
+
+7-ZIP
+──────────────────────────────────────────────────────────────
+  7z a archive.7z files      Create archive
+  7z x archive.7z            Extract archive
+  7z l archive.7z            List contents

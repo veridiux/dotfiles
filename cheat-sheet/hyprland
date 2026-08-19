@@ -1,0 +1,53 @@
+// ┌─[ HYPRLAND :: COMMANDS ]────────────────────────────────┐
+// │                                                         │
+// └─────────────────────────────────────────────────────────┘
+
+CONFIGURATION
+──────────────────────────────────────────────────────────────
+  hyprctl reload             Reload Hyprland configuration
+  hyprctl version             Show Hyprland version
+  hyprctl configerrors        Show configuration errors
+
+
+MONITORS
+──────────────────────────────────────────────────────────────
+  hyprctl monitors            Show all monitors
+  hyprctl monitors all        Show detailed monitor information
+
+
+WORKSPACES
+──────────────────────────────────────────────────────────────
+  hyprctl workspaces          Show all workspaces
+  hyprctl activeworkspace     Show current workspace
+
+
+WINDOWS
+──────────────────────────────────────────────────────────────
+  hyprctl clients             Show all open windows
+  hyprctl activewindow        Show active window
+
+
+LAYERS
+──────────────────────────────────────────────────────────────
+  hyprctl layers              Show Wayland layers
+
+
+DISPATCH
+──────────────────────────────────────────────────────────────
+  hyprctl dispatch <command>  Run a Hyprland dispatcher
+  hyprctl dispatch exec <cmd>
+                              Execute a command
+  hyprctl dispatch workspace 5
+                              Switch to workspace 5
+  hyprctl dispatch killactive
+                              Close active window
+  hyprctl dispatch togglefloating
+                              Toggle floating
+
+
+DEBUGGING
+──────────────────────────────────────────────────────────────
+  hyprctl clients             Find window class/title
+  hyprctl monitors            Check monitor names/resolution
+  hyprctl layers              Inspect layer-shell applications
+  hyprctl workspaces          Check workspace assignments

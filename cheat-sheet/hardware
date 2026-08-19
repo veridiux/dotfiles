@@ -1,0 +1,44 @@
+// ┌─[ SYSTEM :: HARDWARE ]──────────────────────────────────┐
+// │                                                         │
+// └─────────────────────────────────────────────────────────┘
+
+CPU
+──────────────────────────────────────────────────────────────
+  lscpu                     CPU information
+  lscpu | less              Detailed CPU information
+
+
+MEMORY
+──────────────────────────────────────────────────────────────
+  free -h                   RAM usage
+
+
+PCI
+──────────────────────────────────────────────────────────────
+  lspci                     List PCI devices
+  lspci -k                  Show drivers
+  lspci | grep -i vga       Find GPU
+  lspci | grep -i audio     Find audio hardware
+
+
+USB
+──────────────────────────────────────────────────────────────
+  lsusb                     List USB devices
+  lsusb -t                  USB device tree
+
+
+STORAGE
+──────────────────────────────────────────────────────────────
+  lsblk                     List block devices
+  blkid                     Show filesystem UUIDs
+
+
+GPU
+──────────────────────────────────────────────────────────────
+  nvidia-smi                NVIDIA GPU status
+  nvidia-settings           NVIDIA configuration
+
+
+SENSORS
+──────────────────────────────────────────────────────────────
+  sensors                   Temperature / voltage readings

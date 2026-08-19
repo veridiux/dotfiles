@@ -1,0 +1,45 @@
+// ┌─[ ARCH :: PACKAGE BACKUP ]──────────────────────────────┐
+// │                                                         │
+// └─────────────────────────────────────────────────────────┘
+
+EXPORT
+──────────────────────────────────────────────────────────────
+  ep                      Export package snapshot
+
+  Official:
+    pacman.txt            Official packages
+
+  AUR:
+    aur.txt               Foreign / AUR packages
+
+  Combined:
+    all.txt               Official + AUR
+
+  Installed:
+    installed.txt         Every installed package
+
+  Explicit:
+    explicit.txt          Explicitly installed packages
+
+  Orphans:
+    orphans.txt           Unneeded dependencies
+
+
+RESTORE
+──────────────────────────────────────────────────────────────
+  p!                      Restore official packages
+  y!                      Restore AUR packages
+
+
+PACKAGE DATABASE
+──────────────────────────────────────────────────────────────
+  pacman -Qqen            Official explicit package names
+  pacman -Qqem            Foreign explicit package names
+  pacman -Qdtq            Orphan package names
+
+
+SNAPSHOT LOCATION
+──────────────────────────────────────────────────────────────
+  ~/.dotfiles/packages/
+      └── <hostname>/
+          └── <timestamp>/

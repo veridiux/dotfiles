@@ -1,0 +1,43 @@
+// ┌─[ LINUX :: PERMISSIONS ]────────────────────────────────┐
+// │                                                         │
+// └─────────────────────────────────────────────────────────┘
+
+INSPECT
+──────────────────────────────────────────────────────────────
+  ls -l                     Show permissions
+  id                        Show user/group IDs
+  groups                    Show group membership
+
+
+CHMOD
+──────────────────────────────────────────────────────────────
+  chmod +x file             Make executable
+  chmod -x file             Remove executable
+  chmod 644 file            Owner RW, everyone R
+  chmod 755 file            Owner RWX, everyone RX
+  chmod 600 file            Owner RW only
+  chmod -R 755 directory    Recursive permissions
+
+
+CHOWN
+──────────────────────────────────────────────────────────────
+  sudo chown user file      Change owner
+  sudo chown user:group file
+                              Change owner + group
+  sudo chown -R user:group directory
+                              Recursive ownership
+
+
+COMMON
+──────────────────────────────────────────────────────────────
+  644                       Files
+  755                       Executable files / directories
+  600                       Private files
+  700                       Private directories
+
+
+SUDO
+──────────────────────────────────────────────────────────────
+  sudo <command>            Run as root
+  sudo -i                   Root shell
+  sudo -k                   Forget cached credentials

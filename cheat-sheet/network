@@ -1,0 +1,42 @@
+// ┌─[ NETWORK :: COMMANDS ]─────────────────────────────────┐
+// │                                                         │
+// └─────────────────────────────────────────────────────────┘
+
+INTERFACES
+──────────────────────────────────────────────────────────────
+  ip addr                   Show IP addresses
+  ip link                   Show network interfaces
+  ip -br addr               Compact IP information
+
+
+ROUTES
+──────────────────────────────────────────────────────────────
+  ip route                  Show routing table
+  ip route get 1.1.1.1     Show route to destination
+
+
+CONNECTIVITY
+──────────────────────────────────────────────────────────────
+  ping <host>               Test connectivity
+  ping 1.1.1.1             Test internet without DNS
+  ping google.com           Test internet + DNS
+
+
+NETWORKMANAGER
+──────────────────────────────────────────────────────────────
+  nmcli device status       Show network devices
+  nmcli connection show     Show connections
+  nmcli device wifi list    List Wi-Fi networks
+  nmcli device wifi connect <SSID>
+                              Connect to Wi-Fi
+
+
+DNS
+──────────────────────────────────────────────────────────────
+  resolvectl status         DNS information
+  resolvectl query <host>   Test DNS lookup
+
+
+PUBLIC IP
+──────────────────────────────────────────────────────────────
+  curl ifconfig.me          Show public IPv4 address

@@ -1,0 +1,37 @@
+// ┌─[ SYSTEM :: PROCESSES ]─────────────────────────────────┐
+// │                                                         │
+// └─────────────────────────────────────────────────────────┘
+
+LIST
+──────────────────────────────────────────────────────────────
+  ps aux                    List all processes
+  pgrep <name>              Find process by name
+  pidof <name>              Find process PID
+
+
+MONITOR
+──────────────────────────────────────────────────────────────
+  top                       Process monitor
+  htop                      Interactive process monitor
+  btop                      System monitor
+
+
+KILL
+──────────────────────────────────────────────────────────────
+  kill <PID>                Send signal to process
+  kill -9 <PID>             Force kill process
+  pkill <name>              Kill by process name
+  pkill -9 <name>           Force kill by name
+
+
+FIND PROCESS
+──────────────────────────────────────────────────────────────
+  ps aux | grep <name>      Search running processes
+  pgrep -a <name>           Process + command line
+  pidof <name>              Show PID
+
+
+PORT PROCESS
+──────────────────────────────────────────────────────────────
+  ss -tulpn                Show listening processes
+  lsof -i :<port>          Find process using port

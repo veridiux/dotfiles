@@ -1,0 +1,54 @@
+// ┌─[ PACMAN :: PACKAGE MANAGEMENT ]────────────────────────┐
+// │                                                         │
+// └─────────────────────────────────────────────────────────┘
+
+INSTALL
+──────────────────────────────────────────────────────────────
+  sudo pacman -S <pkg>     Install package
+  sudo pacman -Syu         Update system + packages
+  sudo pacman -S --needed  Install without reinstalling
+
+
+SEARCH
+──────────────────────────────────────────────────────────────
+  pacman -Ss <pkg>         Search repositories
+  pacman -Qs <pkg>         Search installed packages
+  pacman -F <file>         Search package database for file
+  pacman -Fy               Refresh file database
+
+
+INFORMATION
+──────────────────────────────────────────────────────────────
+  pacman -Qi <pkg>         Installed package information
+  pacman -Si <pkg>         Repository package information
+  pacman -Ql <pkg>         List package files
+  pacman -Qo <file>        Find package owning file
+
+
+LIST PACKAGES
+──────────────────────────────────────────────────────────────
+  pacman -Q                List installed packages
+  pacman -Qe               Explicitly installed packages
+  pacman -Qd               Dependency packages
+  pacman -Qm               Foreign/AUR packages
+  pacman -Qn               Official repository packages
+  pacman -Qdt              Orphan packages
+
+
+REMOVE
+──────────────────────────────────────────────────────────────
+  sudo pacman -R <pkg>     Remove package
+  sudo pacman -Rs <pkg>    Remove + unused dependencies
+  sudo pacman -Rns <pkg>   Remove + config + dependencies
+
+
+CACHE
+──────────────────────────────────────────────────────────────
+  sudo pacman -Sc          Remove old package cache
+  sudo pacman -Scc         Remove entire package cache
+
+
+COMMON
+──────────────────────────────────────────────────────────────
+  sudo pacman -Syu         Full system update
+  sudo pacman -Qdtq        List orphan package names

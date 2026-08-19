@@ -1,0 +1,54 @@
+// ┌─[ SHELL :: SCRIPTING ]──────────────────────────────────┐
+// │                                                         │
+// └─────────────────────────────────────────────────────────┘
+
+EXIT STATUS
+──────────────────────────────────────────────────────────────
+  $?                       Previous command status
+  0                        Success
+  non-zero                 Failure
+
+  command || exit 1        Exit if command fails
+  command && command       Continue if successful
+
+
+ARGUMENTS
+──────────────────────────────────────────────────────────────
+  $1                       First argument
+  $2                       Second argument
+  $@                       All arguments
+  $#                       Argument count
+
+
+COMMAND CHECKS
+──────────────────────────────────────────────────────────────
+  command -v <command>     Check if command exists
+  [[ -f file ]]            File exists
+  [[ -d directory ]]       Directory exists
+  [[ -n "$VAR" ]]          Variable is not empty
+  [[ -z "$VAR" ]]          Variable is empty
+
+
+USEFUL PATTERNS
+──────────────────────────────────────────────────────────────
+  local VAR                Function-local variable
+  readonly VAR             Read-only variable
+  export VAR=value         Export variable
+
+
+FILES
+──────────────────────────────────────────────────────────────
+  mkdir -p directory       Create directory tree
+  cp source destination    Copy
+  mv source destination    Move / rename
+  rm file                  Remove
+  rm -rf directory         Remove recursively
+  touch file               Create empty file
+
+
+TEXT
+──────────────────────────────────────────────────────────────
+  printf '%s\n' "text"     Reliable formatted output
+  echo "text"              Simple output
+  cat file                 Display file
+  less file                Paginated file viewer

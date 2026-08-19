@@ -1,0 +1,38 @@
+// ┌─[ QUICKSHELL :: COMMANDS ]──────────────────────────────┐
+// │                                                         │
+// └─────────────────────────────────────────────────────────┘
+
+START
+──────────────────────────────────────────────────────────────
+  quickshell                Launch Quickshell
+  quickshell &              Launch in background
+
+
+RESTART
+──────────────────────────────────────────────────────────────
+  pkill quickshell
+  quickshell &              Restart Quickshell
+
+
+DEBUGGING
+──────────────────────────────────────────────────────────────
+  quickshell                Watch terminal output
+  pkill quickshell          Stop running instance
+
+
+IPC
+──────────────────────────────────────────────────────────────
+  quickshell ipc list       List IPC handlers
+  quickshell ipc call <handler> <function>
+                              Call IPC function
+
+
+CONFIGURATION
+──────────────────────────────────────────────────────────────
+  ~/.config/quickshell/     Quickshell configuration
+  shell.qml                 Main shell
+  components/               Reusable components
+  panels/                   Panels
+  popups/                   Popup windows
+  widgets/                  Widgets
+  themes/                   Theme files

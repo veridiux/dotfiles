@@ -1,0 +1,50 @@
+// ┌─[ SYSTEM :: MANAGEMENT ]────────────────────────────────┐
+// │                                                         │
+// └─────────────────────────────────────────────────────────┘
+
+SYSTEM
+──────────────────────────────────────────────────────────────
+  uname -r                  Show kernel version
+  uname -a                  Show system information
+  hostnamectl               Show hostname information
+  uptime                    Show uptime
+  date                      Show current date/time
+
+
+SERVICES
+──────────────────────────────────────────────────────────────
+  systemctl status <svc>    Show service status
+  systemctl start <svc>     Start service
+  systemctl stop <svc>      Stop service
+  systemctl restart <svc>   Restart service
+  systemctl enable <svc>    Enable at boot
+  systemctl disable <svc>   Disable at boot
+
+
+FAILED SERVICES
+──────────────────────────────────────────────────────────────
+  systemctl --failed        Show failed services
+
+
+LOGS
+──────────────────────────────────────────────────────────────
+  journalctl -b             Current boot logs
+  journalctl -b -1          Previous boot logs
+  journalctl -f             Follow live logs
+  journalctl -u <service>   Service logs
+  journalctl -p err -b      Errors from current boot
+
+
+POWER
+──────────────────────────────────────────────────────────────
+  systemctl reboot          Reboot system
+  systemctl poweroff        Shut down system
+  systemctl suspend         Suspend system
+
+
+PROCESSES
+──────────────────────────────────────────────────────────────
+  ps aux                    List processes
+  pgrep <name>              Find process
+  pkill <name>              Kill processes by name
+  kill <PID>                Kill process by PID

@@ -1,0 +1,65 @@
+// ┌─[ LINUX :: TROUBLESHOOTING ]────────────────────────────┐
+// │                                                         │
+// └─────────────────────────────────────────────────────────┘
+
+SYSTEM
+──────────────────────────────────────────────────────────────
+  systemctl --failed        Find failed services
+  journalctl -b -p err      Boot errors
+  journalctl -f             Follow system logs
+  dmesg                     Kernel messages
+
+
+PROCESS
+──────────────────────────────────────────────────────────────
+  ps aux                    List processes
+  pgrep <name>              Find process
+  pkill <name>              Kill process
+  ss -tulpn                 Find listening ports
+
+
+DISK
+──────────────────────────────────────────────────────────────
+  lsblk -f                  Check disks/filesystems
+  df -h                     Check free space
+  du -sh <dir>              Check directory size
+  findmnt                   Check mounts
+
+
+NETWORK
+──────────────────────────────────────────────────────────────
+  ip addr                   Check IP
+  ip route                  Check routing
+  ping 1.1.1.1              Test internet
+  ping google.com            Test DNS
+  ss -tulpn                 Check ports
+
+
+HYPRLAND
+──────────────────────────────────────────────────────────────
+  hyprctl clients            Inspect windows
+  hyprctl monitors           Inspect monitors
+  hyprctl workspaces         Inspect workspaces
+  hyprctl configerrors       Find config errors
+  hyprctl reload             Reload configuration
+
+
+QUICKSHELL
+──────────────────────────────────────────────────────────────
+  pkill quickshell
+  quickshell                 Restart + watch errors
+
+
+PACKAGE
+──────────────────────────────────────────────────────────────
+  pacman -Q                  List installed packages
+  pacman -Qdtq               Find orphans
+  pacman -Qo <file>          Find package owning file
+  pacman -Qs <package>       Search installed packages
+
+
+PERMISSIONS
+──────────────────────────────────────────────────────────────
+  ls -ld <path>              Check permissions
+  namei -l <path>            Check path permissions
+  id                         Check current user/groups

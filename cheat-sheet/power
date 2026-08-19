@@ -1,0 +1,55 @@
+// ┌─[ SYSTEM :: POWER & GPU ]───────────────────────────────┐
+// │                                                         │
+// └─────────────────────────────────────────────────────────┘
+
+POWER PROFILE
+──────────────────────────────────────────────────────────────
+  powerprofilesctl          Show current profile
+  powerprofilesctl list     List available profiles
+  powerprofilesctl set performance
+                              Performance mode
+  powerprofilesctl set power-saver
+                              Power saving mode
+
+
+NVIDIA
+──────────────────────────────────────────────────────────────
+  nvidia-smi                GPU status
+  nvidia-smi -l 1           Refresh every second
+
+
+BRIGHTNESS
+──────────────────────────────────────────────────────────────
+  brightnessctl             Show brightness devices
+  brightnessctl -d amdgpu_bl1 set 50%
+                              Set display brightness
+  brightnessctl -d amdgpu_bl1 set 5%+
+                              Increase brightness
+  brightnessctl -d amdgpu_bl1 set 5%-
+                              Decrease brightness
+
+
+KEYBOARD BACKLIGHT
+──────────────────────────────────────────────────────────────
+  brightnessctl -l          List brightness devices
+  brightnessctl -d <device> set 50%
+
+
+POWER
+──────────────────────────────────────────────────────────────
+  powerprofilesctl get      Show current profile
+  cat /sys/class/power_supply/BAT1/status
+                              Battery status
+
+
+BATTERY
+──────────────────────────────────────────────────────────────
+  upower -i $(upower -e | grep BAT)
+                              Battery information
+
+
+POWER DEBUGGING
+──────────────────────────────────────────────────────────────
+  powertop                  Power consumption analysis
+  systemctl status power-profiles-daemon
+                              Check power daemon

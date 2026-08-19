@@ -1,0 +1,28 @@
+// ┌─[ STORAGE :: DISK TOOLS ]───────────────────────────────┐
+// │                                                         │
+// └─────────────────────────────────────────────────────────┘
+
+USAGE
+──────────────────────────────────────────────────────────────
+  df -h                     Filesystem usage
+  du -sh <dir>              Directory size
+  du -sh *                  Current directory sizes
+
+
+LARGE FILES
+──────────────────────────────────────────────────────────────
+  du -ah . | sort -h        Sort files by size
+  find . -type f -size +1G  Files larger than 1 GB
+
+
+NVME / SSD
+──────────────────────────────────────────────────────────────
+  lsblk                     Show drives
+  lsblk -d                  Show physical disks
+  smartctl -a /dev/nvme0    SMART information
+
+
+MOUNT INFORMATION
+──────────────────────────────────────────────────────────────
+  findmnt                   Show mount tree
+  lsblk -f                  Filesystem + UUID information

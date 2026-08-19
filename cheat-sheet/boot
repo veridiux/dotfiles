@@ -1,0 +1,34 @@
+// ┌─[ LINUX :: BOOT ]───────────────────────────────────────┐
+// │                                                         │
+// └─────────────────────────────────────────────────────────┘
+
+BOOT INFORMATION
+──────────────────────────────────────────────────────────────
+  bootctl status            Show boot information
+  efibootmgr                Show EFI boot entries
+
+
+KERNEL
+──────────────────────────────────────────────────────────────
+  uname -r                  Current kernel
+  ls /boot                  List boot files
+
+
+INITRAMFS
+──────────────────────────────────────────────────────────────
+  mkinitcpio -P             Rebuild all initramfs images
+
+
+LIMINE
+──────────────────────────────────────────────────────────────
+  /boot/EFI/BOOT/limine.conf
+                              Limine configuration
+
+  /boot/EFI/BOOT/            EFI boot files
+
+
+DEBUGGING
+──────────────────────────────────────────────────────────────
+  journalctl -b             Current boot logs
+  journalctl -b -1          Previous boot
+  systemctl --failed        Failed services

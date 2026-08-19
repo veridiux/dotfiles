@@ -1,0 +1,114 @@
+// ┌─[ GIT :: COMMANDS ]─────────────────────────────────────┐
+// │                                                         │
+// └─────────────────────────────────────────────────────────┘
+
+STATUS
+──────────────────────────────────────────────────────────────
+  git status                Show repository status
+  git diff                  Show unstaged changes
+  git diff --cached         Show staged changes
+  git log --oneline         Compact history
+
+
+STAGING
+──────────────────────────────────────────────────────────────
+  git add <file>            Stage file
+  git add -A                Stage everything
+  git restore <file>        Discard unstaged changes
+  git restore --staged      Unstage file
+
+
+COMMIT
+──────────────────────────────────────────────────────────────
+  git commit -m "message"   Create commit
+  git commit --amend        Modify last commit
+
+
+BRANCHES
+──────────────────────────────────────────────────────────────
+  git branch                List branches
+  git branch <name>         Create branch
+  git switch <name>         Switch branch
+  git switch -c <name>      Create + switch branch
+  git branch -d <name>     Delete branch
+
+
+REMOTE
+──────────────────────────────────────────────────────────────
+  git remote -v             Show remotes
+  git fetch                 Download remote changes
+  git pull                  Fetch + merge
+  git pull --rebase         Fetch + rebase
+  git push                  Push changes
+
+
+STASH
+──────────────────────────────────────────────────────────────
+  git stash                 Save changes temporarily
+  git stash pop             Restore latest stash
+  git stash list            List stashes
+  git stash drop            Delete stash
+
+
+HISTORY
+──────────────────────────────────────────────────────────────
+  git log                   Full history
+  git log --oneline         Compact history
+  git log --graph --all     Visual history
+  git reflog                Local reference history
+
+
+UNDO
+──────────────────────────────────────────────────────────────
+  git restore <file>        Discard file changes
+  git restore --staged      Unstage changes
+  git reset HEAD~1          Undo commit, keep changes
+  git reset --hard HEAD~1   Undo commit + changes
+  git reflog                Recover lost commits
+
+
+
+// ┌─[ GIT :: RECOVERY ]─────────────────────────────────────┐
+// │                                                         │
+// └─────────────────────────────────────────────────────────┘
+
+BEFORE PANICKING
+──────────────────────────────────────────────────────────────
+  git status                Check current state
+  git reflog                Find previous HEAD positions
+  git log --all --oneline   Search all reachable commits
+
+
+UNDO LAST COMMIT
+──────────────────────────────────────────────────────────────
+  git reset --soft HEAD~1   Undo commit, keep staged changes
+  git reset HEAD~1          Undo commit, keep changes
+  git reset --hard HEAD~1   Undo commit + discard changes
+
+
+RECOVER LOST COMMIT
+──────────────────────────────────────────────────────────────
+  git reflog
+
+  Find desired commit:
+    abc1234
+
+  Recover:
+    git switch -c recovery abc1234
+
+
+RESTORE DELETED FILE
+──────────────────────────────────────────────────────────────
+  git restore <file>        Restore working-tree file
+
+
+UNSTAGE FILE
+──────────────────────────────────────────────────────────────
+  git restore --staged <file>
+
+
+ABORT OPERATIONS
+──────────────────────────────────────────────────────────────
+  git merge --abort         Abort merge
+  git rebase --abort        Abort rebase
+  git cherry-pick --abort   Abort cherry-pick
