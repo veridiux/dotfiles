@@ -1,0 +1,123 @@
+// ┌─[ GITHUB :: ARCH LINUX SETUP ]──────────────────────────┐
+// │                                                         │
+// └─────────────────────────────────────────────────────────┘
+
+INSTALL
+──────────────────────────────────────────────────────────────
+  sudo pacman -S git openssh
+
+
+GIT IDENTITY
+──────────────────────────────────────────────────────────────
+  git config --global user.name "justin"
+  git config --global user.email "veridiux@gmail.com"
+
+  # Check configuration
+  git config --global --list
+
+
+SSH KEY
+──────────────────────────────────────────────────────────────
+  # Generate SSH key
+  ssh-keygen -t ed25519 -C "veridiux@gmail.com"
+
+  # Press Enter to accept the default location:
+  # ~/.ssh/id_ed25519
+  #
+  # Set a passphrase if desired.
+
+
+START SSH AGENT
+──────────────────────────────────────────────────────────────
+  eval "$(ssh-agent -s)"
+
+  ssh-add ~/.ssh/id_ed25519
+
+
+SHOW PUBLIC KEY
+──────────────────────────────────────────────────────────────
+  cat ~/.ssh/id_ed25519.pub
+
+  # Copy the entire output
+
+
+GITHUB
+──────────────────────────────────────────────────────────────
+  # GitHub → Settings → SSH and GPG keys
+  #
+  # Add new SSH key
+  # Title: <laptop name>
+  # Key type: Authentication Key
+  # Paste ~/.ssh/id_ed25519.pub
+
+
+TEST GITHUB SSH
+──────────────────────────────────────────────────────────────
+  ssh -T git@github.com
+
+  # Expected:
+  # Hi veridiux! You've successfully authenticated...
+
+
+CLONE REPOSITORIES
+──────────────────────────────────────────────────────────────
+  mkdir -p ~/git
+  cd ~/git
+
+  git clone git@github.com:veridiux/dotfiles.git
+
+
+ENTER EXISTING REPO
+──────────────────────────────────────────────────────────────
+  cd ~/git/<repo>
+
+
+CHECK REMOTE
+──────────────────────────────────────────────────────────────
+  git remote -v
+
+  # Should look like:
+  # origin  git@github.com:veridiux/<repo>.git (fetch)
+  # origin  git@github.com:veridiux/<repo>.git (push)
+
+
+SYNC REPOSITORY
+──────────────────────────────────────────────────────────────
+  git fetch origin
+  git pull
+
+
+CHECK BRANCH
+──────────────────────────────────────────────────────────────
+  git branch
+  git status
+
+
+SET UPSTREAM IF NEEDED
+──────────────────────────────────────────────────────────────
+  git branch --set-upstream-to=origin/main main
+
+  # Then:
+  git pull
+
+
+CREATE / PUSH NEW REPO
+──────────────────────────────────────────────────────────────
+  git init
+  git add .
+  git commit -m "Initial commit"
+
+  git branch -M main
+  git remote add origin git@github.com:veridiux/<repo>.git
+  git push -u origin main
+
+
+NORMAL DAILY WORKFLOW
+──────────────────────────────────────────────────────────────
+  git pull
+  git status
+
+  # After making changes:
+  git add .
+  git commit -m "Describe changes"
+  git push
