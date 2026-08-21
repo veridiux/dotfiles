@@ -8,6 +8,7 @@ alias ll='ls -lah'
 alias cs='cs_viewer'                # show the cheat sheet
 alias reload='source ~/.zshrc'
 alias ep='export_packages'
+alias il='is_link'
 
 # Git Shortcuts
 alias gs='git status'
@@ -177,6 +178,18 @@ gitupdate_safe() {
         echo "Git update complete."
     )
 }
+
+# ===============================
+# Is the current path symlinked
+# ===============================
+is_link() {
+	if [[ -L $PWD ]]; then
+  	echo "✓ $PWD is a symlink → $(readlink $PWD)"
+  	echo "  Resolved path: $(pwd -P)"
+	else	
+  	    echo "✗ $PWD is not a symlink"
+	fi
+}	
 
 # ===============================
 # Export packages to folder specified by host name
