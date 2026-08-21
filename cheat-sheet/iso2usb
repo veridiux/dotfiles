@@ -1,0 +1,52 @@
+// ┌─[ BAZZITE :: ISO TO USB ]───────────────────────────────┐
+// │                                                         │
+// └─────────────────────────────────────────────────────────┘
+
+IDENTIFY USB
+──────────────────────────────────────────────────────────────
+  lsblk -o NAME,SIZE,MODEL,TRAN,MOUNTPOINTS
+                            Show drives + USB devices
+
+  ⚠️ Identify USB by SIZE / MODEL before continuing
+  ⚠️ Use /dev/sdX, NOT /dev/sdX1
+
+
+UNMOUNT USB
+──────────────────────────────────────────────────────────────
+  sudo umount /dev/sdX*
+                            Unmount USB partitions
+
+
+WRITE ISO
+──────────────────────────────────────────────────────────────
+  sudo dd if=~/Downloads/bazzite.iso of=/dev/sdX \
+    bs=4M status=progress conv=fsync
+
+                            Write Bazzite ISO to USB
+
+  ⚠️ THIS WILL ERASE THE ENTIRE USB DRIVE
+
+
+FLUSH / SYNC
+──────────────────────────────────────────────────────────────
+  sync                      Flush pending writes
+
+
+EJECT
+──────────────────────────────────────────────────────────────
+  sudo eject /dev/sdX      Safely eject USB
+
+
+QUICK VERSION
+──────────────────────────────────────────────────────────────
+  lsblk -o NAME,SIZE,MODEL,TRAN,MOUNTPOINTS
+  sudo umount /dev/sdX*
+  sudo dd if=~/Downloads/bazzite.iso of=/dev/sdX bs=4M status=progress conv=fsync
+  sync
+  sudo eject /dev/sdX
+
+
+⚠️ Replace /dev/sdX with the ACTUAL USB device.
+   Example: /dev/sda — NOT /dev/sda1
+
+Press Enter to return to the menu...
