@@ -9,6 +9,7 @@ alias cs='cs_viewer'                # show the cheat sheet
 alias reload='source ~/.zshrc'
 alias ep='export_packages'
 alias il='is_link'
+alias zshedit='vscodium ~/.zshrc'
 
 # Git Shortcuts
 alias gs='git status'
@@ -48,6 +49,7 @@ alias cfg='cd ~/.config/'
 
 # Extra
 alias theme='vscodium ~/.config/quickshell/themes/Main.qml'
+alias sshm='sshmenu'
 
 # ===============================
 # System info on shell startup
@@ -335,6 +337,99 @@ cs_viewer() {
     done
 }
 
+# ===============================
+# SSH Menu
+# ===============================
+sshmenu() {
+    local dir="$HOME/.dotfiles/ssh-menu"
+    local choice
+    local file
+    local device
+    local name
+    local target
+    local description
+
+    while true; do
+        echo
+        echo "SSH MENU"
+        echo "────────────────────────────"
+
+        local -a files
+        files=("$dir"/*(N:t))
+
+        local i=1
+
+        for file in "${files[@]}"; do
+            printf "%d) %s\n" "$i" "$file"
+            ((i++))
+        done
+
+        echo "q) Quit"
+        echo
+
+        read "choice?Select group: "
+
+        [[ "$choice" == [qQ] ]] && return
+
+        if (( choice < 1 || choice > ${#files[@]} )); then
+            echo "Invalid selection."
+            continue
+        fi
+
+        file="$dir/${files[$choice]}"
+
+        while true; do
+            echo
+            echo "${files[$choice]:u}"
+            echo "────────────────────────────────────────────"
+
+            local -a devices
+            devices=("${(@f)$(grep -v '^[[:space:]]*$\|^[[:space:]]*#' "$file")}")
+
+            i=1
+
+            for device in "${devices[@]}"; do
+                name="${device%%|*}"
+                device="${device#*|}"
+                target="${device%%|*}"
+                description="${device#*|}"
+
+                printf "%d) %-18s — %-22s %s\n" \
+                    "$i" "$name" "$target" "$description"
+
+                ((i++))
+            done
+
+            echo "b) Back"
+            echo "q) Quit"
+            echo
+
+            read "choice?Select device: "
+
+            [[ "$choice" == [qQ] ]] && return
+            [[ "$choice" == [bB] ]] && break
+
+            if (( choice >= 1 && choice <= ${#devices[@]} )); then
+                device="${devices[$choice]}"
+
+                name="${device%%|*}"
+                device="${device#*|}"
+
+                target="${device%%|*}"
+
+                echo
+                echo "Connecting to $name..."
+                echo
+
+                ssh "$target"
+
+                break
+            else
+                echo "Invalid selection."
+            fi
+        done
+    done
+}
 
 #\\------------Custom Functions------------//#
 

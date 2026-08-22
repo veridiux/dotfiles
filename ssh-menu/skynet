@@ -1,0 +1,14 @@
+# Server
+bazarr|root@10.1.7.42|Media LXC
+radarr|root@10.1.7.43|Media LXC
+sonarr|root@10.1.7.44|Media LXC
+jackett|root@10.1.7.105|Media LXC
+qbitorrent|root@10.1.7.100|Media LXC
+
+Skynet|root@10.1.7.50|Server
+Ubuntu-Plex_Jelly|administrator@10.1.7.60|VM
+OpenWRT|root@10.1.7.150|Router
+pterodactyl|administrator@10.1.7.175|Server Management
+
+syncthing|root@10.1.7.110|LXC
+pivpn|pivpn@10.1.7.180|LXC
