@@ -1,0 +1,517 @@
+// ┌─[ DIABLO II :: RESSURECTED ]────────────────────────────┐
+// │                                                         │
+// └─────────────────────────────────────────────────────────┘
+
+QUICK REFERENCE
+──────────────────────────────────────────────────────────────
+  Runes are inserted LEFT → RIGHT in the order shown.
+  "os" = required sockets
+  "Lvl" = required character level
+  "Weapon" = all weapon types unless otherwise specified
+
+
+HELMETS
+──────────────────────────────────────────────────────────────
+  Nadir
+  Nef + Tir                         2os  Helm                 Lvl 13
+
+  Lore
+  Ort + Sol                         2os  Helm                 Lvl 27
+
+  Radiance
+  Nef + Sol + Ith                   3os  Helm                 Lvl 27
+
+  Ground
+  Shael + Io + Ort                  3os  Helm                 Lvl 35
+
+  Temper
+  Shael + Io + Ral                  3os  Helm                 Lvl 35
+
+  Hearth
+  Shael + Io + Thul                 3os  Helm                 Lvl 35
+
+  Cure
+  Shael + Io + Tal                  3os  Helm                 Lvl 35
+
+  Bulwark
+  Shael + Io + Sol                  3os  Helm                 Lvl 35
+
+  Wisdom
+  Pul + Ith + Eld                   3os  Helm                 Lvl 45
+
+  Delirium
+  Lem + Ist + Io                    3os  Helm                 Lvl 51
+
+  Coven
+  Ist + Ral + Io                    3os  Helm                 Lvl 51
+
+  Flickering Flame
+  Nef + Pul + Vex                   3os  Helm                 Lvl 55
+
+  Dream
+  Io + Jah + Pul                    3os  Helm                 Lvl 65
+
+  Metamorphosis
+  Io + Cham + Fal                   3os  Helm                 Lvl 67
+
+
+BODY ARMOR
+──────────────────────────────────────────────────────────────
+  Stealth
+  Tal + Eth                         2os  Body Armor           Lvl 17
+
+  Myth
+  Hel + Amn + Nef                   3os  Body Armor           Lvl 25
+
+  Authority
+  Hel + Shael + Ral                 3os  Body Armor           Lvl 29
+
+  Peace
+  Shael + Thul + Amn                3os  Body Armor           Lvl 29
+
+  Lionheart
+  Hel + Lum + Fal                   3os  Body Armor           Lvl 41
+
+  Hysteria
+  Shael + Ko + Eld                  3os  Body Armor           Lvl 39
+
+  Treachery
+  Shael + Thul + Lem                3os  Body Armor           Lvl 43
+
+  Wealth
+  Lem + Ko + Tir                    3os  Body Armor           Lvl 43
+
+  Enlightenment
+  Pul + Ral + Sol                   3os  Body Armor           Lvl 45
+
+  Bone
+  Sol + Um + Um                     3os  Body Armor           Lvl 47
+
+  Duress
+  Shael + Um + Thul                 3os  Body Armor           Lvl 47
+
+  Gloom
+  Fal + Um + Pul                    3os  Body Armor           Lvl 47
+
+  Rain
+  Ort + Mal + Ith                   3os  Body Armor           Lvl 49
+
+  Prudence
+  Mal + Tir                         2os  Body Armor           Lvl 49
+
+  Stone
+  Shael + Um + Pul + Lum            4os  Body Armor           Lvl 47
+
+  Principle
+  Ral + Gul + Eld                   3os  Body Armor           Lvl 53
+
+  Fortitude
+  El + Sol + Dol + Lo               4os  Body Armor           Lvl 59
+
+  Bramble
+  Ral + Ohm + Sur + Eth             4os  Body Armor           Lvl 61
+
+  Chains of Honor
+  Dol + Um + Ber + Ist              4os  Body Armor           Lvl 63
+
+  Dragon
+  Sur + Lo + Sol                    3os  Body Armor           Lvl 61
+
+  Enigma
+  Jah + Ith + Ber                   3os  Body Armor           Lvl 65
+
+
+SHIELDS
+──────────────────────────────────────────────────────────────
+  Ancients' Pledge
+  Ral + Ort + Tal                   3os  Shield               Lvl 21
+
+  Rhyme
+  Shael + Eth                       2os  Shield               Lvl 29
+
+  Splendor
+  Eth + Lum                         2os  Shield               Lvl 37
+
+  Sanctuary
+  Ko + Ko + Mal                     3os  Shield               Lvl 49
+
+  Dragon
+  Sur + Lo + Sol                    3os  Shield               Lvl 61
+
+  Dream
+  Io + Jah + Pul                    3os  Shield               Lvl 65
+
+  Phoenix
+  Vex + Vex + Lo + Jah              4os  Shield               Lvl 65
+
+  Spirit
+  Tal + Thul + Ort + Amn            4os  Shield               Lvl 25
+
+  Exile
+  Vex + Ohm + Ist + Dol             4os  Paladin Shield       Lvl 57
+
+  Vigilance
+  Dol + Gul                         2os  Shield / Grimoire    Lvl 53
+
+
+SWORDS
+──────────────────────────────────────────────────────────────
+  Steel
+  Tir + El                          2os  Sword / Axe / Mace   Lvl 13
+
+  King's Grace
+  Amn + Ral + Thul                  3os  Sword / Scepter      Lvl 25
+
+  Spirit
+  Tal + Thul + Ort + Amn            4os  Sword                Lvl 25
+
+  Oath
+  Shael + Pul + Mal + Lum           4os  Sword / Axe / Mace   Lvl 49
+
+  Lawbringer
+  Amn + Lem + Ko                    3os  Sword / Hammer       Lvl 43
+
+  Passion
+  Dol + Ort + Eld + Lem             4os  Weapon               Lvl 43
+
+  Voice of Reason
+  Lem + Ko + El + Eld               4os  Sword / Mace         Lvl 43
+
+  Crescent Moon
+  Shael + Um + Tir                  3os  Sword / Axe / Polearm Lvl 47
+
+  Kingslayer
+  Mal + Um + Gul + Fal              4os  Sword / Axe          Lvl 53
+
+  Grief
+  Eth + Tir + Lo + Mal + Ral        5os  Sword / Axe          Lvl 59
+
+  Death
+  Hel + El + Vex + Ort + Gul        5os  Sword / Axe          Lvl 55
+
+  Last Wish
+  Jah + Mal + Jah + Sur + Jah + Ber 6os  Sword / Axe / Hammer Lvl 65
+
+  Hand of Justice
+  Sur + Cham + Amn + Lo             4os  Weapon               Lvl 67
+
+  Doom
+  Hel + Ohm + Um + Lo + Cham        5os  Axe / Polearm / Hammer Lvl 67
+
+  Fury
+  Jah + Gul + Eth                   3os  Melee Weapon         Lvl 65
+
+  Voice of Reason
+  Lem + Ko + El + Eld               4os  Sword / Mace         Lvl 43
+
+
+AXES / MACES / HAMMERS
+──────────────────────────────────────────────────────────────
+  Black
+  Thul + Io + Nef                   3os  Club / Mace / Hammer  Lvl 35
+
+  Strength
+  Amn + Tir                         2os  Melee Weapon         Lvl 25
+
+  Honor
+  Amn + El + Ith + Tir + Sol        5os  Melee Weapon         Lvl 27
+
+  Oath
+  Shael + Pul + Mal + Lum           4os  Sword / Axe / Mace   Lvl 49
+
+  Kingslayer
+  Mal + Um + Gul + Fal              4os  Sword / Axe          Lvl 53
+
+  Famine
+  Fal + Ohm + Ort + Jah             4os  Axe / Hammer          Lvl 65
+
+  Beast
+  Ber + Tir + Um + Mal + Lum        5os  Axe / Scepter / Hammer Lvl 63
+
+  Death
+  Hel + El + Vex + Ort + Gul        5os  Sword / Axe          Lvl 55
+
+  Last Wish
+  Jah + Mal + Jah + Sur + Jah + Ber 6os  Sword / Axe / Hammer Lvl 65
+
+  Grief
+  Eth + Tir + Lo + Mal + Ral        5os  Sword / Axe          Lvl 59
+
+  Wind
+  Sur + El                          2os  Melee Weapon         Lvl 61
+
+  Hand of Justice
+  Sur + Cham + Amn + Lo             4os  Weapon               Lvl 67
+
+
+POLEARMS / SPEARS
+──────────────────────────────────────────────────────────────
+  Insight
+  Ral + Tir + Tal + Sol             4os  Polearm / Staff       Lvl 27
+
+  Obedience
+  Hel + Ko + Thul + Eth + Fal       5os  Polearm / Spear       Lvl 41
+
+  Crescent Moon
+  Shael + Um + Tir                  3os  Axe / Sword / Polearm Lvl 47
+
+  Rift
+  Hel + Ko + Lem + Gul              4os  Polearm / Scepter     Lvl 53
+
+  Infinity
+  Ber + Mal + Ber + Ist             4os  Polearm / Spear       Lvl 63
+
+  Pride
+  Cham + Sur + Io + Lo              4os  Polearm / Spear       Lvl 67
+
+  Doom
+  Hel + Ohm + Um + Lo + Cham        5os  Axe / Polearm / Hammer Lvl 67
+
+  Destruction
+  Vex + Lo + Ber + Jah + Ko         5os  Polearm / Sword       Lvl 65
+
+
+STAVES
+──────────────────────────────────────────────────────────────
+  Leaf
+  Tir + Ral                         2os  Staff                Lvl 19
+
+  Memory
+  Lum + Io + Sol + Eth              4os  Staff                Lvl 37
+
+  Insight
+  Ral + Tir + Tal + Sol             4os  Staff / Polearm       Lvl 27
+
+  Heart of the Oak
+  Ko + Vex + Pul + Thul             4os  Staff / Mace          Lvl 55
+
+  Obsession
+  Zod + Ist + Lem + Lum + Io + Nef  6os  Staff                Lvl 69
+
+
+WANDS
+──────────────────────────────────────────────────────────────
+  White
+  Dol + Io                          2os  Wand                Lvl 35
+
+
+SCEPTERS
+──────────────────────────────────────────────────────────────
+  Holy Thunder
+  Eth + Ral + Ort + Tal             4os  Scepter              Lvl 21
+
+  King's Grace
+  Amn + Ral + Thul                  3os  Sword / Scepter       Lvl 25
+
+  Rift
+  Hel + Ko + Lem + Gul              4os  Scepter / Polearm     Lvl 53
+
+  Lawbringer
+  Amn + Lem + Ko                    3os  Sword / Hammer        Lvl 43
+
+  Beast
+  Ber + Tir + Um + Mal + Lum        5os  Scepter / Axe / Hammer Lvl 63
+
+
+MISSILE WEAPONS
+──────────────────────────────────────────────────────────────
+  Zephyr
+  Ort + Eth                         2os  Bow / Crossbow        Lvl 21
+
+  Edge
+  Tir + Tal + Amn                   3os  Bow / Crossbow        Lvl 25
+
+  Melody
+  Shael + Ko + Nef                  3os  Bow / Crossbow        Lvl 39
+
+  Harmony
+  Tir + Ith + Sol + Ko              4os  Bow / Crossbow        Lvl 39
+
+  Insight
+  Ral + Tir + Tal + Sol             4os  Bow / Crossbow        Lvl 27
+
+  Brand
+  Jah + Lo + Mal + Gul              4os  Bow / Crossbow        Lvl 65
+
+  Wrath
+  Pul + Lum + Ber + Mal             4os  Bow / Crossbow        Lvl 63
+
+  Faith
+  Ohm + Jah + Lem + Eld             4os  Bow / Crossbow        Lvl 65
+
+  Ice
+  Amn + Shael + Jah + Lo            4os  Bow / Crossbow        Lvl 65
+
+  Mist
+  Cham + Shael + Gul + Thul + Ith   5os  Bow / Crossbow        Lvl 67
+
+
+CLAWS / KATARS
+──────────────────────────────────────────────────────────────
+  Pattern
+  Tal + Ort + Thul                 3os  Claw                 Lvl 23
+
+  Chaos
+  Fal + Ohm + Um                   3os  Claw                 Lvl 57
+
+  Plague
+  Cham + Shael + Um                3os  Sword / Claw / Dagger Lvl 67
+
+  Mosaic
+  Mal + Gul + Amn                  3os  Claw                 Lvl 53
+
+
+GENERAL WEAPONS
+──────────────────────────────────────────────────────────────
+  Malice
+  Ith + El + Eth                   3os  Melee Weapon          Lvl 15
+
+  Steel
+  Tir + El                         2os  Sword / Axe / Mace     Lvl 13
+
+  Strength
+  Amn + Tir                        2os  Melee Weapon          Lvl 25
+
+  Honor
+  Amn + El + Ith + Tir + Sol       5os  Melee Weapon          Lvl 27
+
+  Passion
+  Dol + Ort + Eld + Lem            4os  Weapon                Lvl 43
+
+  Silence
+  Dol + Eld + Hel + Ist + Tir + Vex
+                                   6os  Weapon                Lvl 55
+
+  Call to Arms
+  Amn + Ral + Mal + Ist + Ohm      5os  Weapon                Lvl 57
+
+  Fortitude
+  El + Sol + Dol + Lo              4os  Weapon                Lvl 59
+
+  Eternity
+  Amn + Ber + Ist + Sol + Sur      5os  Melee Weapon           Lvl 63
+
+  Breath of the Dying
+  Vex + Hel + El + Eld + Zod + Eth 6os  Weapon                Lvl 69
+
+  Beast
+  Ber + Tir + Um + Mal + Lum       5os  Axe / Scepter / Hammer  Lvl 63
+
+  Famine
+  Fal + Ohm + Ort + Jah            4os  Axe / Hammer            Lvl 65
+
+  Fury
+  Jah + Gul + Eth                  3os  Melee Weapon            Lvl 65
+
+  Last Wish
+  Jah + Mal + Jah + Sur + Jah + Ber
+                                   6os  Sword / Axe / Hammer    Lvl 65
+
+  Destruction
+  Vex + Lo + Ber + Jah + Ko        5os  Polearm / Sword         Lvl 65
+
+  Hand of Justice
+  Sur + Cham + Amn + Lo            4os  Weapon                  Lvl 67
+
+
+DAGGERS / KNIVES
+──────────────────────────────────────────────────────────────
+  Ritual
+  Amn + Shael + Ohm                3os  Knife                  Lvl 57
+
+  Plague
+  Cham + Shael + Um                3os  Knife / Sword / Claw   Lvl 67
+
+  Venom
+  Tal + Dol + Mal                  3os  Weapon                 Lvl 49
+
+  Void
+  Thul + Zod + Ist                 3os  Knife                  Lvl 69
+
+
+SPECIAL / NEW RUNEWORDS
+──────────────────────────────────────────────────────────────
+  Authority
+  Hel + Shael + Ral                3os  Body Armor             Lvl 29
+
+  Coven
+  Ist + Ral + Io                   3os  Helm                   Lvl 51
+
+  Vigilance
+  Dol + Gul                        2os  Shield / Grimoire      Lvl 53
+
+  Ritual
+  Amn + Shael + Ohm                3os  Knife                  Lvl 57
+
+  Void
+  Thul + Zod + Ist                 3os  Knife                  Lvl 69
+
+
+MOST IMPORTANT LEVELING RUNEWORDS
+──────────────────────────────────────────────────────────────
+  Stealth
+  Tal + Eth                        2os  Body Armor             Lvl 17
+
+  Leaf
+  Tir + Ral                        2os  Staff                  Lvl 19
+
+  Ancients' Pledge
+  Ral + Ort + Tal                  3os  Shield                 Lvl 21
+
+  Spirit
+  Tal + Thul + Ort + Amn           4os  Sword / Shield          Lvl 25
+
+  Lore
+  Ort + Sol                        2os  Helm                   Lvl 27
+
+  Insight
+  Ral + Tir + Tal + Sol            4os  Polearm / Staff / Bow   Lvl 27
+
+  Rhyme
+  Shael + Eth                      2os  Shield                 Lvl 29
+
+  Smoke
+  Nef + Lum                        2os  Body Armor             Lvl 37
+
+  Treachery
+  Shael + Thul + Lem               3os  Body Armor             Lvl 43
+
+
+HIGH-VALUE ENDGAME RUNEWORDS
+──────────────────────────────────────────────────────────────
+  Grief
+  Eth + Tir + Lo + Mal + Ral       5os  Sword / Axe             Lvl 59
+
+  Fortitude
+  El + Sol + Dol + Lo              4os  Weapon / Armor           Lvl 59
+
+  Chains of Honor
+  Dol + Um + Ber + Ist             4os  Body Armor               Lvl 63
+
+  Infinity
+  Ber + Mal + Ber + Ist            4os  Polearm / Spear           Lvl 63
+
+  Enigma
+  Jah + Ith + Ber                  3os  Body Armor               Lvl 65
+
+  Call to Arms
+  Amn + Ral + Mal + Ist + Ohm      5os  Weapon                   Lvl 57
+
+  Breath of the Dying
+  Vex + Hel + El + Eld + Zod + Eth
+                                   6os  Weapon                   Lvl 69
+
+  Last Wish
+  Jah + Mal + Jah + Sur + Jah + Ber
+                                   6os  Sword / Axe / Hammer      Lvl 65
+
+  Phoenix
+  Vex + Vex + Lo + Jah             4os  Weapon / Shield            Lvl 65
+
+  Heart of the Oak
+  Ko + Vex + Pul + Thul            4os  Staff / Mace               Lvl 55
+
+
+ 
+
+Press Enter to return to the menu...
