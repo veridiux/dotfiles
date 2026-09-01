@@ -1,0 +1,629 @@
+```text
+// ┌─[ DIABLO II :: RESURRECTED ]────────────────────────────┐
+// │ HORADRIC CUBE RECIPES                                   │
+// └─────────────────────────────────────────────────────────┘
+
+QUICK REFERENCE
+──────────────────────────────────────────────────────────────
+  Ingredients are inserted in ANY order unless noted.
+  "os" = required sockets
+  "P"  = Perfect Gem
+  "F"  = Flawless Gem
+  "N"  = Normal Gem
+  "C"  = Chipped Gem
+  "Magic" = Magic-quality item
+  "Rare"  = Rare-quality item
+  "Normal" = Normal-quality item
+
+
+══════════════════════════════════════════════════════════════
+  RUNE UPGRADES
+══════════════════════════════════════════════════════════════
+
+  3 El                              → Eld
+
+  3 Eld                             → Tir
+
+  3 Tir                             → Nef
+
+  3 Nef                             → Eth
+
+  3 Eth                             → Ith
+
+  3 Ith                             → Tal
+
+  3 Tal                             → Ral
+
+  3 Ral                             → Ort
+
+  3 Ort                             → Thul
+
+  3 Thul + C Topaz                  → Amn
+
+  3 Amn + C Amethyst                → Sol
+
+  3 Sol + C Sapphire                → Shael
+
+  3 Shael + C Ruby                  → Dol
+
+  3 Dol + C Emerald                 → Hel
+
+  3 Hel + C Diamond                 → Io
+
+  3 Io + F Topaz                    → Lum
+
+  3 Lum + F Amethyst                → Ko
+
+  3 Ko + F Sapphire                 → Fal
+
+  3 Fal + F Ruby                    → Lem
+
+  3 Lem + F Emerald                 → Pul
+
+  2 Pul + F Diamond                 → Um
+
+  2 Um + Topaz                      → Mal
+
+  2 Mal + Amethyst                  → Ist
+
+  2 Ist + Sapphire                  → Gul
+
+  2 Gul + Ruby                      → Vex
+
+  2 Vex + Emerald                   → Ohm
+
+  2 Ohm + Diamond                   → Lo
+
+  2 Lo + F Topaz                    → Sur
+
+  2 Sur + F Amethyst                → Ber
+
+  2 Ber + F Sapphire                → Jah
+
+  2 Jah + F Ruby                    → Cham
+
+  2 Cham + F Emerald                → Zod
+
+
+══════════════════════════════════════════════════════════════
+  GEM UPGRADES
+══════════════════════════════════════════════════════════════
+
+  3 Chipped Gem                     → Flawed Gem
+
+  3 Flawed Gem                      → Normal Gem
+
+  3 Normal Gem                      → Flawless Gem
+
+  3 Flawless Gem                    → Perfect Gem
+
+  Applies to:
+    Amethyst / Diamond / Emerald / Ruby / Sapphire / Topaz / Skull
+
+
+══════════════════════════════════════════════════════════════
+  SOCKET RECIPES
+══════════════════════════════════════════════════════════════
+
+  Ral + Amn + P Amethyst
+  + Normal Weapon                   → 1–6os Weapon
+
+  Tal + Thul + P Topaz
+  + Normal Body Armor               → 1–4os Body Armor
+
+  Ral + Thul + P Sapphire
+  + Normal Helm                     → 1–3os Helm
+
+  Tal + Amn + P Ruby
+  + Normal Shield                   → 1–4os Shield
+
+  NOTE:
+    Socket count is RANDOM.
+    Maximum sockets are still limited by the item's base,
+    item level, and maximum socket count.
+
+
+══════════════════════════════════════════════════════════════
+  REMOVE SOCKET CONTENTS
+══════════════════════════════════════════════════════════════
+
+  Hel + Scroll of Town Portal
+  + Socketed Item                   → Empty Socketed Item
+
+  WARNING:
+    Runes / Gems / Jewels removed from the sockets
+    are DESTROYED.
+
+
+══════════════════════════════════════════════════════════════
+  MAGIC ITEM RECIPES
+══════════════════════════════════════════════════════════════
+
+  3 Perfect Gems + Magic Item       → Rerolled Magic Item
+
+  3 Chipped Gems + Magic Weapon     → Socketed Magic Weapon
+                                      ilvl 25 / 1–2os
+
+  3 Flawless Gems + Magic Weapon    → Socketed Magic Weapon
+                                      ilvl 30 / 1–2os
+
+
+══════════════════════════════════════════════════════════════
+  RARE ITEM RECIPES
+══════════════════════════════════════════════════════════════
+
+  6 Perfect Skulls + Rare Item      → Rerolled Rare Item
+
+  1 P Skull + Stone of Jordan
+  + Rare Item                       → High-Level Rare Item
+
+  3 P Skulls + Stone of Jordan
+  + Rare Item                       → Rare Item + 1os
+
+
+══════════════════════════════════════════════════════════════
+  UNIQUE ITEM UPGRADES
+══════════════════════════════════════════════════════════════
+
+  Normal Unique Weapon
+  + Ral + Sol + P Emerald           → Exceptional Unique Weapon
+
+  Normal Unique Armor
+  + Tal + Shael + P Diamond         → Exceptional Unique Armor
+
+  Exceptional Unique Weapon
+  + Lum + Pul + P Emerald           → Elite Unique Weapon
+
+  Exceptional Unique Armor
+  + Ko + Lem + P Diamond            → Elite Unique Armor
+
+
+══════════════════════════════════════════════════════════════
+  RARE ITEM UPGRADES
+══════════════════════════════════════════════════════════════
+
+  Normal Rare Weapon
+  + Ort + Amn + P Sapphire          → Exceptional Rare Weapon
+
+  Normal Rare Armor
+  + Ral + Thul + P Amethyst         → Exceptional Rare Armor
+
+  Exceptional Rare Weapon
+  + Fal + Um + P Sapphire           → Elite Rare Weapon
+
+  Exceptional Rare Armor
+  + Ko + Pul + P Amethyst           → Elite Rare Armor
+
+
+══════════════════════════════════════════════════════════════
+  SET ITEM UPGRADES
+══════════════════════════════════════════════════════════════
+
+  Exceptional Set Weapon
+  + Lum + Pul + P Emerald           → Elite Set Weapon
+
+  Exceptional Set Armor
+  + Ko + Lem + P Diamond            → Elite Set Armor
+
+
+══════════════════════════════════════════════════════════════
+  REPAIR / RECHARGE
+══════════════════════════════════════════════════════════════
+
+  Ral + Armor                       → Fully Repaired Armor
+
+  Ort + Weapon                      → Fully Repaired Weapon
+
+  Ral + Flawed Gem + Armor          → Repair + Recharge Armor
+
+  Ort + Chipped Gem + Weapon        → Repair + Recharge Weapon
+
+  NOTE:
+    These recipes do NOT work on Ethereal items.
+
+
+══════════════════════════════════════════════════════════════
+  POTIONS
+══════════════════════════════════════════════════════════════
+
+  3 Health Potions
+  + 3 Mana Potions
+  + C Gem                           → Rejuvenation Potion
+
+  3 Health Potions
+  + 3 Mana Potions
+  + N Gem                           → Full Rejuvenation Potion
+
+  3 Rejuvenation Potions            → Full Rejuvenation Potion
+
+  Strangling Gas Potion
+  + Health Potion                   → Antidote Potion
+
+
+══════════════════════════════════════════════════════════════
+  JEWELRY
+══════════════════════════════════════════════════════════════
+
+  3 Magic Amulets                   → Random Magic Ring
+
+  3 Magic Rings                     → Random Magic Amulet
+
+
+  MAGIC RESISTANCE RINGS
+  ────────────────────────────────────────────────────────────
+
+  Magic Ring
+  + Thawing Potion
+  + P Sapphire                      → Cobalt Ring
+                                      21–30% Cold Resist
+
+  Magic Ring
+  + Rejuvenation Potion
+  + P Topaz                         → Coral Ring
+                                      21–30% Lightning Resist
+
+  Magic Ring
+  + Exploding Potion
+  + P Ruby                          → Garnet Ring
+                                      21–30% Fire Resist
+
+  Magic Ring
+  + Antidote Potion
+  + P Emerald                       → Jade Ring
+                                      21–30% Poison Resist
+
+
+  PRISMATIC AMULET
+  ────────────────────────────────────────────────────────────
+
+  Magic Amulet
+  + P Amethyst
+  + P Diamond
+  + P Emerald
+  + P Ruby
+  + P Sapphire
+  + P Topaz                         → Prismatic Amulet
+                                      16–20% All Resist
+
+
+══════════════════════════════════════════════════════════════
+  LOW-QUALITY ITEMS
+══════════════════════════════════════════════════════════════
+
+  Low-Quality Weapon
+  + Eld + C Gem                     → Normal Weapon
+
+  Low-Quality Armor
+  + El + C Gem                      → Normal Armor
+
+
+══════════════════════════════════════════════════════════════
+  MISCELLANEOUS
+══════════════════════════════════════════════════════════════
+
+  Axe + Dagger                      → Throwing Axe
+
+  Magic Sword
+  + 4 Health Potions
+  + Ruby                            → Magic Sword of the Leech
+
+
+══════════════════════════════════════════════════════════════
+  CASTER CRAFTS
+══════════════════════════════════════════════════════════════
+
+  Caster Helm
+  ────────────────────────────────────────────────────────────
+  Magic Helm / Casque / Armet
+  + Nef + P Amethyst + Jewel        → Caster Helm
+
+  Caster Body
+  ────────────────────────────────────────────────────────────
+  Magic Light Plate / Mage Plate / Archon Plate
+  + Tal + P Amethyst + Jewel        → Caster Body
+
+  Caster Gloves
+  ────────────────────────────────────────────────────────────
+  Magic Leather Gloves / Demonhide Gloves / Bramble Mitts
+  + Ort + P Amethyst + Jewel        → Caster Gloves
+
+  Caster Belt
+  ────────────────────────────────────────────────────────────
+  Magic Light Belt / Sharkskin Belt / Vampirefang Belt
+  + Ith + P Amethyst + Jewel        → Caster Belt
+
+  Caster Boots
+  ────────────────────────────────────────────────────────────
+  Magic Boots / Demonhide Boots / Wyrmhide Boots
+  + Thul + P Amethyst + Jewel       → Caster Boots
+
+  Caster Shield
+  ────────────────────────────────────────────────────────────
+  Magic Small Shield / Round Shield / Luna
+  + Eth + P Amethyst + Jewel        → Caster Shield
+
+  Caster Weapon
+  ────────────────────────────────────────────────────────────
+  Magic Scepter / Rune Scepter / Mighty Scepter
+  + Tir + P Amethyst + Jewel        → Caster Weapon
+
+  Caster Ring
+  ────────────────────────────────────────────────────────────
+  Magic Ring
+  + Amn + P Amethyst + Jewel        → Caster Ring
+
+  Caster Amulet
+  ────────────────────────────────────────────────────────────
+  Magic Amulet
+  + Ral + P Amethyst + Jewel        → Caster Amulet
+
+
+══════════════════════════════════════════════════════════════
+  BLOOD CRAFTS
+══════════════════════════════════════════════════════════════
+
+  Blood Helm
+  ────────────────────────────────────────────────────────────
+  Magic Helm / Casque / Armet
+  + Ral + P Ruby + Jewel            → Blood Helm
+
+  Blood Body
+  ────────────────────────────────────────────────────────────
+  Magic Plate Mail / Templar Coat / Hellforge Plate
+  + Thul + P Ruby + Jewel           → Blood Body
+
+  Blood Gloves
+  ────────────────────────────────────────────────────────────
+  Magic Heavy Gloves / Sharkskin Gloves / Vampirebone Gloves
+  + Nef + P Ruby + Jewel            → Blood Gloves
+
+  Blood Belt
+  ────────────────────────────────────────────────────────────
+  Magic Belt / Mesh Belt / Mithril Coil
+  + Tal + P Ruby + Jewel            → Blood Belt
+
+  Blood Boots
+  ────────────────────────────────────────────────────────────
+  Magic Light Plated Boots / Battle Boots / Mirrored Boots
+  + Eth + P Ruby + Jewel            → Blood Boots
+
+  Blood Shield
+  ────────────────────────────────────────────────────────────
+  Magic Spiked Shield / Barbed Shield / Blade Barrier
+  + Ith + P Ruby + Jewel            → Blood Shield
+
+  Blood Weapon
+  ────────────────────────────────────────────────────────────
+  Magic Axe
+  + Ort + P Ruby + Jewel            → Blood Weapon
+
+  Blood Ring
+  ────────────────────────────────────────────────────────────
+  Magic Ring
+  + Sol + P Ruby + Jewel            → Blood Ring
+
+  Blood Amulet
+  ────────────────────────────────────────────────────────────
+  Magic Amulet
+  + Amn + P Ruby + Jewel            → Blood Amulet
+
+
+══════════════════════════════════════════════════════════════
+  HIT POWER CRAFTS
+══════════════════════════════════════════════════════════════
+
+  Hit Power Helm
+  ────────────────────────────────────────────────────────────
+  Magic Full Helm / Basinet / Giant Conch
+  + Ith + P Sapphire + Jewel        → Hit Power Helm
+
+  Hit Power Body
+  ────────────────────────────────────────────────────────────
+  Magic Field Plate / Sharktooth Armor / Kraken Shell
+  + Nef + P Sapphire + Jewel        → Hit Power Body
+
+  Hit Power Gloves
+  ────────────────────────────────────────────────────────────
+  Magic Chain Gloves / Heavy Bracers / Vambraces
+  + Ort + P Sapphire + Jewel        → Hit Power Gloves
+
+  Hit Power Belt
+  ────────────────────────────────────────────────────────────
+  Magic Heavy Belt / Battle Belt / Troll Belt
+  + Tal + P Sapphire + Jewel        → Hit Power Belt
+
+  Hit Power Boots
+  ────────────────────────────────────────────────────────────
+  Magic Chain Boots / Mesh Boots / Boneweave Boots
+  + Ral + P Sapphire + Jewel        → Hit Power Boots
+
+  Hit Power Shield
+  ────────────────────────────────────────────────────────────
+  Magic Gothic Shield / Ancient Shield / Ward
+  + Eth + P Sapphire + Jewel        → Hit Power Shield
+
+  Hit Power Weapon
+  ────────────────────────────────────────────────────────────
+  Magic Club / Hammer / Mace
+  + Tir + P Sapphire + Jewel        → Hit Power Weapon
+
+  Hit Power Ring
+  ────────────────────────────────────────────────────────────
+  Magic Ring
+  + Amn + P Sapphire + Jewel        → Hit Power Ring
+
+  Hit Power Amulet
+  ────────────────────────────────────────────────────────────
+  Magic Amulet
+  + Thul + P Sapphire + Jewel       → Hit Power Amulet
+
+
+══════════════════════════════════════════════════════════════
+  SAFETY CRAFTS
+══════════════════════════════════════════════════════════════
+
+  Safety Helm
+  ────────────────────────────────────────────────────────────
+  Magic Crown / Grand Crown / Corona
+  + Ith + P Emerald + Jewel         → Safety Helm
+
+  Safety Body
+  ────────────────────────────────────────────────────────────
+  Magic Breast Plate / Cuirass / Great Hauberk
+  + Eth + P Emerald + Jewel         → Safety Body
+
+  Safety Gloves
+  ────────────────────────────────────────────────────────────
+  Magic Gauntlets / War Gauntlets / Ogre Gauntlets
+  + Ral + P Emerald + Jewel         → Safety Gloves
+
+  Safety Belt
+  ────────────────────────────────────────────────────────────
+  Magic Sash / Demonhide Sash / Spiderweb Sash
+  + Tal + P Emerald + Jewel         → Safety Belt
+
+  Safety Boots
+  ────────────────────────────────────────────────────────────
+  Magic Greaves / War Boots / Myrmidon Greaves
+  + Ort + P Emerald + Jewel         → Safety Boots
+
+  Safety Shield
+  ────────────────────────────────────────────────────────────
+  Magic Kite Shield / Dragon Shield / Monarch
+  + Nef + P Emerald + Jewel         → Safety Shield
+
+  Safety Weapon
+  ────────────────────────────────────────────────────────────
+  Magic Spear / Fuscina / Matriarchal Spear
+  + Sol + P Emerald + Jewel         → Safety Weapon
+
+  Safety Ring
+  ────────────────────────────────────────────────────────────
+  Magic Ring
+  + Amn + P Emerald + Jewel         → Safety Ring
+
+  Safety Amulet
+  ────────────────────────────────────────────────────────────
+  Magic Amulet
+  + Thul + P Emerald + Jewel        → Safety Amulet
+
+
+══════════════════════════════════════════════════════════════
+  QUEST RECIPES
+══════════════════════════════════════════════════════════════
+
+  Staff of Kings
+  + Amulet of the Viper             → Horadric Staff
+
+  Wirt's Leg
+  + Tome of Town Portal             → Secret Cow Level Portal
+
+
+══════════════════════════════════════════════════════════════
+  UBER KEY RECIPES
+══════════════════════════════════════════════════════════════
+
+  Key of Terror
+  + Key of Hate
+  + Key of Destruction              → Random Uber Portal
+
+  POSSIBLE PORTALS:
+    Matron's Den
+    Forgotten Sands
+    Furnace of Pain
+
+  NOTE:
+    Use the three key sets in the SAME GAME to open
+    all three portals without duplicate portal locations.
+
+
+══════════════════════════════════════════════════════════════
+  UBER TRISTRAM
+══════════════════════════════════════════════════════════════
+
+  Diablo's Horn
+  + Baal's Eye
+  + Mephisto's Brain                → Uber Tristram
+
+  Obtained from:
+    Lilith   → Diablo's Horn
+    Uber Duriel → Baal's Eye
+    Uber Izual  → Mephisto's Brain
+
+
+══════════════════════════════════════════════════════════════
+  RESPEC
+══════════════════════════════════════════════════════════════
+
+  Twisted Essence of Suffering
+  + Charged Essence of Hatred
+  + Burning Essence of Terror
+  + Festering Essence of Destruction
+                                    → Token of Absolution
+
+  Token of Absolution               → Reset Skills + Stats
+
+
+══════════════════════════════════════════════════════════════
+  QUICK CRAFT REFERENCE
+══════════════════════════════════════════════════════════════
+
+  CASTER
+    Ral + P Amethyst + Jewel + Magic Amulet
+                                    → Caster Amulet
+
+  BLOOD
+    Sol + P Ruby + Jewel + Magic Ring
+                                    → Blood Ring
+
+  HIT POWER
+    Ort + P Sapphire + Jewel + Magic Chain Gloves
+                                    → Hit Power Gloves
+
+  SAFETY
+    Nef + P Emerald + Jewel + Magic Monarch
+                                    → Safety Shield
+
+  SOCKET WEAPON
+    Ral + Amn + P Amethyst + Normal Weapon
+                                    → 1–6os Weapon
+
+  SOCKET ARMOR
+    Tal + Thul + P Topaz + Normal Armor
+                                    → 1–4os Armor
+
+  SOCKET HELM
+    Ral + Thul + P Sapphire + Normal Helm
+                                    → 1–3os Helm
+
+  SOCKET SHIELD
+    Tal + Amn + P Ruby + Normal Shield
+                                    → 1–4os Shield
+
+  REMOVE SOCKETS
+    Hel + TP Scroll + Socketed Item → Empty Socketed Item
+
+  REROLL MAGIC
+    3 P Gems + Magic Item            → Rerolled Magic Item
+
+  REROLL RARE
+    6 P Skulls + Rare Item           → Rerolled Rare Item
+
+  REROLL CHARM
+    3 P Gems + Magic Charm           → Rerolled Magic Charm
+
+  REPAIR ARMOR
+    Ral + Armor                      → Repaired Armor
+
+  REPAIR WEAPON
+    Ort + Weapon                     → Repaired Weapon
+
+  FULL REJUV
+    3 Rejuvenation Potions           → Full Rejuvenation
+
+  COW LEVEL
+    Wirt's Leg + TP Tome             → Secret Cow Level
+
+  RESPEC
+    4 Essences                       → Token of Absolution
+```
