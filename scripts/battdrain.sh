@@ -49,7 +49,7 @@ if [[ "$save_log" =~ ^[Yy]$ ]]; then
     mkdir -p "$LOG_DIR"
 
     # Timestamp the log filename
-    LOG_FILE="$LOG_DIR/batt.log/battdrain_$(date '+%Y-%m-%d_%H-%M-%S').log"
+    LOG_FILE="$LOG_DIR/battdrain_$(date '+%Y-%m-%d_%H-%M-%S').log"
 
     # Get initial battery percentage
     initial_capacity=$(cat "$BATTERY/capacity")
