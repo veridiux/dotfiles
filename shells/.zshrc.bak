@@ -264,21 +264,14 @@ export_packages() {
 # Cheat Sheet Viewer
 # ===============================
 cs_viewer() {
-    local base_dir="$HOME/.dotfiles/cheat-sheet"
-    local current_dir="$base_dir"
-    local choice
     local file
+    local files=(~/.dotfiles/cheat-sheet/*)
+    local choice
     local i
 
     # Clear screen + scrollback
     cs_clear() {
         printf '\033[2J\033[3J\033[H'
-    }
-
-    # Get the relative path for display
-    cs_relative_path() {
-        local path="$1"
-        printf '%s' "${path#$base_dir/}"
     }
 
     while true; do
@@ -289,121 +282,58 @@ cs_viewer() {
             '// │                                                         │' \
             '// └─────────────────────────────────────────────────────────┘'
 
-        printf '\n  Location: %s\n\n' "$(cs_relative_path "$current_dir")"
+        printf '\n'
 
-        # ---------------------------------
-        # Build menu
-        # ---------------------------------
-        local -a entries=()
-        local -a types=()
-
-        # Add ".." if we're not at the root
-        if [[ "$current_dir" != "$base_dir" ]]; then
-            entries+=("..")
-            types+=("dir")
-        fi
-
-        # Add directories first
-        for file in "$current_dir"/*(/N); do
-            entries+=("${file:t}")
-            types+=("dir")
-        done
-
-        # Then add files
-        for file in "$current_dir"/*(.N); do
-            entries+=("${file:t}")
-            types+=("file")
-        done
-
-        # ---------------------------------
-        # Display menu
-        # ---------------------------------
         i=1
-
-        for (( i = 1; i <= ${#entries[@]}; i++ )); do
-            if [[ "${types[i]}" == "dir" ]]; then
-                printf '  %d) %s/\n' "$i" "${entries[i]}"
-            else
-                printf '  %d) %s\n' "$i" "${entries[i]}"
-            fi
+        for file in "${files[@]}"; do
+            printf '  %d) %s\n' "$i" "${file:t:r}"
+            ((i++))
         done
 
         printf '\n  q) Quit\n\n'
-        printf 'Select: '
+        printf 'Select cheat-sheet: '
         read -r choice
 
-        # ---------------------------------
-        # Quit
-        # ---------------------------------
+        # q = quit
         if [[ "${choice:l}" == "q" ]]; then
             cs_clear
             return
         fi
 
-        # ---------------------------------
         # Number selection
-        # ---------------------------------
         if [[ "$choice" =~ '^[0-9]+$' ]]; then
-            if (( choice < 1 || choice > ${#entries[@]} )); then
+            if (( choice >= 1 && choice <= ${#files[@]} )); then
+                file="${files[choice]}"
+            else
                 printf '\nInvalid selection.'
                 sleep 1
                 continue
             fi
 
-            local selected="${entries[choice]}"
-            local selected_type="${types[choice]}"
-
-        # ---------------------------------
         # Name selection
-        # ---------------------------------
         else
-            local selected=""
-            local selected_type=""
+            file=""
 
-            for (( i = 1; i <= ${#entries[@]}; i++ )); do
-                if [[ "${entries[i]:l}" == "${choice:l}" ]]; then
-                    selected="${entries[i]}"
-                    selected_type="${types[i]}"
+            for i in "${files[@]}"; do
+                if [[ "${i:t:r:l}" == "${choice:l}" ]]; then
+                    file="$i"
                     break
                 fi
             done
 
-            if [[ -z "$selected" ]]; then
+            if [[ -z "$file" ]]; then
                 printf '\nInvalid selection.'
                 sleep 1
                 continue
             fi
         fi
 
-        # ---------------------------------
-        # Directory
-        # ---------------------------------
-        if [[ "$selected_type" == "dir" ]]; then
+        # Display selected cheat sheet
+        cs_clear
+        cat "$file"
 
-            if [[ "$selected" == ".." ]]; then
-                current_dir="${current_dir:h}"
-            else
-                current_dir="$current_dir/$selected"
-            fi
-
-            continue
-        fi
-
-        # ---------------------------------
-        # File
-        # ---------------------------------
-        file="$current_dir/$selected"
-
-        # less gives us:
-        #
-        #   /word  = search
-        #   n      = next match
-        #   N      = previous match
-        #   g      = top
-        #   G      = bottom
-        #   q      = quit
-        #
-        less -N "$file"
+        printf '\n\nPress Enter to return to the menu...'
+        read -r
     done
 }
 
