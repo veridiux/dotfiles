@@ -26,6 +26,15 @@ hl.env("QT_WAYLAND_DISABLE_WINDOWDECORATION", "1")
 -- hl.env("QT_QPA_PLATFORMTHEME", "qt6ct-kde")
 hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
 
--- NVIDIA 
+
+-- Hybrid GPU
+-- AMD iGPU = primary
+-- NVIDIA dGPU = secondary / offload
+--hl.env(
+--    "AQ_DRM_DEVICES",
+--    "/dev/dri/by-path/pci-0000:65:00.0-card:/dev/dri/by-path/pci-0000:64:00.0-card"
+--)
+
+
+-- NVIDIA VA-API
 hl.env("LIBVA_DRIVER_NAME", "nvidia")
-hl.env("__GLX_VENDOR_LIBRARY_NAME", "nvidia")
