@@ -23,3 +23,9 @@ libreoffice-fresh
 fastfetch
 kitty
 hyprpaper
+power-profiles-daemon
+nm-connection-editor
+dolphin
+qt6ct-kde
+wget
+brave-bin
