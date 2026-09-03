@@ -501,6 +501,45 @@ sshmenu() {
     done
 }
 
+# ===============================
+# Quick add pkg
+# ===============================
+padd() {
+    local pkg="$1"
+    local file="$HOME/.dotfiles/packages/pacman.txt"
+
+    [[ -z "$pkg" ]] && { echo "Usage: padd <package>"; return 1; }
+
+    grep -qxF "$pkg" "$file" || echo "$pkg" >> "$file"
+}
+
+pdel() {
+    local pkg="$1"
+    local file="$HOME/.dotfiles/packages/pacman.txt"
+
+    [[ -z "$pkg" ]] && { echo "Usage: pdel <package>"; return 1; }
+
+    sed -i "/^${pkg}$/d" "$file"
+}
+
+yadd() {
+    local pkg="$1"
+    local file="$HOME/.dotfiles/packages/yay.txt"
+
+    [[ -z "$pkg" ]] && { echo "Usage: yadd <package>"; return 1; }
+
+    grep -qxF "$pkg" "$file" || echo "$pkg" >> "$file"
+}
+
+ydel() {
+    local pkg="$1"
+    local file="$HOME/.dotfiles/packages/yay.txt"
+
+    [[ -z "$pkg" ]] && { echo "Usage: ydel <package>"; return 1; }
+
+    sed -i "/^${pkg}$/d" "$file"
+}
+
 #\\------------Custom Functions------------//#
 
 
