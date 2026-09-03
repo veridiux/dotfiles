@@ -122,10 +122,9 @@ while true; do
         remaining=$(printf "%02d:%02d" "$h" "$m")
 
     else
-        remaining="--:--"┌─[justin@Sys0p] // ~/.dotfiles/scripts [main] ✗
-└─[❯] cat battdrain.sh     
-```bash
-#!/bin/bash
+        remaining="--:--"
+    fi
+
 
 # ---------------------------------------------------------
 # Battery Drain Watcher
@@ -250,38 +249,6 @@ while true; do
 
     else
         remaining="--:--"
-    fi
-
-    # Display current status.
-    printf "\r%s | %d%% | %.2f W | %s remaining   " \
-        "$status" "$capacity" "$power" "$remaining"
-
-    # -----------------------------------------------------
-    # Log every 5% battery lost
-    # -----------------------------------------------------
-
-    if [[ -n "$LOG_FILE" ]] && (( capacity <= next_threshold )); then
-
-        timestamp=$(date '+%Y-%m-%d %H:%M:%S')
-
-        echo "$timestamp | ${capacity}% | ${power} W | ${status}" \
-            >> "$LOG_FILE"
-
-        # Move the threshold down another 5%.
-        #
-        # The while loop means that if the battery percentage
-        # drops several thresholds between checks, we don't
-        # get stuck on the old threshold.
-        while (( capacity <= next_threshold )); do
-            next_threshold=$((next_threshold - 5))
-        done
-    fi
-
-    sleep 5
-done
-```
-┌─[justin@Sys0p] // ~/.dotfiles/scripts [main] ✗
-└─[❯] 
     fi
 
     # Display current status.

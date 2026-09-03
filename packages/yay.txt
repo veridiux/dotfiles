@@ -13,10 +13,13 @@ neovim
 btop
 gimp
 vscodium
-libreoffics-fresh
 kate
 discord
 obs-studio
 mpv
 syncthing
 syncthingtray-qt6
+libreoffice-fresh
+fastfetch
+kitty
+hyprpaper
