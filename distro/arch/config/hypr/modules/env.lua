@@ -38,4 +38,4 @@ hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
 
 -- NVIDIA VA-API
 -- hl.env("LIBVA_DRIVER_NAME", "nvidia")
-hl.env("AQ_DRM_DEVICES", "/dev/dri/amd-igpu")
+-- hl.env("AQ_DRM_DEVICES", "/dev/dri/amd-igpu")

@@ -4,7 +4,7 @@
 -- See https://wiki.hypr.land/Configuring/Basics/Monitors/
 
 -- Names / descriptions from hyprctl monitors
-local LAPTOP  = "eDP-1"
+local LAPTOP  = "desc:Samsung Display Corp. ATNA40CU05-0"
 local ACER    = "desc:Acer Technologies Acer X34"
 local SAMSUNG = "desc:Samsung Electric Company C27JG5x HTOK800290"
 
@@ -13,7 +13,7 @@ local SAMSUNG = "desc:Samsung Electric Company C27JG5x HTOK800290"
 local function enable_laptop()
     hl.monitor({
         output   = LAPTOP,
-        mode     = "preferred",
+        mode     = "2880x1800@120",
         position = "0x0",
         scale    = "1.6",
         vrr      = 2,
