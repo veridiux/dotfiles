@@ -39,6 +39,8 @@ hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("steam"))
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("steam steam://open/bigpicture"))
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("~/.config/hypr/scripts/hyprpaper-random.sh"))
 
+hl.bind(mainMod .. " + G", hl.dsp.exec_cmd("~/.dotfiles/scripts/steam-gaming-mode.sh"))
+
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))
 hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))

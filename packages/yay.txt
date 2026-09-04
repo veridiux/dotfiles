@@ -39,3 +39,4 @@ lib32-vulkan-radeon
 lib32-mesa
 gamemode
 lib32-gamemode
+ntfs-3g
