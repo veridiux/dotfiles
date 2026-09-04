@@ -1,0 +1,522 @@
+# ARCH LINUX BTRFS INSTALLATION GUIDE
+
+Manual filesystem setup
+UEFI + Btrfs + Subvolumes + /boot + fstab
+
+# FILESYSTEM LAYOUT
+
+Btrfs:
+
+```
+@           -> /
+@home       -> /home
+@log        -> /var/log
+@pkg        -> /var/cache/pacman/pkg
+@swap       -> /swap
+@snapshots  -> /.snapshots
+```
+
+EFI:
+
+```
+EFI         -> /boot
+```
+
+# IMPORTANT
+
+The commands in this guide use:
+
+```
+/dev/nvme0n1p1 = EFI
+/dev/nvme0n1p2 = Btrfs root
+```
+
+REPLACE THESE WITH YOUR ACTUAL PARTITIONS.
+
+Formatting the wrong partition will destroy the data on it.
+
+================================================================
+
+1. IDENTIFY THE PARTITIONS
+   ================================================================
+
+Display all disks and partitions:
+
+```
+lsblk -f
+```
+
+Identify:
+
+```
+- EFI System Partition
+- Partition to use for the Btrfs root filesystem
+```
+
+Example:
+
+```
+/dev/nvme0n1p1 = EFI
+/dev/nvme0n1p2 = Btrfs root
+```
+
+Do not continue until you are certain these are correct.
+
+================================================================
+2. FORMAT THE EFI PARTITION
+===========================
+
+Format the EFI System Partition as FAT32:
+
+```
+mkfs.fat -F 32 /dev/nvme0n1p1
+```
+
+NOTE:
+
+If you are intentionally reusing an existing EFI System Partition
+and need to preserve its contents, DO NOT format it.
+
+================================================================
+3. FORMAT THE ROOT PARTITION
+============================
+
+Create the Btrfs filesystem:
+
+```
+mkfs.btrfs -f /dev/nvme0n1p2
+```
+
+================================================================
+4. VERIFY THE FILESYSTEMS
+=========================
+
+Check everything again:
+
+```
+lsblk -f
+```
+
+You should see something similar to:
+
+```
+nvme0n1
+├─nvme0n1p1    vfat
+└─nvme0n1p2    btrfs
+```
+
+================================================================
+5. MOUNT THE BTRFS TOP LEVEL
+============================
+
+Temporarily mount the Btrfs filesystem:
+
+```
+mount /dev/nvme0n1p2 /mnt
+```
+
+Verify:
+
+```
+findmnt /mnt
+```
+
+This temporary mount lets us create the Btrfs subvolumes.
+
+================================================================
+6. CREATE THE BTRFS SUBVOLUMES
+==============================
+
+Create the root subvolume:
+
+```
+btrfs subvolume create /mnt/@
+```
+
+Create the home subvolume:
+
+```
+btrfs subvolume create /mnt/@home
+```
+
+Create the log subvolume:
+
+```
+btrfs subvolume create /mnt/@log
+```
+
+Create the Pacman package-cache subvolume:
+
+```
+btrfs subvolume create /mnt/@pkg
+```
+
+Create the swap subvolume:
+
+```
+btrfs subvolume create /mnt/@swap
+```
+
+Create the snapshots subvolume:
+
+```
+btrfs subvolume create /mnt/@snapshots
+```
+
+================================================================
+7. VERIFY THE SUBVOLUMES
+========================
+
+Run:
+
+```
+btrfs subvolume list /mnt
+```
+
+You should see:
+
+```
+@
+@home
+@log
+@pkg
+@swap
+@snapshots
+```
+
+================================================================
+8. UNMOUNT THE BTRFS TOP LEVEL
+==============================
+
+The temporary top-level mount is no longer needed:
+
+```
+umount /mnt
+```
+
+We will now remount the filesystem using @ as the actual root.
+
+================================================================
+9. MOUNT @ AS ROOT
+==================
+
+Mount the root subvolume:
+
+```
+mount -o subvol=@,compress=zstd,noatime \
+    /dev/nvme0n1p2 /mnt
+```
+
+Verify:
+
+```
+findmnt /mnt
+```
+
+The mount options should indicate the @ subvolume.
+
+Usually this will appear as:
+
+```
+subvol=/@
+```
+
+================================================================
+10. CREATE THE MOUNT POINTS
+===========================
+
+Create /home:
+
+```
+mkdir -p /mnt/home
+```
+
+Create /var/log:
+
+```
+mkdir -p /mnt/var/log
+```
+
+Create the Pacman cache directory:
+
+```
+mkdir -p /mnt/var/cache/pacman/pkg
+```
+
+Create /swap:
+
+```
+mkdir -p /mnt/swap
+```
+
+Create /.snapshots:
+
+```
+mkdir -p /mnt/.snapshots
+```
+
+Create /boot:
+
+```
+mkdir -p /mnt/boot
+```
+
+================================================================
+11. MOUNT @home
+===============
+
+```
+mount -o subvol=@home,compress=zstd,noatime \
+    /dev/nvme0n1p2 /mnt/home
+```
+
+================================================================
+12. MOUNT @log
+==============
+
+```
+mount -o subvol=@log,compress=zstd,noatime \
+    /dev/nvme0n1p2 /mnt/var/log
+```
+
+================================================================
+13. MOUNT @pkg
+==============
+
+```
+mount -o subvol=@pkg,compress=zstd,noatime \
+    /dev/nvme0n1p2 /mnt/var/cache/pacman/pkg
+```
+
+================================================================
+14. MOUNT @snapshots
+====================
+
+```
+mount -o subvol=@snapshots,compress=zstd,noatime \
+    /dev/nvme0n1p2 /mnt/.snapshots
+```
+
+================================================================
+15. MOUNT @swap
+===============
+
+Mount the swap subvolume:
+
+```
+mount -o subvol=@swap,noatime \
+    /dev/nvme0n1p2 /mnt/swap
+```
+
+NOTE:
+
+Compression is intentionally NOT enabled for @swap.
+
+The actual Btrfs swapfile will be created later.
+
+================================================================
+16. MOUNT THE EFI SYSTEM PARTITION
+==================================
+
+Mount the EFI partition at /boot:
+
+```
+mount /dev/nvme0n1p1 /mnt/boot
+```
+
+================================================================
+17. VERIFY THE COMPLETE MOUNT LAYOUT
+====================================
+
+STOP HERE AND CHECK EVERYTHING.
+
+Run:
+
+```
+findmnt -R /mnt -o TARGET,SOURCE,FSTYPE,OPTIONS
+```
+
+Confirm the following mapping:
+
+```
+/mnt
+    @
+
+/mnt/home
+    @home
+
+/mnt/var/log
+    @log
+
+/mnt/var/cache/pacman/pkg
+    @pkg
+
+/mnt/swap
+    @swap
+
+/mnt/.snapshots
+    @snapshots
+
+/mnt/boot
+    EFI partition
+```
+
+Expected layout:
+
+```
+/mnt
+├── /mnt/home
+├── /mnt/var/log
+├── /mnt/var/cache/pacman/pkg
+├── /mnt/swap
+├── /mnt/.snapshots
+└── /mnt/boot
+```
+
+Do not continue until the mount layout is correct.
+
+================================================================
+18. INSTALL THE BASE ARCH SYSTEM
+================================
+
+Install the base system:
+
+```
+pacstrap -K /mnt \
+    base \
+    linux \
+    linux-firmware \
+    btrfs-progs
+```
+
+Additional packages can be added to this command if desired.
+
+================================================================
+19. GENERATE /etc/fstab
+=======================
+
+After pacstrap finishes:
+
+```
+genfstab -U /mnt > /mnt/etc/fstab
+```
+
+================================================================
+20. INSPECT /etc/fstab
+======================
+
+DO NOT blindly continue after generating fstab.
+
+Read it:
+
+```
+cat /mnt/etc/fstab
+```
+
+Confirm that entries exist for:
+
+```
+/
+/home
+/var/log
+/var/cache/pacman/pkg
+/swap
+/.snapshots
+/boot
+```
+
+The Btrfs entries should contain the appropriate subvol options:
+
+```
+subvol=/@
+subvol=/@home
+subvol=/@log
+subvol=/@pkg
+subvol=/@swap
+subvol=/@snapshots
+```
+
+The /boot entry should point to the FAT32 EFI partition.
+
+IMPORTANT:
+
+Having @swap mounted at:
+
+```
+/swap
+```
+
+does NOT mean swap is active.
+
+The actual swapfile still needs to be created.
+
+================================================================
+21. ENTER THE NEW ARCH INSTALLATION
+===================================
+
+Enter the installed system:
+
+```
+arch-chroot /mnt
+```
+
+================================================================
+FINAL FILESYSTEM LAYOUT
+=======================
+
+Btrfs filesystem
+
+```
+Btrfs Top Level
+│
+├── @
+│   └── /
+│
+├── @home
+│   └── /home
+│
+├── @log
+│   └── /var/log
+│
+├── @pkg
+│   └── /var/cache/pacman/pkg
+│
+├── @swap
+│   └── /swap
+│
+└── @snapshots
+    └── /.snapshots
+```
+
+EFI System Partition
+
+```
+EFI
+└── /boot
+```
+
+================================================================
+NEXT STEPS
+==========
+
+After arch-chroot, continue with:
+
+```
+1. Timezone
+2. Hardware clock
+3. Locale
+4. Hostname
+5. Root password
+6. User account
+7. sudo
+8. Networking
+9. Btrfs swapfile
+```
+
+10. Hibernation
+11. mkinitcpio
+12. CPU microcode
+13. Limine
+14. Snapper
+15. Enable required services
+16. Final boot verification
