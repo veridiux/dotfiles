@@ -87,12 +87,33 @@ hl.window_rule({
 })
 
 hl.window_rule({
+    name = "ytmcli-floating",
+    match = { class = "^youtube-music-cli$" },
+
+    float = true,
+    center = true,
+    size = { 975, 475 },
+})
+
+hl.window_rule({
     name = "mpv=floating",
     match = { class = "^mpv$" },
 
     float = true,
     center = true,
     size = { 1920, 1080 },
+})
+
+hl.window_rule({
+    name = "ytm-floating",
+
+    match = {
+        initial_class = "brave-music.youtube.com__-Default",
+    },
+
+    float = true,
+    center = true,
+    size = { 1680, 1050 },
 })
 
 hl.window_rule({

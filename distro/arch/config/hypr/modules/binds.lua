@@ -28,7 +28,7 @@ hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(terminal))
 local closeWindowBind = hl.bind(mainMod .. " + C", hl.dsp.window.close())
 
 -- hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("quickshell ipc call launcher toggle"))
-hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
+hl.bind(mainMod .. " + Y", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
@@ -38,6 +38,8 @@ hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("pkill quickshell; quickshell &"))
 hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("steam"))
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("steam steam://open/bigpicture"))
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("~/.config/hypr/scripts/hyprpaper-random.sh"))
+
+hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("brave --app=https://music.youtube.com"))
 
 hl.bind(mainMod .. " + G", hl.dsp.exec_cmd("~/.dotfiles/scripts/steam-gaming-mode.sh"))
 
