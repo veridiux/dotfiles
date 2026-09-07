@@ -48,3 +48,8 @@ pipewire-jack
 wireplumber
 lib32-pipewire
 lib32-libpulse
+ly
+hyprland
+uwsm
+xdg-desktop-portal-hyprland
+xdg-desktop-portal-gtk
