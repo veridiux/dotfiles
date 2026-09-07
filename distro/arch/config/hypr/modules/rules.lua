@@ -21,7 +21,7 @@ hl.window_rule({
     no_focus = false,
     float = true,
     center = true,
-    size = { 200, 1050 },
+    size = { 300, 1050 },
 })
 
 hl.window_rule({
@@ -100,4 +100,14 @@ hl.window_rule({
     float = true,
     center = true,
     size = { 1680, 1050 },
+})
+
+hl.window_rule({
+    name = "once-human-fullscreen",
+    match = {
+        initial_class = "steam_app_2139460",
+        initial_title = "ONCE_HUMAN",
+    },
+
+    fullscreen = true,
 })
