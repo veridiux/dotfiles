@@ -28,7 +28,7 @@ mkdir -p "$HOME/.ssh"
 chmod 700 "$HOME/.ssh"
 
 if [[ ! -f "$HOME/.ssh/id_ed25519" ]]; then
-    ssh-keygen -t ed25519 -C "$USER@$(hostname)" -f "$HOME/.ssh/id_ed25519"
+    ssh-keygen -t ed25519 -C "veridiux@gmail.com" -f "$HOME/.ssh/id_ed25519"
 else
     echo "SSH key already exists. Skipping."
 fi
