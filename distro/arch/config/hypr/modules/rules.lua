@@ -1,4 +1,17 @@
 hl.window_rule({
+    name = "battlenet-floating",
+    match = {
+        initial_class = "steam_app_default",
+        title = "Battle.net",
+    },
+
+    no_focus = false,
+    float = true,
+    center = true,
+    size = { 1680, 1050 },
+})
+
+hl.window_rule({
     name = "steam-floating",
     match = {
         initial_class = "steam",
@@ -110,4 +123,24 @@ hl.window_rule({
     },
 
     fullscreen = true,
+})
+
+-- Diablo III
+hl.window_rule({
+    match = {
+        class = "steam_app_default",
+        title = "Diablo III",
+    },
+    fullscreen = true,
+})
+
+-- Hide Wine / Battle.net tray window
+hl.window_rule({
+    match = {
+        class = "steam_app_default",
+        title = "^$",
+    },
+
+    float = true,
+    move = { -10000, -10000 },
 })
