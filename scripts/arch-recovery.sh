@@ -1,51 +1,34 @@
 #!/bin/bash
-
 set -e
 
-echo "=========================================="
-echo " Arch Linux Recovery / Chroot"
-echo "=========================================="
-echo
+DISK="/dev/nvme3n1p2"
+ESP="/dev/nvme3n1p1"
 
-echo "[1/5] Activating LVM..."
-vgchange -ay
+OPTS="noatime,compress=zstd:3,ssd,discard=async"
 
-echo
-echo "[2/5] Mounting root..."
-mount -o subvol=@ /dev/ArchinstallVg/root /mnt
+echo "==> Mounting root..."
+mkdir -p /mnt
+mount -o subvol=@,$OPTS "$DISK" /mnt
 
-echo
-echo "[3/5] Mounting EFI/boot..."
-mount /dev/nvme0n1p1 /mnt/boot
+echo "==> Creating mount points..."
+mkdir -p /mnt/{boot,home,var/log,var/cache/pacman/pkg,swap,.snapshots}
 
-echo
-echo "[4/5] Mounting virtual filesystems..."
+echo "==> Mounting Btrfs subvolumes..."
+mount -o subvol=@home,$OPTS "$DISK" /mnt/home
+mount -o subvol=@log,$OPTS "$DISK" /mnt/var/log
+mount -o subvol=@pkg,$OPTS "$DISK" /mnt/var/cache/pacman/pkg
+mount -o subvol=@snapshots,$OPTS "$DISK" /mnt/.snapshots
 
-mount --types proc /proc /mnt/proc
-mount --rbind /sys /mnt/sys
-mount --rbind /dev /mnt/dev
-mount --rbind /run /mnt/run
+# Swap subvolume: no compression / CoW
+mount -o subvol=@swap,noatime,nodatacow "$DISK" /mnt/swap
 
-mount --make-rslave /mnt/sys
-mount --make-rslave /mnt/dev
-mount --make-rslave /mnt/run
+echo "==> Mounting ESP..."
+mount "$ESP" /mnt/boot
 
 echo
-echo "=========================================="
-echo " Mounts ready"
-echo "=========================================="
+echo "==> Mounts:"
+findmnt -R /mnt
 echo
-echo "Root:"
-findmnt /mnt
-echo
-echo "Boot:"
-findmnt /mnt/boot
-echo
-echo "EFI/Kernel files:"
-ls -lh /mnt/boot/EFI/Linux/ 2>/dev/null || true
-echo
-
-echo "[5/5] Entering installed system..."
-echo
+echo "==> Entering chroot..."
 
 arch-chroot /mnt
