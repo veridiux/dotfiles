@@ -28,7 +28,7 @@ QtObject {
 
     readonly property color bgt: Qt.rgba(0, 0, 0, .70)  // Background Transparency
 
-    readonly property color mainAccent: c1
+    readonly property color mainAccent: c2
     readonly property color border: "#44FFFFFF"
     readonly property color background: "#66111111"
     readonly property color text: "#f5e2c5"

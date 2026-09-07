@@ -1,13 +1,47 @@
-
 hl.window_rule({
-    name = "steam=floating",
-    match = { class = "steam$", initial_class = "^steam$" },
+    name = "steam-floating",
+    match = {
+        initial_class = "steam",
+        initial_title = "Steam",
+    },
 
     no_focus = false,
     float = true,
     center = true,
     size = { 1680, 1050 },
 })
+
+hl.window_rule({
+    name = "steam-friends-floating",
+    match = {
+        initial_class = "steam",
+        initial_title = "Friends List",
+    },
+
+    no_focus = false,
+    float = true,
+    center = true,
+    size = { 200, 1050 },
+})
+
+hl.window_rule({
+    name = "steam-big-picture-fullscreen",
+    match = {
+        initial_class = "steam",
+        initial_title = "Steam Big Picture Mode",
+    },
+
+    fullscreen = true,
+})
+
+hl.on("window.active", function(w)
+    if w and w.class == "steam" and w.title == "Steam Big Picture Mode" then
+        hl.dispatch(hl.dsp.window.fullscreen({
+            action = "set",
+            mode = "fullscreen",
+        }))
+    end
+end)
 
 hl.window_rule({
     name = "discord-floating",

@@ -40,3 +40,11 @@ gamemode
 lib32-gamemode
 ntfs-3g
 ntfsprogs
+pipewire
+pipewire-audio
+pipewire-alsa
+pipewire-pulse
+pipewire-jack
+wireplumber
+lib32-pipewire
+lib32-libpulse
