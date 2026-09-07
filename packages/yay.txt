@@ -53,3 +53,4 @@ hyprland
 uwsm
 xdg-desktop-portal-hyprland
 xdg-desktop-portal-gtk
+nvidia-open-dkms
