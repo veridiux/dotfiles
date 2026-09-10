@@ -56,3 +56,4 @@ xdg-desktop-portal-gtk
 nvidia-open-dkms
 hyprpolkitagent
 faugus-launcher
+hyprshot
