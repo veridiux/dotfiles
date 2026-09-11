@@ -10,6 +10,7 @@ QtObject {
     readonly property color c3: '#129ada'
     readonly property color c4: '#12da12'
     readonly property color c5: '#5812da'
+    readonly property color c6: '#00A3A6'
 
     property string systemName: "Sys0p"
 
@@ -28,7 +29,7 @@ QtObject {
 
     readonly property color bgt: Qt.rgba(0, 0, 0, .70)  // Background Transparency
 
-    readonly property color mainAccent: c2
+    readonly property color mainAccent: c6
     readonly property color border: "#44FFFFFF"
     readonly property color background: "#66111111"
     readonly property color text: "#f5e2c5"
