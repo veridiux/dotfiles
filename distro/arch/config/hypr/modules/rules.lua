@@ -165,3 +165,12 @@ hl.window_rule({
     float = true,
     move = { -10000, -10000 },
 })
+
+-- Diablo
+hl.window_rule({
+    match = {
+        class = "steam_app_default",
+        title = "DIABLO",
+    },
+    fullscreen = true,
+})
