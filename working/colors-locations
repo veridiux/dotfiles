@@ -1,0 +1,93 @@
+~~/.config/hypr/modules/decorations.lua
+
+ol = {
+            active_border   = { colors = {"rgba(255, 98, 0, 1)", "rgba(255, 179, 71, 1)"}, angle = 45 },
+            inactive_border = "rgba(595959aa)",
+        },
+
+--------------------------------
+
+~/.config/kitty/kitty.conf
+
+# ============================================================
+# COLORS
+# ============================================================
+
+# Deep HUD background
+background #080808
+
+# Main text
+foreground #d7d7d7
+
+# Cursor
+cursor #ff6200
+cursor_text_color #080808
+
+
+# ------------------------------------------------------------
+# ANSI COLORS
+# ------------------------------------------------------------
+
+color0  #080808
+color1  #ff4d00
+color2  #7cff00
+color3  #ff9d00
+color4  #ff6200
+color5  #ff7a18
+color6  #ffb347
+color7  #d7d7d7
+
+color8  #71665d
+color9  #ff5c1a
+color10 #9cff3b
+color11 #ffb52e
+color12 #ff6200
+color13 #ff8c32
+color14 #ffc266
+color15 #f2f2f2
+
+
+--------------------------------------
+
+~/.config/quickshell/themes/Main.qml
+
+pragma Singleton
+
+import QtQuick
+
+QtObject {
+
+    //SET COLORS
+    readonly property color c1: '#ff6200'
+    readonly property color c2: '#ff0000'
+    readonly property color c3: '#129ada'
+    readonly property color c4: '#12da12'
+    readonly property color c5: '#5812da'
+    readonly property color c6: '#00A3A6'
+
+    property string systemName: "Sys0p"
+
+
+    property string fontFamily: "JetBrainsMono Nerd Font"
+    property int fontSize: 13
+    property int fontWeight: Font.Normal
+
+
+    
+    
+
+    property int borderWidth: 1
+    property int borderRadius: 1
+    property color borderColor: mainAccent
+
+    readonly property color bgt: Qt.rgba(0, 0, 0, .70)  // Background Transparency
+
+    readonly property color mainAccent: c6
+    readonly property color border: "#44FFFFFF"
+    readonly property color background: "#66111111"
+    readonly property color text: "#f5e2c5"
+
+    readonly property color battery1: "#ff6200"
+    readonly property color battery2: '#ff0000'
+    readonly property color battery3: '#ffb347'
+}
